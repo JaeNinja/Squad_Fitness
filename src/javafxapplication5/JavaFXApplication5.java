@@ -1,6 +1,6 @@
 
 package javafxapplication5;
-
+// bruh i did shit
 import javafx.application.Application;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;

@@ -1,13 +1,12 @@
 
 package javafxapplication5;
 // bruh i did shit
+//Kyle did this
 import javafx.application.Application;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 
@@ -17,16 +16,9 @@ public class JavaFXApplication5 extends Application {
     
     @Override
     public void start(Stage primaryStage) throws Exception {
-//        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
-//        
-//        Scene scene = new Scene(root,300,275);
-//        
-//        stage.setTitle("Welcome to the SQUAD");        
-//        stage.setScene(scene);
-//        stage.show();
+
         window = primaryStage;
         
-        //Label label1 = new Label("Welcome to the SQUAD");
         Button button1= new Button("BEGIN");
         button1.setOnAction(e -> window.setScene(scene2));
          button1.setLayoutX(465.7);

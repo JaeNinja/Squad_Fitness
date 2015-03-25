@@ -1,0 +1,17 @@
+.root{
+	-fx-background-image: url("idea2.jpg");
+        -fx-background-repeat:no-repeat;
+        -fx-background-size: 1000 850;
+        
+	}
+.button{
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+        -fx-font-size: 30;
+	 -fx-background-color: linear-gradient(#2E2E2E, #2E2E2E);
+	-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.button:hover{
+	 -fx-background-color: linear-gradient(#2E2E2E, #6E6E6E);
+}

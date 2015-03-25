@@ -21,26 +21,26 @@
                   <content>
                     <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="850.0" prefWidth="1000.0">
                       <children>
-                        <Label text="Register" textAlignment="CENTER" AnchorPane.leftAnchor="247.0" AnchorPane.rightAnchor="247.0" AnchorPane.topAnchor="6.0">
+                        <Label alignment="CENTER" text="Register" textAlignment="CENTER" AnchorPane.leftAnchor="247.0" AnchorPane.rightAnchor="247.0" AnchorPane.topAnchor="6.0">
                           <font>
                             <Font name="Footlight MT Light" size="30.0" />
                           </font>
                         </Label>
-                        <Label layoutY="56.0" text="Username" AnchorPane.leftAnchor="53.0">
+                        <Label layoutY="135.0" text="Username" AnchorPane.leftAnchor="283.0">
                           <font>
                             <Font name="Footlight MT Light" size="24.0" fx:id="x1" />
                           </font>
                         </Label>
-                        <TextField fx:id="Txt_User" layoutX="226.0" layoutY="51.0" prefWidth="200.0" promptText="Enter Username" />
-                        <Label font="$x1" layoutY="90.0" text="Password" AnchorPane.leftAnchor="53.0" />
-                        <PasswordField fx:id="Txt_PW" layoutX="226.0" layoutY="85.0" prefWidth="200.0" promptText="Enter Password" />
-                        <Label font="$x1" layoutY="125.0" text="Confirm Password" AnchorPane.leftAnchor="53.0" />
-                        <PasswordField fx:id="Txt_PW2" layoutX="247.0" layoutY="125.0" prefWidth="200.0" promptText="Confirm Password" />
-                        <Label font="$x1" layoutY="163.0" text="Age" AnchorPane.leftAnchor="53.0" />
-                        <TextField fx:id="Age" layoutX="226.0" layoutY="163.0" prefWidth="200.0" promptText="Enter Age" />
-                        <Label font="$x1" layoutY="198.0" text="Height" textAlignment="CENTER" AnchorPane.leftAnchor="53.0" />
-                        <TextField fx:id="Height" layoutX="226.0" layoutY="193.0" prefWidth="200.0" promptText="Enter Height" />
-                        <ComboBox fx:id="Gender_Select" prefHeight="21.0" prefWidth="116.0" promptText="Select" AnchorPane.bottomAnchor="118.0" AnchorPane.rightAnchor="242.0">
+                        <TextField fx:id="Txt_User" layoutX="553.0" layoutY="135.0" prefWidth="200.0" promptText="Enter Username" />
+                        <Label font="$x1" layoutY="199.0" text="Password" AnchorPane.leftAnchor="283.0" />
+                        <PasswordField fx:id="Txt_PW" layoutX="553.0" layoutY="210.0" prefWidth="200.0" promptText="Enter Password" />
+                        <Label font="$x1" layoutY="276.0" text="Confirm Password" AnchorPane.leftAnchor="283.0" />
+                        <PasswordField fx:id="Txt_PW2" layoutX="553.0" layoutY="276.0" prefWidth="200.0" promptText="Confirm Password" />
+                        <Label font="$x1" layoutY="328.0" text="Age" AnchorPane.leftAnchor="283.0" />
+                        <TextField fx:id="Age" layoutX="553.0" layoutY="323.0" prefWidth="200.0" promptText="Enter Age" />
+                        <Label font="$x1" layoutY="386.0" text="Height" textAlignment="CENTER" AnchorPane.leftAnchor="283.0" />
+                        <TextField fx:id="Height" layoutX="553.0" layoutY="381.0" prefWidth="200.0" promptText="Enter Height" />
+                        <ComboBox fx:id="Gender_Select" prefHeight="21.0" prefWidth="116.0" promptText="Select" AnchorPane.bottomAnchor="404.0" AnchorPane.rightAnchor="307.0">
                           <items>
                             <FXCollections fx:factory="observableArrayList">
                               <String fx:value="Male" />
@@ -48,11 +48,11 @@
                             </FXCollections>
                           </items>
                         </ComboBox>
-                        <Label font="$x1" layoutY="229.0" text="Gender" textAlignment="CENTER" AnchorPane.leftAnchor="53.0" />
-                        <Label font="$x1" layoutY="260.0" text="Weight" textAlignment="CENTER" AnchorPane.leftAnchor="53.0" />
-                        <TextField fx:id="Weight" layoutX="226.0" layoutY="260.0" prefWidth="200.0" promptText="Enter Weight" />
-                        <Label font="$x1" layoutY="300.0" text="Body Type" textAlignment="CENTER" AnchorPane.leftAnchor="53.0" />
-                        <ComboBox fx:id="BodyType" prefHeight="21.0" prefWidth="116.0" promptText="Select" AnchorPane.bottomAnchor="47.0" AnchorPane.rightAnchor="242.0">
+                        <Label font="$x1" layoutY="443.0" text="Gender" textAlignment="CENTER" AnchorPane.leftAnchor="283.0" />
+                        <Label font="$x1" layoutY="511.0" text="Weight" textAlignment="CENTER" AnchorPane.leftAnchor="283.0" />
+                        <TextField fx:id="Weight" layoutX="553.0" layoutY="511.0" prefWidth="200.0" promptText="Enter Weight" />
+                        <Label font="$x1" layoutY="594.0" text="Body Type" textAlignment="CENTER" AnchorPane.leftAnchor="283.0" />
+                        <ComboBox fx:id="BodyType" prefHeight="21.0" prefWidth="116.0" promptText="Select" AnchorPane.bottomAnchor="246.0" AnchorPane.rightAnchor="307.0">
                           <items>
                             <FXCollections fx:factory="observableArrayList">
                               <String fx:value="Male" />
@@ -60,7 +60,7 @@
                             </FXCollections>
                           </items>
                         </ComboBox>
-                        <Button fx:id="Next_Button" layoutX="514.0" layoutY="334.0" mnemonicParsing="false" text="NEXT" />
+                        <Button fx:id="Next_Button" layoutX="800.0" layoutY="710.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="109.0" text="NEXT" />
                       </children>
                     </AnchorPane>
                   </content>

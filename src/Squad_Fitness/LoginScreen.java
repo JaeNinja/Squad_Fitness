@@ -19,9 +19,10 @@ public class LoginScreen extends Application {
     {
         Parent root = FXMLLoader.load(getClass().getResource("/FXML/loginScreen.fxml"));
         loginScene = new Scene(root, 1000, 850);
-        // primaryStage.setScene(loginScene);
-        //primaryStage.setTitle("Enter Login Information");
-        //primaryStage.show();
+        primaryStage.setScene(loginScene);
+        primaryStage.setTitle("Enter Login Information");
+        primaryStage.show();
+
     }
     public static void main(String[] args) {
         launch(args);

@@ -12,6 +12,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class Splash_Screen extends Application  {
     //Stage is the entire window
     Stage window;
@@ -25,15 +27,16 @@ public class Splash_Screen extends Application  {
         
         button1 = new Button("BEGIN");
 
-        //Switches scenes
         LoginScreen login = new LoginScreen();
 
 
         button1.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                Scene newScene = login.loginScene;
-                window.setScene(newScene);
+                try{
+                    new LoginScreen().start(window);
+                } catch (Exception e) {}
+
             }
         });
 
@@ -53,8 +56,8 @@ public class Splash_Screen extends Application  {
         //VBox layout2= new VBox();
         //Line line1 = new Line(50, 25, 150, 25);
         //layout2.getChildren().addAll(button2, line1);
-        Parent root = FXMLLoader.load(getClass().getResource("/FXML/loginScreen.fxml"));
-        scene2 = new Scene(root, 1000, 850);
+        //Parent root = FXMLLoader.load(getClass().getResource("/FXML/loginScreen.fxml"));
+        //scene2 = new Scene(root, 1000, 850);
 
         window.setScene(scene1);
         window.setTitle("Welcome to the SQUAD!");

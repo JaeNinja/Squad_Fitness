@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="850.0" prefWidth="1000.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="javafxapplication6.RegisterController">
+  <children>
+    <TabPane prefHeight="850.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <tabs>
+        <Tab closable="false" text="Register">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="850.0" prefWidth="1000.0">
+              <children>
+                <ScrollPane prefHeight="369.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="850.0" prefWidth="1000.0">
+                      <children>
+                        <Label alignment="CENTER" text="Register" textAlignment="CENTER" AnchorPane.leftAnchor="247.0" AnchorPane.rightAnchor="247.0" AnchorPane.topAnchor="6.0">
+                          <font>
+                            <Font name="Footlight MT Light" size="30.0" />
+                          </font>
+                        </Label>
+                        <Label layoutY="135.0" text="Username" AnchorPane.leftAnchor="283.0">
+                          <font>
+                            <Font name="Footlight MT Light" size="24.0" fx:id="x1" />
+                          </font>
+                        </Label>
+                        <TextField fx:id="Txt_User" layoutX="553.0" layoutY="135.0" prefWidth="200.0" promptText="Enter Username" />
+                        <Label font="$x1" layoutY="199.0" text="Password" AnchorPane.leftAnchor="283.0" />
+                        <PasswordField fx:id="Txt_PW" layoutX="553.0" layoutY="210.0" prefWidth="200.0" promptText="Enter Password" />
+                        <Label font="$x1" layoutY="276.0" text="Confirm Password" AnchorPane.leftAnchor="283.0" />
+                        <PasswordField fx:id="Txt_PW2" layoutX="553.0" layoutY="276.0" prefWidth="200.0" promptText="Confirm Password" />
+                        <Label font="$x1" layoutY="328.0" text="Age" AnchorPane.leftAnchor="283.0" />
+                        <TextField fx:id="Age" layoutX="553.0" layoutY="323.0" prefWidth="200.0" promptText="Enter Age" />
+                        <Label font="$x1" layoutY="386.0" text="Height" textAlignment="CENTER" AnchorPane.leftAnchor="283.0" />
+                        <TextField fx:id="Height" layoutX="553.0" layoutY="381.0" prefWidth="200.0" promptText="Enter Height" />
+                        <ComboBox fx:id="Gender_Select" prefHeight="21.0" prefWidth="116.0" promptText="Select" AnchorPane.bottomAnchor="404.0" AnchorPane.rightAnchor="307.0">
+                          <items>
+                            <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="Male" />
+                              <String fx:value="Female" />
+                            </FXCollections>
+                          </items>
+                        </ComboBox>
+                        <Label font="$x1" layoutY="443.0" text="Gender" textAlignment="CENTER" AnchorPane.leftAnchor="283.0" />
+                        <Label font="$x1" layoutY="511.0" text="Weight" textAlignment="CENTER" AnchorPane.leftAnchor="283.0" />
+                        <TextField fx:id="Weight" layoutX="553.0" layoutY="511.0" prefWidth="200.0" promptText="Enter Weight" />
+                        <Label font="$x1" layoutY="594.0" text="Body Type" textAlignment="CENTER" AnchorPane.leftAnchor="283.0" />
+                        <ComboBox fx:id="BodyType" prefHeight="21.0" prefWidth="116.0" promptText="Select" AnchorPane.bottomAnchor="246.0" AnchorPane.rightAnchor="307.0">
+                          <items>
+                            <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="Male" />
+                              <String fx:value="Female" />
+                            </FXCollections>
+                          </items>
+                        </ComboBox>
+                        <Button fx:id="Next_Button" layoutX="800.0" layoutY="710.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="109.0" text="NEXT" />
+                      </children>
+                    </AnchorPane>
+                  </content>
+                </ScrollPane>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab closable="false" text="Choose Your Body Part">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="850.0" prefWidth="1000.0">
+              <children>
+                <SplitPane dividerPositions="0.4331103678929766" focusTraversable="true" prefHeight="850.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <items>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="850.0" prefWidth="1000.0">
+                      <children>
+                        <CheckBox layoutX="14.0" layoutY="64.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="123.0" text="Neck" />
+                        <CheckBox layoutX="14.0" layoutY="85.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="123.0" text="Back" />
+                        <CheckBox layoutX="14.0" layoutY="106.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="123.0" text="Shoulders" />
+                        <CheckBox layoutX="14.0" layoutY="127.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="123.0" text="Triceps" />
+                        <CheckBox layoutX="14.0" layoutY="148.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="123.0" text="Biceps" />
+                        <CheckBox layoutX="14.0" layoutY="169.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="123.0" text="Forearms" />
+                        <CheckBox layoutX="14.0" layoutY="191.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="123.0" text="Chest" />
+                        <CheckBox layoutX="14.0" layoutY="212.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="123.0" text="Abs" />
+                        <CheckBox layoutX="14.0" layoutY="233.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="123.0" text="Glutes" />
+                        <CheckBox layoutX="14.0" layoutY="254.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="123.0" text="Thighs" />
+                        <CheckBox layoutX="14.0" layoutY="275.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="123.0" text="Calves" />
+                        <Label layoutX="14.0" layoutY="21.0" prefHeight="21.0" prefWidth="147.0" text="Select your focus areas:" />
+                      </children>
+                    </AnchorPane>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="850.0" prefWidth="1000.0" />
+                  </items>
+                </SplitPane>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab closable="false" text="Login">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </children>
+  <stylesheets>
+    <URL value="@register.css" />
+  </stylesheets>
+</AnchorPane>

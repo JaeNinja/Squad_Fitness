@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="1102.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Squad_Fitness.LoginScreen">
+   <children>
+      <Pane prefHeight="674.0" prefWidth="1008.0">
+         <children>
+            <Line endX="100.0" layoutX="147.0" layoutY="83.0" startX="-100.0" />
+            <Text layoutX="47.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" wrappingWidth="201.0">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Text>
+            <Text layoutX="47.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="123.0" />
+            <Text layoutX="47.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="123.0" />
+            <Line endX="100.0" layoutX="147.0" layoutY="477.0" startX="-100.0" />
+            <Text layoutX="47.0" layoutY="557.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register" wrappingWidth="201.0">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Text>
+            <PasswordField fx:id="tfPassword" layoutX="271.0" layoutY="298.0" promptText="Password" />
+            <TextField fx:id="tfUserName" layoutX="271.0" layoutY="213.0" promptText="UserName" />
+            <Button fx:id="btnLogin" layoutX="332.0" layoutY="372.0" mnemonicParsing="false" onAction="#goToMyProfile" text="LOGIN" />
+            <Button fx:id="btnRegister" layoutX="327.0" layoutY="527.0" mnemonicParsing="false" onAction="#goToRegistration" text="Register" />
+         </children>
+      </Pane>
+   </children>
+</FlowPane>

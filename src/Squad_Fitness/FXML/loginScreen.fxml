@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="1102.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Squad_Fitness.LoginScreen">
+<FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="1102.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Squad_Fitness.Java.LoginScreen">
    <children>
       <Pane prefHeight="674.0" prefWidth="1008.0">
          <children>
@@ -27,7 +27,7 @@
             <PasswordField fx:id="tfPassword" layoutX="271.0" layoutY="298.0" promptText="Password" />
             <TextField fx:id="tfUserName" layoutX="271.0" layoutY="213.0" promptText="UserName" />
             <Button fx:id="btnLogin" layoutX="332.0" layoutY="372.0" mnemonicParsing="false" onAction="#goToMyProfile" text="LOGIN" />
-            <Button fx:id="btnRegister" layoutX="327.0" layoutY="527.0" mnemonicParsing="false" onAction="#goToRegistration" text="Register" />
+            <Button fx:id="btnRegister" layoutX="327.0" layoutY="527.0" mnemonicParsing="false" onAction="#goToRegistration" onMousePressed="#goToRegistration" text="Register" />
          </children>
       </Pane>
    </children>

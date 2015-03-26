@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Squad_Fitness.Java.MyProfile">
+  <children>
+    <SplitPane blendMode="MULTIPLY" dividerPositions="0.9197860962566845" focusTraversable="true" orientation="VERTICAL" prefHeight="750.0" prefWidth="400.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.04" AnchorPane.rightAnchor="-0.04" AnchorPane.topAnchor="1.0">
+      <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="166.0" prefWidth="398.0">
+          <children>
+            <Text layoutX="26.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+            <Text layoutX="26.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+            <Text layoutX="26.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+            <Text layoutX="32.0" layoutY="444.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age" />
+            <Text layoutX="32.0" layoutY="490.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sex" />
+            <Text layoutX="26.0" layoutY="538.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight" />
+            <Circle fill="DODGERBLUE" layoutX="191.0" layoutY="179.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
+            <Text layoutX="26.0" layoutY="582.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+          </children>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="142.0" prefWidth="398.0">
+          <children>
+            <Text layoutX="119.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pull Up For Stats" />
+            <Text layoutX="59.0" layoutY="128.0" scaleX="0.6950543485505626" scaleY="0.7985420535482131" strokeType="OUTSIDE" strokeWidth="0.0" text="Calories">
+              <font>
+                <Font size="72.0" fx:id="x1" />
+              </font>
+            </Text>
+            <Text font="$x1" layoutX="-36.0" layoutY="249.0" scaleX="0.6950543485505626" scaleY="0.7985420535482131" strokeType="OUTSIDE" strokeWidth="0.0" text="Avg Heartrate" />
+            <Text font="$x1" layoutX="-344.0" layoutY="366.0" scaleX="0.22785273156417873" scaleY="0.6419088122145077" strokeType="OUTSIDE" strokeWidth="0.0" text="How Long Can U Hold Deez Nutz" />
+          </children>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+    <Text id="Register_Button" fill="BLACK" fontSmoothingType="LCD" layoutX="81.0" layoutY="93.0" scaleX="0.7375539477256459" scaleY="0.546400879677058" strokeType="OUTSIDE" strokeWidth="0.0" text="My Profile">
+      <font>
+        <Font name="Niagara Solid" size="100.0" />
+      </font>
+    </Text>
+    <Line endX="133.0" endY="1.0" layoutX="193.0" layoutY="20.0" startX="-100.0" />
+  </children>
+</AnchorPane>

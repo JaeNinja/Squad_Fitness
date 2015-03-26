@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Squad_Fitness.Java.Register">
+  <children>
+    <Text id="Register_Button" fill="BLACK" fontSmoothingType="LCD" layoutX="62.0" layoutY="164.0" scaleX="0.7375539477256459" scaleY="0.546400879677058" strokeType="OUTSIDE" strokeWidth="0.0" text="Register">
+      <font>
+        <Font name="Niagara Solid" size="175.0" />
+      </font>
+    </Text>
+    <Line endX="133.0" endY="1.0" layoutX="209.0" layoutY="24.0" startX="-100.0" />
+    <Text layoutX="36.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+    <Text layoutX="36.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+    <TextField layoutX="204.0" layoutY="186.0" prefWidth="200.0" />
+    <TextField layoutX="204.0" layoutY="231.0" prefWidth="200.0" />
+    <Text layoutX="36.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+    <Text layoutX="36.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age" />
+    <TextField layoutX="204.0" layoutY="280.0" prefWidth="200.0" />
+    <TextField layoutX="204.0" layoutY="325.0" prefWidth="200.0" />
+    <Text layoutX="36.0" layoutY="393.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sex" />
+    <Text layoutX="36.0" layoutY="438.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight" />
+    <TextField layoutX="204.0" layoutY="416.0" prefWidth="200.0" />
+    <Text layoutX="36.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+    <TextField layoutX="204.0" layoutY="460.0" prefWidth="200.0" />
+    <ChoiceBox layoutX="216.0" layoutY="366.0" value="Sex">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Male" />
+          <String fx:value="Female" />
+          <String fx:value="Other" />
+          <String fx:value="Bruh Ion Know" />
+        </FXCollections>
+      </items>
+    </ChoiceBox>
+    <Button fx:id="Submit_Register" layoutX="301.0" layoutY="544.0" mnemonicParsing="false" onAction="#goToMyProfile" text="Register" />
+  </children>
+</AnchorPane>

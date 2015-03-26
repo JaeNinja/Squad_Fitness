@@ -1,24 +1,20 @@
 
-package Squad_Fitness;
+package Squad_Fitness.Java;
 
 import javafx.application.Application;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
 public class Splash_Screen extends Application  {
     //Stage is the entire window
     Stage window;
     //Scenes are the containers within stages
-    Scene scene1, scene2;
+    Scene scene1;
     Button button1;
     
     @Override
@@ -35,6 +31,8 @@ public class Splash_Screen extends Application  {
             public void handle(ActionEvent event) {
                 try{
                     new LoginScreen().start(window);
+                    System.out.println("It's connected");
+
                 } catch (Exception e) {}
 
             }
@@ -56,7 +54,7 @@ public class Splash_Screen extends Application  {
         //VBox layout2= new VBox();
         //Line line1 = new Line(50, 25, 150, 25);
         //layout2.getChildren().addAll(button2, line1);
-        //Parent root = FXMLLoader.load(getClass().getResource("/FXML/loginScreen.fxml"));
+        //Parent root = FXMLLoader.load(getClass().getResource("/Squad_Fitness.FXML/loginScreen.fxml"));
         //scene2 = new Scene(root, 1000, 850);
 
         window.setScene(scene1);

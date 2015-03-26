@@ -10,7 +10,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 
 /**
- * FXML Controller class
+ * Squad_Fitness.FXML Controller class
  *
  * @author Jae
  */

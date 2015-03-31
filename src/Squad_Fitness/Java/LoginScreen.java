@@ -13,6 +13,8 @@ import javafx.stage.Stage;
 public class LoginScreen extends Application {
     Scene loginScene;
     static Stage window;
+
+
     Button btnRegister;
     public void start(Stage primaryStage) throws Exception
     {

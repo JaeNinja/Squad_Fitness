@@ -10,12 +10,27 @@ public class User {
     int UserID;
     String FName;
     String LName;
-    int age;
-    Character gender;
-    int weight;
-    String email;
+    int Age;
+    Character Gender;
+    int Weight;
+    String EMail;
 
     public User(){}
+
+    public User (String username, String strPassword, int userid, String fname, String lname, int age, Character gender,
+                 int weight, String email)
+    {
+        userName = username;
+        password = strPassword;
+        UserID = userid;
+        FName = fname;
+        LName = lname;
+        Age = age;
+        Gender = gender;
+        Weight = weight;
+        EMail = email;
+
+    }
 
 
 }

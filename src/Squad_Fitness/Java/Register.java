@@ -1,5 +1,6 @@
 package Squad_Fitness.Java;
 
+import Squad_Fitness.Model.User;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,6 +13,7 @@ import javafx.stage.Stage;
 public class Register extends Application {
     Scene registerScene;
     static Stage window;
+    static User objUser;
 
     public void start(Stage primaryStage) throws Exception
     {

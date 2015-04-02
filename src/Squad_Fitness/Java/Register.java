@@ -1,5 +1,8 @@
 package Squad_Fitness.Java;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import Squad_Fitness.Model.User;
 import javafx.application.Application;
@@ -7,8 +10,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ChoiceBox;
 import javafx.stage.Stage;
 import javafx.scene.control.TextField;
+
+import javax.activation.DataSource;
+
 /**
  * Created by Kyle on 3/26/2015.
  */
@@ -16,10 +23,22 @@ public class Register extends Application {
     Scene registerScene;
     static Stage window;
     static User objUser;
-
+    @FXML
+    private TextField tfWeight;
+    @FXML
+    private TextField tfPassword;
     @FXML
     private TextField tfUsername;
+    @FXML
+    private TextField tfName;
+    @FXML
+    private ChoiceBox<?> ddSex;
+    @FXML
+    private TextField tfEmail;
+    @FXML
+    private TextField tfAge;
 
+    @Override
     public void start(Stage primaryStage) throws Exception
     {
         window = primaryStage;
@@ -31,14 +50,21 @@ public class Register extends Application {
 
     }
 
-    public void goToMyProfile()
-    {
-        try{
+    public void goToMyProfile() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException {
+        try {
             new MyProfile().start(window);
-        } catch (Exception e) {}
+        } catch (Exception e) {
+        }
         System.out.println("It's connected");
-        System.out.println(tfUsername.getText().toString());
-
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            DataSource data;
+            Connection user = data.getConnection("jdbc:mysql://localhost:3306/SQUAD", "root", "root");
+            Statement state = user.createStatement();
+            state.executeUpdate("INSERT INTO user (username, password, name, age, sex, weight, email) VALUES (" + tfUsername + ", " + tfPassword + ", " + tfName + ", " + tfAge + ", " + ddSex + ", " + tfWeight + ", " + tfEmail + ");");
+        } catch (Exception x) {
+            System.out.println("Error: " + x);
+        }
     }
 
     public void newUser() throws SQLException

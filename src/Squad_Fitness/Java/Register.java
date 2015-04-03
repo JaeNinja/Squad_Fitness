@@ -1,8 +1,11 @@
 package Squad_Fitness.Java;
+import java.io.FileInputStream;
 import java.sql.Connection;
+import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Properties;
 
 import Squad_Fitness.Model.User;
 import javafx.application.Application;
@@ -13,8 +16,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.stage.Stage;
 import javafx.scene.control.TextField;
-
-import javax.activation.DataSource;
 
 /**
  * Created by Kyle on 3/26/2015.
@@ -58,12 +59,19 @@ public class Register extends Application {
         System.out.println("It's connected");
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            DataSource data;
-            Connection user = data.getConnection("jdbc:mysql://localhost:3306/SQUAD", "root", "root");
-            Statement state = user.createStatement();
-            state.executeUpdate("INSERT INTO user (username, password, name, age, sex, weight, email) VALUES (" + tfUsername + ", " + tfPassword + ", " + tfName + ", " + tfAge + ", " + ddSex + ", " + tfWeight + ", " + tfEmail + ");");
-        } catch (Exception x) {
-            System.out.println("Error: " + x);
+            //Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBCDemo", "root", "password");
+            //Statement state = user.createStatement();
+            //state.executeUpdate("INSERT INTO user (username, password, name, age, sex, weight, email) VALUES (" + tfUsername + ", " + tfPassword + ", " + tfName + ", " + tfAge + ", " + ddSex + ", " + tfWeight + ", " + tfEmail + ");");
+        //} catch (Exception x) {
+        //    System.out.println("Error: " + x);
+        //}
+        //try
+        //{
+            //if(connection != null)
+             //   connection.close();
+           // System.out.println("Connection closed !!");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Damn, it failed: " + e);
         }
     }
 

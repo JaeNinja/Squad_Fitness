@@ -1,10 +1,6 @@
 package Squad_Fitness.Java;
 import java.io.FileInputStream;
-import java.sql.Connection;
-import java.sql.Driver;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Properties;
 
 import Squad_Fitness.Model.User;
@@ -23,7 +19,11 @@ import javafx.scene.control.TextField;
 public class Register extends Application {
     Scene registerScene;
     static Stage window;
-    static User objUser;
+    Connection connection;
+    String strUserName, strPassword, strName, strGender, strEmail;
+    int weight, age;
+    int dbResponse = -1;
+
     @FXML
     private TextField tfWeight;
     @FXML
@@ -51,35 +51,68 @@ public class Register extends Application {
 
     }
 
-    public void goToMyProfile() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException {
-        try {
-            new MyProfile().start(window);
-        } catch (Exception e) {
-        }
-        System.out.println("It's connected");
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            //Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBCDemo", "root", "password");
-            //Statement state = user.createStatement();
-            //state.executeUpdate("INSERT INTO user (username, password, name, age, sex, weight, email) VALUES (" + tfUsername + ", " + tfPassword + ", " + tfName + ", " + tfAge + ", " + ddSex + ", " + tfWeight + ", " + tfEmail + ");");
-        //} catch (Exception x) {
-        //    System.out.println("Error: " + x);
-        //}
-        //try
-        //{
-            //if(connection != null)
-             //   connection.close();//
-           // System.out.println("Connection closed !!");
-        } catch (ClassNotFoundException e) {
-            System.out.println("Damn, it failed: " + e);
-        }
-    }
-
-    public void newUser() throws SQLException
+    public void goToMyProfile() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException
     {
-        Connection user = DriverManager.getConnection("jdbc:mysql://localhost:3306/SQUAD", "root", "root");
-        Statement state = user.createStatement();
-        int execute = state.executeUpdate("INSERT INTO user (username, password, name, age, sex, weight, email) VALUES (" + tfUsername + ", x, x, x, x, x, x);");
+        /**
+         * Logic to make sure there are no blank fields
+         */
+        if(tfUsername.getText().equals("") || tfPassword.getText().equals("") || tfName.getText().equals("") ||
+                tfEmail.getText().equals("") || ddSex.getValue().toString().equals("") || tfAge.getText().equals("")
+                || tfWeight.getText().equals(""))
+        {
+            /**
+             * Make error messages pop up here
+             */
+            System.out.println("No blank fields allowed");
+        }
+        else
+        {
+            strUserName = tfUsername.getText();
+            strPassword = tfPassword.getText();
+            strName = tfName.getText();
+            strEmail = tfEmail.getText();
+            strGender = ddSex.getValue().toString();
+            age = Integer.parseInt(tfAge.getText());
+            weight = Integer.parseInt(tfWeight.getText());
+            try
+            {
+                /**
+                 * Fancy db stored procedures. Insert into database
+                 */
+                Class.forName("com.mysql.jdbc.Driver");
+                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "root", "");
+                Statement state = connection.createStatement();
+                dbResponse = state.executeUpdate("INSERT INTO user (username, password, name, age, sex, weight, email) VALUES ('" + strUserName + "', '"
+                        + strPassword + "', '" + strName + "', " + age + ", '" + strGender + "', "
+                        + weight + ", '" + strEmail + "');");
+            } catch (Exception x)
+            {
+                System.out.println("Error: " + x);
+            }
+            /**
+             * A respsone of 1 means that 1 successful row was added to the database
+             */
+            if(dbResponse > 0 ) {
+                try {
+                    new MyProfile().start(window);
+                } catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+
+                try {
+                    if (connection != null)
+                    {
+                        connection.close();
+                        System.out.println("Connection closed !!");
+                    }
+
+                } catch (Exception e)
+                {
+                    System.out.println("Damn, it failed: " + e);
+                }
+            }
+        }
 
     }
 

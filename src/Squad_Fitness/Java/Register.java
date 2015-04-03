@@ -68,7 +68,7 @@ public class Register extends Application {
         //try
         //{
             //if(connection != null)
-             //   connection.close();
+             //   connection.close();//
            // System.out.println("Connection closed !!");
         } catch (ClassNotFoundException e) {
             System.out.println("Damn, it failed: " + e);

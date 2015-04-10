@@ -8,8 +8,14 @@ public class Goal {
     int goalID;
     String goalType;
     int goalInt;
-    int exercise;
-    Boolean accomplished;
+    int exercisE;
+    Boolean accomplisheD;
 
-    public Goal() {}
+    public Goal(int goaldid, String goaltype, int goalint, int exercise, boolean accomplished) {
+        goalID = goaldid;
+        goalType = goaltype;
+        goalInt = goalint;
+        exercisE = exercise;
+        accomplisheD = accomplished;
+    }
 }

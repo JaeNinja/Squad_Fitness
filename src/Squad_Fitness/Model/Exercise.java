@@ -8,12 +8,21 @@ public class Exercise {
     int exerciseID;
     String exerciseName;
     String exerciseDescription;
-    String type;
-    String tips;
+    String typE;
+    String tipS;
     int bodyPart;
     Boolean equipmentNeeded;
     //In seconds,
     int timeRequired;
 
-    public Exercise() {}
+    public Exercise(int exerciseid, String exercisename, String exercisedescription, String type, String tips,
+                    int bodypart, Boolean equipmentneeded) {
+        exerciseID = exerciseid;
+        exerciseName = exercisename;
+        exerciseDescription = exercisedescription;
+        typE = type;
+        tipS = tips;
+        bodyPart = bodypart;
+        equipmentNeeded = equipmentneeded;
+    }
 }

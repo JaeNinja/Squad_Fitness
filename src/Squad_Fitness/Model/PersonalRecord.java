@@ -9,8 +9,14 @@ public class PersonalRecord {
     int personalRecordID;
     String prType;
     int prInt;
-    int exercise;
+    int exercisE;
     String userName;
 
-    public PersonalRecord(){}
+    public PersonalRecord(int personalrecordid, String prtype, int print, int exercise, String username){
+        personalRecordID = personalrecordid;
+        prType = prtype;
+        prInt = print;
+        exercisE = exercise;
+        userName = username;
+    }
 }

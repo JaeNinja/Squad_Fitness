@@ -53,7 +53,7 @@ public class Register extends Application {
     }
 
     public void goToMyProfile() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException
-    {        /**
+    {   /*
          * Logic to make sure there are no blank fields
          */
         if(tfUsername.getText().equals("") || tfPassword.getText().equals("") || tfName.getText().equals("") ||
@@ -81,9 +81,9 @@ public class Register extends Application {
                  * Fancy db stored procedures. Insert into database
                  */
                 Class.forName("com.mysql.jdbc.Driver");
-                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "root", "");
+                connection = DriverManager.getConnection("jdbc:mysql://23.229.201.1:3306/Squadd", "Squadd", "deeptoot");
                 Statement state = connection.createStatement();
-                dbResponse = state.executeUpdate("INSERT INTO user (username, password, name, age, sex, weight, email) VALUES ('" + strUserName + "', '"
+                dbResponse = state.executeUpdate("INSERT INTO user (userID, username, password, name, age, sex, weight, email) VALUES ('" + userID + "', '" + strUserName + "', '"
                         + strPassword + "', '" + strName + "', " + age + ", '" + strGender + "', "
                         + weight + ", '" + strEmail + "');");
             } catch (Exception x)

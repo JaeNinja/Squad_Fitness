@@ -1,11 +1,17 @@
 package Squad_Fitness.Java;
 
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
 
 /*
  * Created by Kyle on 3/24/2015.
@@ -15,9 +21,18 @@ import javafx.stage.Stage;
 public class LoginScreen extends Application {
     Scene loginScene;
     static Stage window;
+    String strUserName, strPassword;
+    int dbResponse = -1;
+    Connection connection;
+
+    @FXML
+    private TextField tfUserName;
+    @FXML
+    private TextField tfPassword;
+    @FXML
+    private Button btnLogin;
 
 
-    Button btnRegister;
     public void start(Stage primaryStage) throws Exception
     {
         window = primaryStage;
@@ -31,19 +46,45 @@ public class LoginScreen extends Application {
 
     public void goToRegistration()
     {
-        System.out.println("It's connected");
-
-        try{
-            new Register().start(window);
-        } catch (Exception e) {}
+            try{
+                new Register().start(window);
+            } catch (Exception e) {}
     }
 
     public void goToMyProfile()
     {
-        try{
-            new MyProfile().start(window);
-        } catch (Exception e) {}
-        System.out.println("It's connected");
+
+        if(tfUserName.getText().equals("") || tfPassword.getText().equals(""))
+        {
+            /**
+             * Make error messages pop up here
+             */
+            System.out.println("No blank fields allowed");
+        }
+        else
+        {
+            strUserName = tfUserName.getText();
+            strPassword = tfPassword.getText();
+            try
+            {
+                /**
+                 * Fancy db stored procedures. Insert into database
+                 */
+                Class.forName("com.mysql.jdbc.Driver");
+                connection = DriverManager.getConnection("jdbc:mysql://23.229.201.1:3306/Squadd", "Squadd", "deeptoot");
+                Statement state = connection.createStatement();
+                System.out.print(state.executeQuery("SELECT * FROM user where username='" + strUserName + "'AND password='" + strPassword + "'"));
+            } catch (Exception x)
+            {
+                System.out.println("Error: " + x);
+            }
+            try{
+                new MyProfile().start(window);
+            } catch (Exception e) {}
+            System.out.println("It's connected");
+        }
+
+
     }
     public static void main(String[] args) {
         launch(args);

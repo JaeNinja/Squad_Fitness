@@ -50,13 +50,6 @@ public class Splash_Screen extends Application  {
         scene1 = new Scene(layout1, 1000,850);
         scene1.getStylesheets().add("Squad_Fitness/Start_Screen.css");
 
-        //Layout 2
-        //VBox layout2= new VBox();
-        //Line line1 = new Line(50, 25, 150, 25);
-        //layout2.getChildren().addAll(button2, line1);
-        //Parent root = FXMLLoader.load(getClass().getResource("/Squad_Fitness.FXML/loginScreen.fxml"));
-        //scene2 = new Scene(root, 1000, 850);
-
         window.setScene(scene1);
         window.setTitle("Welcome to the SQUAD!");
         window.show();

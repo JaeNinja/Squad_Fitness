@@ -23,6 +23,7 @@ public class Register extends Application {
     String strUserName, strPassword, strName, strGender, strEmail;
     int weight, age;
     int dbResponse = -1;
+    int userID = 12345;
 
     @FXML
     private TextField tfWeight;
@@ -52,8 +53,7 @@ public class Register extends Application {
     }
 
     public void goToMyProfile() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException
-    {
-        /**
+    {        /**
          * Logic to make sure there are no blank fields
          */
         if(tfUsername.getText().equals("") || tfPassword.getText().equals("") || tfName.getText().equals("") ||
@@ -74,6 +74,7 @@ public class Register extends Application {
             strGender = ddSex.getValue().toString();
             age = Integer.parseInt(tfAge.getText());
             weight = Integer.parseInt(tfWeight.getText());
+
             try
             {
                 /**
@@ -89,8 +90,9 @@ public class Register extends Application {
             {
                 System.out.println("Error: " + x);
             }
+            User currentUser = new User(strUserName, strPassword,userID, strName, strName, age, strGender, weight, strEmail);
             /**
-             * A respsone of 1 means that 1 successful row was added to the database
+             * A response of 1 means that 1 successful row was added to the database
              */
             if(dbResponse > 0 ) {
                 try {

@@ -12,13 +12,13 @@ public class User {
     String FName;
     String LName;
     int Age;
-    Character Gender;
+    String Gender;
     int Weight;
     String EMail;
 
     public User(){}
 
-    public User (String username, String strPassword, int userid, String fname, String lname, int age, Character gender,
+    public User (String username, String strPassword, int userid, String fname, String lname, int age, String gender,
                  int weight, String email)
     {
         userName = username;

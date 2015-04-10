@@ -1,5 +1,6 @@
 package Squad_Fitness.Java;
 
+import Squad_Fitness.Model.User;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +12,7 @@ import javafx.stage.Stage;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.Statement;
 
 /*
@@ -24,6 +26,8 @@ public class LoginScreen extends Application {
     String strUserName, strPassword;
     int dbResponse = -1;
     Connection connection;
+    static User currentUser;
+    static  ResultSet rs;
 
     @FXML
     private TextField tfUserName;
@@ -73,7 +77,13 @@ public class LoginScreen extends Application {
                 Class.forName("com.mysql.jdbc.Driver");
                 connection = DriverManager.getConnection("jdbc:mysql://23.229.201.1:3306/Squadd", "Squadd", "deeptoot");
                 Statement state = connection.createStatement();
-                System.out.print(state.executeQuery("SELECT * FROM user where username='" + strUserName + "'AND password='" + strPassword + "'"));
+                //A result set is basically the table
+                rs = state.executeQuery("SELECT * FROM user where username='" + strUserName + "'AND password='" + strPassword + "'");
+                if(rs.next())
+                {
+                    System.out.print(rs.getString("email") + "\n");
+                    currentUser = new User(rs);
+                }
             } catch (Exception x)
             {
                 System.out.println("Error: " + x);
@@ -86,6 +96,12 @@ public class LoginScreen extends Application {
 
 
     }
+    //Used to get the user object on other pages
+    public User getUser()
+    {
+        return currentUser;
+    }
+
     public static void main(String[] args) {
         launch(args);
     }

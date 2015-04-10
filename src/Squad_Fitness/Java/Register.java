@@ -90,7 +90,7 @@ public class Register extends Application {
             {
                 System.out.println("Error: " + x);
             }
-            User currentUser = new User(strUserName, strPassword,userID, strName, strName, age, strGender, weight, strEmail);
+            User currentUser = new User(strUserName, strPassword,userID, strName, age, strGender, weight, strEmail);
             /**
              * A response of 1 means that 1 successful row was added to the database
              */

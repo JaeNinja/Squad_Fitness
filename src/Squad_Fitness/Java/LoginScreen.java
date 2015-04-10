@@ -7,10 +7,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-/**
+/*
  * Created by Kyle on 3/24/2015.
  * Kyle hold deez nuts
  */
+
 public class LoginScreen extends Application {
     Scene loginScene;
     static Stage window;

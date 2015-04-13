@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Skin;
 import javafx.stage.Stage;
 import javafx.scene.control.TextField;
 
@@ -60,13 +61,30 @@ public class Register extends Application {
                 tfEmail.getText().equals("") || ddSex.getValue().toString().equals("") || tfAge.getText().equals("")
                 || tfWeight.getText().equals(""))
         {
-            /**
-             * Make error messages pop up here
-             */
-            System.out.println("No blank fields allowed");
+            Skin<?> red=null;
+            if(tfUsername.getText().equals("")) {
+                tfUsername.setStyle("  -fx-control-inner-background: red");
+            }
+            if(tfPassword.getText().equals("")){
+                tfPassword.setStyle("  -fx-control-inner-background: red");
+            }
+            if(tfName.getText().equals("")){
+                tfName.setStyle("  -fx-control-inner-background: red");
+            }
+            if (tfEmail.getText().equals("")) {
+                tfEmail.setStyle("  -fx-control-inner-background: red");
+            }
+            if (ddSex.getValue().toString().equals("")){
+                ddSex.setStyle("  -fx-control-inner-background: red");
+            }
+            if (tfAge.getText().equals("")){
+                tfAge.setStyle("  -fx-control-inner-background: red");
+            }
+            if(tfWeight.getText().equals("")){
+                tfWeight.setStyle("  -fx-control-inner-background: red");
+            }
         }
-        else
-        {
+        else{
             strUserName = tfUsername.getText();
             strPassword = tfPassword.getText();
             strName = tfName.getText();

@@ -18,6 +18,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Skin;
 import javafx.stage.Stage;
 import javafx.scene.control.TextField;
+import java.util.prefs.Preferences;
 
 /**
  * Created by Kyle on 3/26/2015.
@@ -32,6 +33,7 @@ public class Register extends Application implements Initializable {
     Random intUserID = new Random();
     int userID;
     ResultSet checkUserID;
+    Preferences pref;
 
     @FXML
     private TextField tfWeight;
@@ -108,8 +110,9 @@ public class Register extends Application implements Initializable {
         }
         if(age <= 100 && age > 0) {
             try {
+                pref = Preferences.systemNodeForPackage(this.getClass());
                 /**
-                 * Fancy db stored procedures. Insert into database
+                 * Fancy db stored procedures. Insert into database and what not
                  */
                 Class.forName("com.mysql.jdbc.Driver");
                 connection = DriverManager.getConnection("jdbc:mysql://23.229.201.1:3306/Squadd", "Squadd", "deeptoot");
@@ -121,6 +124,8 @@ public class Register extends Application implements Initializable {
                     userID = intUserID.nextInt(999999999);
                     checkUserID = state.executeQuery("SELECT * FROM user WHERE userID='" + userID + "'");
                 }
+                //Save the UserID so that we can skip log in screen next time
+                pref.putInt("UserID", userID);
                 dbResponse = state.executeUpdate("INSERT INTO user (userID, username, password, name, age, sex, weight, email) VALUES ('" + userID + "', '" + strUserName + "', '"
                         + strPassword + "', '" + strName + "', " + age + ", '" + strGender + "', "
                         + weight + ", '" + strEmail + "');");

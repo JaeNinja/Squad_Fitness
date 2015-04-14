@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import java.util.prefs.Preferences;
 
 public class Splash_Screen extends Application  {
     //Stage is the entire window
@@ -16,7 +17,9 @@ public class Splash_Screen extends Application  {
     //Scenes are the containers within stages
     Scene scene1;
     Button button1;
-    
+    Preferences preferences;
+    int UserID;
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         window = primaryStage;
@@ -25,18 +28,44 @@ public class Splash_Screen extends Application  {
 
         LoginScreen login = new LoginScreen();
 
+        preferences = Preferences.systemNodeForPackage(this.getClass());
+        /**
+         * If the UserID is greater than 0 that means the user opted for us to save their credentials and for the program
+         * to go straight to my profile instead of logging in.
+         */
+        UserID = preferences.getInt("UserID", -1);
+        if(UserID > 0)
+        {
+            button1.setOnAction(new EventHandler<ActionEvent>() {
 
-        button1.setOnAction(new EventHandler<ActionEvent>() {
+
             @Override
             public void handle(ActionEvent event) {
                 try{
-                    new LoginScreen().start(window);
-                    System.out.println("It's connected");
+                    new MyProfile().start(window);
+                    System.out.println("Something saved.");
 
                 } catch (Exception e) {}
 
             }
         });
+
+        } else {
+            button1.setOnAction(new EventHandler<ActionEvent>() {
+
+
+                @Override
+                public void handle(ActionEvent event) {
+                    try{
+                        new LoginScreen().start(window);
+                        System.out.println("It's connected");
+
+                    } catch (Exception e) {}
+
+                }
+            });
+        }
+
 
         button1.setLayoutX(400);
         button1.setLayoutY(600);

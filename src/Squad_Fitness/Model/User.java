@@ -82,4 +82,36 @@ public class User {
     public String getEmail() {
         return email;
     }
+
+    public void setUsername(String strUsername) {
+        username = strUsername;
+    }
+
+    public void setPassword(String strPassword) {
+        password = strPassword;
+    }
+
+    public void setUserID(int intUserID) {
+        userID = intUserID;
+    }
+
+    public void setName(String strName) {
+        name = strName;
+    }
+
+    public void setAge(int intAge) {
+        age = intAge;
+    }
+
+    public void setSex(String strSex) {
+        sex = strSex;
+    }
+
+    public void setWeight(int intWeight) {
+        weight = intWeight;
+    }
+
+    public void setEmail(String strEmail) {
+        email = strEmail;
+    }
 }

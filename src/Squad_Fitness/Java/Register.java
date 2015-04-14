@@ -1,12 +1,16 @@
 package Squad_Fitness.Java;
 import java.io.FileInputStream;
+import java.net.URL;
 import java.sql.*;
 import java.util.Properties;
+import java.util.Random;
+import java.util.ResourceBundle;
 
 import Squad_Fitness.Model.User;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
@@ -17,14 +21,15 @@ import javafx.scene.control.TextField;
 /**
  * Created by Kyle on 3/26/2015.
  */
-public class Register extends Application {
+public class Register extends Application implements Initializable {
     Scene registerScene;
     static Stage window;
     Connection connection;
     String strUserName, strPassword, strName, strGender, strEmail;
     int weight, age;
     int dbResponse = -1;
-    int userID = 12345;
+    Random intUserID = new Random();
+    int userID;
 
     @FXML
     private TextField tfWeight;
@@ -42,6 +47,11 @@ public class Register extends Application {
     private TextField tfAge;
 
     @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        userID = intUserID.nextInt(999999999);
+    }
+
+    @Override
     public void start(Stage primaryStage) throws Exception
     {
         window = primaryStage;
@@ -50,7 +60,6 @@ public class Register extends Application {
         window.setScene(registerScene);
         window.setTitle("Enter Information");
         window.show();
-
     }
 
     public void goToMyProfile() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException
@@ -109,8 +118,8 @@ public class Register extends Application {
                 System.out.println("Error: " + x);
             }
             User currentUser = new User(strUserName, strPassword, userID, strName, age, strGender, weight, strEmail);
-            currentUser.setUser(currentUser);
-            /**
+            User.setUser(currentUser);
+             /**
              * A response of 1 means that 1 successful row was added to the database
              */
             if(dbResponse > 0 ) {
@@ -120,17 +129,15 @@ public class Register extends Application {
                 {
                     e.printStackTrace();
                 }
-
                 try {
                     if (connection != null)
                     {
                         connection.close();
-                        System.out.println("Connection closed !!");
+                        System.out.println("Connection closed");
                     }
 
-                } catch (Exception e)
-                {
-                    System.out.println("Damn, it failed: " + e);
+                } catch (Exception e) {
+                    System.out.println("Error - Unable to close connection: " + e);
                 }
             }
         }
@@ -140,4 +147,6 @@ public class Register extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
+
 }

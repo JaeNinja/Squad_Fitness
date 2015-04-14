@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -32,6 +33,8 @@ public class LoginScreen extends Application {
     private TextField tfPassword;
     @FXML
     private Button btnLogin;
+    @FXML
+    private Label laInvalid;
 
 
     public void start(Stage primaryStage) throws Exception
@@ -85,8 +88,10 @@ public class LoginScreen extends Application {
                     new MyProfile().start(window);
                 } catch (Exception ignored) {}
             }
-            else
-                System.out.println("Invalid username or password.");
+            else {
+                System.out.println("Invalid username or password");
+                laInvalid.setVisible(true);
+            }
         }
     }
 

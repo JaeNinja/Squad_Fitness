@@ -76,7 +76,7 @@ public class LoginScreen extends Application {
                 Class.forName("com.mysql.jdbc.Driver");
                 connection = DriverManager.getConnection("jdbc:mysql://23.229.201.1:3306/Squadd", "Squadd", "deeptoot");
                 Statement state = connection.createStatement();
-                login = state.executeQuery("SELECT * FROM user where username='" + strUserName + "'AND password='" + strPassword + "'");
+                login = state.executeQuery("SELECT * FROM user WHERE username='" + strUserName + "'AND password='" + strPassword + "'");
             } catch (Exception x)
             {
                 System.out.println("Error 1: " + x);

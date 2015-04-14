@@ -77,6 +77,13 @@ import java.util.ResourceBundle;
     public void goToMyProfile() {
         System.out.println("It's connected");
     }
+
+    public void goToBodyMap() {
+        try {
+            new BodyMap().start(window);
+        } catch (Exception ignored) {}
+    }
+
     public static void main(String[] args) {
         launch(args);
     }

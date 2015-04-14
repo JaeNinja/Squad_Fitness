@@ -6,11 +6,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
 import javafx.stage.Stage;
 
-import java.awt.*;
-import java.awt.TextField;
+import javafx.scene.control.TextField;
 
 /**
  * Created by Kyle on 3/26/2015.
@@ -24,29 +22,33 @@ public class MyProfile extends Application {
     private TextField tfUsername, tfPassword, tfName, tfAge, tfWeight, tfSex, tfEmail;
 
     @Override
-    public void start(Stage primaryStage) throws Exception
-    {
+    public void start(Stage primaryStage) throws Exception {
         window = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("/Squad_Fitness/FXML/My_Profile.fxml"));
         loginScene = new Scene(root, 1000, 850);
         window.setScene(loginScene);
         window.setTitle("Get Swole");
         window.show();
-        //Get login screen so that we have access to the user.
-        //LoginScreen screen = new LoginScreen();
-        /*currentUser = currentUser.getUser();
+
+        currentUser = MyProfile.getCurrentUser();
         tfUsername.setText(currentUser.getUsername());
         tfPassword.setText(currentUser.getPassword());
         tfName.setText(currentUser.getName());
         tfAge.setText(Integer.toString(currentUser.getAge()));
         tfSex.setText(currentUser.getSex());
         tfWeight.setText(Integer.toString(currentUser.getWeight()));
-        tfEmail.setText(currentUser.getEmail());*/
+        tfEmail.setText(currentUser.getEmail());
+    }
+
+    public static User getCurrentUser() {
+        return User.currentUser;
+    }
+
+    public void setTextFields() {
 
     }
 
-    public void goToRegistration()
-    {
+    public void goToRegistration() {
         System.out.println("It's connected");
 
        /* btnRegister.setOnAction(new EventHandler<ActionEvent>() {
@@ -64,8 +66,7 @@ public class MyProfile extends Application {
         } catch (Exception e) {}
     }
 
-    public void goToMyProfile()
-    {
+    public void goToMyProfile() {
         System.out.println("It's connected");
     }
     public static void main(String[] args) {

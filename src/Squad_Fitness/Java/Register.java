@@ -156,6 +156,13 @@ public class Register extends Application implements Initializable {
         }
 
     }
+
+    public void goBack() {
+        try {
+            new LoginScreen().start(window);
+        } catch (Exception ignored) {}
+    }
+
     public static void main(String[] args) {
         launch(args);
     }

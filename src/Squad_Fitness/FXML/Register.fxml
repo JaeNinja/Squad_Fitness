@@ -47,5 +47,6 @@
             <Font size="12.0" />
          </font>
       </Label>
+      <Button fx:id="buBack" layoutX="10.0" layoutY="11.0" mnemonicParsing="false" onAction="#goBack" text="Back" />
     </children>
 </AnchorPane>

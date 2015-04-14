@@ -28,7 +28,7 @@
                   <TextField fx:id="tfWeight" editable="false" layoutX="125.0" layoutY="442.0" />
                   <TextField fx:id="tfEmail" editable="false" layoutX="125.0" layoutY="478.0" />
                   <Button fx:id="buLogout" layoutX="332.0" layoutY="14.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
-                  <Button layoutX="145.0" layoutY="520.0" mnemonicParsing="false" onAction="#goToBodyMap" text="Begin Exercise" />
+                  <Button fx:id="buBeginExercise" layoutX="145.0" layoutY="520.0" mnemonicParsing="false" onAction="#goToBodyMap" text="Begin Exercise" />
           </children>
         </AnchorPane>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="142.0" prefWidth="398.0">

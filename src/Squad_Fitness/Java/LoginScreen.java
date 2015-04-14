@@ -35,6 +35,8 @@ public class LoginScreen extends Application {
     private Button btnLogin;
     @FXML
     private Label laInvalid;
+    @FXML
+    private Label laConnection;
 
 
     public void start(Stage primaryStage) throws Exception
@@ -45,7 +47,6 @@ public class LoginScreen extends Application {
         window.setScene(loginScene);
         window.setTitle("Enter Login Information");
         window.show();
-
     }
 
     public void goToRegistration()
@@ -74,7 +75,12 @@ public class LoginScreen extends Application {
                  * Fancy db stored procedures. Insert into database
                  */
                 Class.forName("com.mysql.jdbc.Driver");
-                connection = DriverManager.getConnection("jdbc:mysql://23.229.201.1:3306/Squadd", "Squadd", "deeptoot");
+                try {
+                    connection = DriverManager.getConnection("jdbc:mysql://23.229.201.1:3306/Squadd", "Squadd", "deeptoot");
+                } catch (Exception e) {
+                    laInvalid.setVisible(false);
+                    laConnection.setVisible(true);
+                }
                 Statement state = connection.createStatement();
                 login = state.executeQuery("SELECT * FROM user WHERE username='" + strUserName + "'AND password='" + strPassword + "'");
             } catch (Exception x)

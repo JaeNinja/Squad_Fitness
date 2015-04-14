@@ -166,6 +166,4 @@ public class Register extends Application implements Initializable {
     public static void main(String[] args) {
         launch(args);
     }
-
-
 }

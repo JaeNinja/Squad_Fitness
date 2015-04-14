@@ -11,15 +11,15 @@ import javafx.stage.Stage;
  * Created by Jonathan Blair on 4/14/2015.
  */
 public class BodyMap extends Application {
-    Scene loginScene;
+    Scene bodyMapScene;
     static Stage window;
     User currentUser;
 
     public void start(Stage primaryStage) throws Exception {
         window = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("/Squad_Fitness/FXML/Body_part.fxml"));
-        loginScene = new Scene(root, 1000, 850);
-        window.setScene(loginScene);
+        bodyMapScene = new Scene(root, 1000, 850);
+        window.setScene(bodyMapScene);
         window.setTitle("Interactive Body Map");
         window.show();
     }

@@ -8,7 +8,7 @@
 
 <FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="1102.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Squad_Fitness.Java.LoginScreen">
    <children>
-      <Pane prefHeight="674.0" prefWidth="1008.0">
+      <Pane prefHeight="674.0" prefWidth="1008.0" visible="false">
          <children>
             <Line endX="100.0" layoutX="147.0" layoutY="83.0" startX="-100.0" />
             <Text layoutX="47.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" wrappingWidth="201.0">
@@ -30,6 +30,8 @@
             <Button fx:id="btnRegister" layoutX="328.0" layoutY="542.0" mnemonicParsing="false" onAction="#goToRegistration" onMousePressed="#goToRegistration" text="Register" />
             <Label fx:id="laInvalid" layoutX="265.0" layoutY="195.0" text="Invalid username or password." textFill="RED" visible="false" />
             <Label fx:id="laConnection" layoutX="224.0" layoutY="195.0" text="Unable to establish connection with database." textFill="RED" visible="false" />
+            <ProgressBar fx:id="loading" layoutX="235.0" layoutY="424.0" prefWidth="200.0" visible="false" />
+            <ProgressIndicator fx:id="progressLoading" layoutX="309.0" layoutY="407.0" />
          </children>
       </Pane>
    </children>

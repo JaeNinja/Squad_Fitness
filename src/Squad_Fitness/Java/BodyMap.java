@@ -22,6 +22,7 @@ public class BodyMap extends Application {
         window.setScene(bodyMapScene);
         window.setTitle("Interactive Body Map");
         window.show();
+        currentUser = MyProfile.getCurrentUser();
     }
 
     public static void main(String[] args) {

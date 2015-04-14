@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.Skin;
 import javafx.stage.Stage;
 import javafx.scene.control.TextField;
@@ -45,6 +46,8 @@ public class Register extends Application implements Initializable {
     private TextField tfEmail;
     @FXML
     private TextField tfAge;
+    @FXML
+    private Label lbInvalidAge;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -66,31 +69,32 @@ public class Register extends Application implements Initializable {
     {   /*
          * Logic to make sure there are no blank fields
          */
+        lbInvalidAge.setVisible(false);
         if(tfUsername.getText().equals("") || tfPassword.getText().equals("") || tfName.getText().equals("") ||
                 tfEmail.getText().equals("") || ddSex.getValue().toString().equals("") || tfAge.getText().equals("")
                 || tfWeight.getText().equals(""))
         {
             Skin<?> red=null;
             if(tfUsername.getText().equals("")) {
-                tfUsername.setStyle("  -fx-control-inner-background: red");
+                tfUsername.setStyle("-fx-text-box-border: red ;");
             }
             if(tfPassword.getText().equals("")){
-                tfPassword.setStyle("  -fx-control-inner-background: red");
+                tfPassword.setStyle("-fx-text-box-border: red ;");
             }
             if(tfName.getText().equals("")){
-                tfName.setStyle("  -fx-control-inner-background: red");
+                tfName.setStyle("-fx-text-box-border: red ;");
             }
             if (tfEmail.getText().equals("")) {
-                tfEmail.setStyle("  -fx-control-inner-background: red");
+                tfEmail.setStyle("-fx-text-box-border: red ;");
             }
             if (ddSex.getValue().toString().equals("")){
-                ddSex.setStyle("  -fx-control-inner-background: red");
+                ddSex.setStyle("-fx-text-box-border: red ;");
             }
             if (tfAge.getText().equals("")){
-                tfAge.setStyle("  -fx-control-inner-background: red");
+                tfAge.setStyle(" -fx-text-box-border: red ;");
             }
             if(tfWeight.getText().equals("")){
-                tfWeight.setStyle("  -fx-control-inner-background: red");
+                tfWeight.setStyle("-fx-text-box-border: red ;");
             }
         }
         else{
@@ -102,44 +106,51 @@ public class Register extends Application implements Initializable {
             age = Integer.parseInt(tfAge.getText());
             weight = Integer.parseInt(tfWeight.getText());
 
-            try
+            if(age <= 100)
             {
-                /**
-                 * Fancy db stored procedures. Insert into database
-                 */
-                Class.forName("com.mysql.jdbc.Driver");
-                connection = DriverManager.getConnection("jdbc:mysql://23.229.201.1:3306/Squadd", "Squadd", "deeptoot");
-                Statement state = connection.createStatement();
-                dbResponse = state.executeUpdate("INSERT INTO user (userID, username, password, name, age, sex, weight, email) VALUES ('" + userID + "', '" + strUserName + "', '"
-                        + strPassword + "', '" + strName + "', " + age + ", '" + strGender + "', "
-                        + weight + ", '" + strEmail + "');");
-            } catch (Exception x)
-            {
-                System.out.println("Error: " + x);
-            }
-            User currentUser = new User(strUserName, strPassword, userID, strName, age, strGender, weight, strEmail);
-            User.setUser(currentUser);
-             /**
-             * A response of 1 means that 1 successful row was added to the database
-             */
-            if(dbResponse > 0 ) {
-                try {
-                    new MyProfile().start(window);
-                } catch (Exception e)
+                try
                 {
-                    e.printStackTrace();
+                    /**
+                     * Fancy db stored procedures. Insert into database
+                     */
+                    Class.forName("com.mysql.jdbc.Driver");
+                    connection = DriverManager.getConnection("jdbc:mysql://23.229.201.1:3306/Squadd", "Squadd", "deeptoot");
+                    Statement state = connection.createStatement();
+                    dbResponse = state.executeUpdate("INSERT INTO user (userID, username, password, name, age, sex, weight, email) VALUES ('" + userID + "', '" + strUserName + "', '"
+                            + strPassword + "', '" + strName + "', " + age + ", '" + strGender + "', "
+                            + weight + ", '" + strEmail + "');");
+                } catch (Exception x)
+                {
+                    System.out.println("Error: " + x);
                 }
-                try {
-                    if (connection != null)
+                User currentUser = new User(strUserName, strPassword, userID, strName, age, strGender, weight, strEmail);
+                User.setUser(currentUser);
+                /**
+                 * A response of 1 means that 1 successful row was added to the database
+                 */
+                if(dbResponse > 0 ) {
+                    try {
+                        new MyProfile().start(window);
+                    } catch (Exception e)
                     {
-                        connection.close();
-                        System.out.println("Connection closed");
+                        e.printStackTrace();
                     }
+                    try {
+                        if (connection != null)
+                        {
+                            connection.close();
+                            System.out.println("Connection closed");
+                        }
 
-                } catch (Exception e) {
-                    System.out.println("Error - Unable to close connection: " + e);
+                    } catch (Exception e) {
+                        System.out.println("Error - Unable to close connection: " + e);
+                    }
                 }
+            } else {
+                    lbInvalidAge.setVisible(true);
             }
+
+
         }
 
     }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.collections.*?>
@@ -41,5 +42,10 @@
             </items>
         </ChoiceBox>
         <Button fx:id="Submit_Register" layoutX="301.0" layoutY="544.0" mnemonicParsing="false" onAction="#goToMyProfile" text="Register" />
+      <Label fx:id="lbInvalidAge" layoutX="410.0" layoutY="332.0" text="Invalid age.. You old fart" textFill="#f20909" visible="false">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

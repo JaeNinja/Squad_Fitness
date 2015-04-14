@@ -1,0 +1,33 @@
+.pane{
+	-fx-background-image: url("GUIBackground.jpg");
+	 -fx-background-size:1000 854;
+      -fx-background-repeat: stretch;
+	}
+.button{
+	-fx-text-fill: white;
+	-fx-font-family: "Arial Narrow";
+	-fx-font-weight: bold;
+	 -fx-background-color: linear-gradient(#2E2E2E, #2E2E2E);
+	-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.button:hover{
+	 -fx-background-color: linear-gradient(#2E2E2E, #6E6E6E);
+}
+
+.text-field{
+	-fx-text-fill: black;
+	-fx-background-color: #C8D7D4;
+}
+
+.text{
+-fx-font-family: "Times New Roman";
+   }
+
+.circle{
+-fx-fill: #C8D7D4;
+}
+
+.circle:hover{
+
+}

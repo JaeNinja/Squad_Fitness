@@ -1,6 +1,6 @@
 .root{
-	-fx-background-image: url("idea2.jpg");
-        -fx-background-size:1000 800;
+	-fx-background-image: url("UpdatedLogo.jpg");
+        -fx-background-size:1000 850;
         -fx-background-repeat: stretch;
         
                 
@@ -9,8 +9,8 @@
 	-fx-text-fill: black;
 	-fx-font-family: "Arial Narrow";
 	-fx-font-weight: bold;
-        -fx-font-size: 50;
-	 -fx-background-color: white;
+     -fx-font-size: 50;
+	 -fx-background-color: #C8D7D4;
 	-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
 }
 

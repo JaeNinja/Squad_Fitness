@@ -1,6 +1,5 @@
 package Squad_Fitness.Java;
 
-import Squad_Fitness.Model.User;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,10 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 /*
  * Created by Kyle on 3/24/2015.
@@ -26,8 +22,7 @@ public class LoginScreen extends Application {
     String strUserName, strPassword;
     int dbResponse = -1;
     Connection connection;
-    static User currentUser;
-    static  ResultSet rs;
+    ResultSet login;
 
     @FXML
     private TextField tfUserName;
@@ -77,16 +72,15 @@ public class LoginScreen extends Application {
                 Class.forName("com.mysql.jdbc.Driver");
                 connection = DriverManager.getConnection("jdbc:mysql://23.229.201.1:3306/Squadd", "Squadd", "deeptoot");
                 Statement state = connection.createStatement();
-                //A result set is basically the table
-                rs = state.executeQuery("SELECT * FROM user where username='" + strUserName + "'AND password='" + strPassword + "'");
-                if(rs.next())
-                {
-                    System.out.print(rs.getString("email") + "\n");
-                    currentUser = new User(rs);
-                }
+                login = state.executeQuery("SELECT * FROM user where username='" + strUserName + "'AND password='" + strPassword + "'");
             } catch (Exception x)
             {
                 System.out.println("Error: " + x);
+            }
+            try {
+                System.out.println("String 1: " + login.getInt(1));
+            } catch (Exception e) {
+                e.printStackTrace();
             }
             try{
                 new MyProfile().start(window);
@@ -96,12 +90,6 @@ public class LoginScreen extends Application {
 
 
     }
-    //Used to get the user object on other pages
-    public User getUser()
-    {
-        return currentUser;
-    }
-
     public static void main(String[] args) {
         launch(args);
     }

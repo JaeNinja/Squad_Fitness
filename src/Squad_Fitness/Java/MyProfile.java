@@ -67,6 +67,13 @@ import java.util.ResourceBundle;
         } catch (Exception ignored) {}
     }
 
+    public void logout() {
+        try {
+            new LoginScreen().start(window);
+        } catch (Exception ignored) {}
+        User.clearUser();
+    }
+
     public void goToMyProfile() {
         System.out.println("It's connected");
     }

@@ -14,6 +14,7 @@ public class User {
     private String sex;
     private int weight;
     private String email;
+    public static User currentUser;
 
     public User(){}
 
@@ -42,7 +43,8 @@ public class User {
         email = reference.email;
     }
 
-    public static User currentUser;
+
+
     public static User getUser() {
         return currentUser;
     }
@@ -113,5 +115,9 @@ public class User {
 
     public void setEmail(String strEmail) {
         email = strEmail;
+    }
+
+    public static void clearUser() {
+        currentUser = new User();
     }
 }

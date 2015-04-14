@@ -11,9 +11,6 @@ import javafx.stage.Stage;
 
 import java.sql.*;
 
-import static javax.swing.text.StyleConstants.getForeground;
-import static javax.swing.text.StyleConstants.setBackground;
-
 /*
  * Created by Kyle on 3/24/2015.
  * Kyle hold deez nuts
@@ -39,7 +36,7 @@ public class LoginScreen extends Application {
     @FXML
     private Label laConnection;
     @FXML
-    private ProgressIndicator progressLoading;
+    private ProgressIndicator loading;
 
 
 
@@ -54,7 +51,7 @@ public class LoginScreen extends Application {
     }
 
     public void goToRegistration() {
-        progressLoading.setVisible(true);
+        loading.setVisible(true);
             try{
                 new Register().start(window);
             } catch (Exception e) {}
@@ -62,7 +59,7 @@ public class LoginScreen extends Application {
 
     public void goToMyProfile() throws SQLException {
 
-        progressLoading.setVisible(true);
+        loading.setVisible(true);
 
         if(tfUserName.getText().equals("") || tfPassword.getText().equals(""))
         {
@@ -70,7 +67,7 @@ public class LoginScreen extends Application {
              * Make error messages pop up here
              */
             System.out.println("No blank fields allowed");
-            progressLoading.setVisible(false);
+            loading.setVisible(false);
         }
         else
         {
@@ -86,7 +83,7 @@ public class LoginScreen extends Application {
                     connection = DriverManager.getConnection("jdbc:mysql://23.229.201.1:3306/Squadd", "Squadd", "deeptoot");
                 } catch (Exception e) {
                     laInvalid.setVisible(false);
-                    progressLoading.setVisible(false);
+                    loading.setVisible(false);
                     laConnection.setVisible(true);
                 }
                 Statement state = connection.createStatement();
@@ -94,7 +91,7 @@ public class LoginScreen extends Application {
             } catch (Exception x)
             {
                 System.out.println("Error 1: " + x);
-                progressLoading.setVisible(false);
+                loading.setVisible(false);
             }
             if (login.next()) {
                 currentUser = new User(login.getString("username"), login.getString("password"), login.getInt("userID"), login.getString("name"), login.getInt("age"), login.getString("sex"), login.getInt("weight"), login.getString("email"));
@@ -106,7 +103,7 @@ public class LoginScreen extends Application {
             else {
                 System.out.println("Invalid username or password");
                 laConnection.setVisible(false);
-                progressLoading.setVisible(false);
+                loading.setVisible(false);
                 laInvalid.setVisible(true);
             }
         }

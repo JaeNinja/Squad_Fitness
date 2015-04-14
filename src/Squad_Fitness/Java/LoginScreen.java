@@ -80,16 +80,18 @@ public class LoginScreen extends Application {
             }
             if (login.next()) {
                 currentUser = new User(login.getString("username"), login.getString("password"), login.getInt("userID"), login.getString("name"), login.getInt("age"), login.getString("sex"), login.getInt("weight"), login.getString("email"));
-                currentUser.setUser(currentUser);
+                LoginScreen.setCurrentUser(currentUser);
             }
             try{
                 new MyProfile().start(window);
-            } catch (Exception e) {}
-            System.out.println("It's connected");
+            } catch (Exception ignored) {}
         }
-
-
     }
+
+    public static void setCurrentUser(User user) {
+        User.setUser(user);
+    }
+
     public static void main(String[] args) {
         launch(args);
     }

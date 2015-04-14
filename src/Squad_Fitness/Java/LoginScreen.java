@@ -81,10 +81,12 @@ public class LoginScreen extends Application {
             if (login.next()) {
                 currentUser = new User(login.getString("username"), login.getString("password"), login.getInt("userID"), login.getString("name"), login.getInt("age"), login.getString("sex"), login.getInt("weight"), login.getString("email"));
                 LoginScreen.setCurrentUser(currentUser);
+                try{
+                    new MyProfile().start(window);
+                } catch (Exception ignored) {}
             }
-            try{
-                new MyProfile().start(window);
-            } catch (Exception ignored) {}
+            else
+                System.out.println("Invalid username or password.");
         }
     }
 

@@ -24,10 +24,10 @@
                   <Font size="36.0" />
                </font>
             </Text>
+            <TextField fx:id="tfUserName" layoutX="271.0" layoutY="232.0" promptText="Username" />
             <PasswordField fx:id="tfPassword" layoutX="271.0" layoutY="298.0" promptText="Password" />
-            <TextField fx:id="tfUserName" layoutX="271.0" layoutY="213.0" promptText="UserName" />
-            <Button fx:id="btnLogin" layoutX="332.0" layoutY="372.0" mnemonicParsing="false" onAction="#goToMyProfile" text="LOGIN" />
-            <Button fx:id="btnRegister" layoutX="327.0" layoutY="527.0" mnemonicParsing="false" onAction="#goToRegistration" onMousePressed="#goToRegistration" text="Register" />
+            <Button fx:id="btnLogin" layoutX="332.0" layoutY="372.0" mnemonicParsing="false" onAction="#goToMyProfile" text="Login" />
+            <Button fx:id="btnRegister" layoutX="328.0" layoutY="542.0" mnemonicParsing="false" onAction="#goToRegistration" onMousePressed="#goToRegistration" text="Register" />
          </children>
       </Pane>
    </children>

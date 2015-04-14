@@ -4,35 +4,31 @@ import Squad_Fitness.Model.User;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import javafx.scene.control.TextField;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
 /**
  * Created by Kyle on 3/26/2015.
  */
-public class MyProfile extends Application {
+    public class MyProfile extends Application implements Initializable {
+
     Scene loginScene;
     static Stage window;
     User currentUser;
 
     @FXML
-    private TextField tfUsername, tfPassword, tfName, tfAge, tfWeight, tfSex, tfEmail;
+    private TextField tfUsername, tfName, tfAge, tfWeight, tfSex, tfEmail;
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-        window = primaryStage;
-        Parent root = FXMLLoader.load(getClass().getResource("/Squad_Fitness/FXML/My_Profile.fxml"));
-        loginScene = new Scene(root, 1000, 850);
-        window.setScene(loginScene);
-        window.setTitle("Get Swole");
-        window.show();
-
+    public void initialize(java.net.URL location, java.util.ResourceBundle resources) {
         currentUser = MyProfile.getCurrentUser();
         tfUsername.setText(currentUser.getUsername());
-        tfPassword.setText(currentUser.getPassword());
         tfName.setText(currentUser.getName());
         tfAge.setText(Integer.toString(currentUser.getAge()));
         tfSex.setText(currentUser.getSex());
@@ -40,12 +36,17 @@ public class MyProfile extends Application {
         tfEmail.setText(currentUser.getEmail());
     }
 
-    public static User getCurrentUser() {
-        return User.currentUser;
+    public void start(Stage primaryStage) throws Exception {
+        window = primaryStage;
+        Parent root = FXMLLoader.load(getClass().getResource("/Squad_Fitness/FXML/My_Profile.fxml"));
+        loginScene = new Scene(root, 1000, 850);
+        window.setScene(loginScene);
+        window.setTitle("Get swole!");
+        window.show();
     }
 
-    public void setTextFields() {
-
+    public static User getCurrentUser() {
+        return User.currentUser;
     }
 
     public void goToRegistration() {
@@ -63,7 +64,7 @@ public class MyProfile extends Application {
         */
         try{
             new Register().start(window);
-        } catch (Exception e) {}
+        } catch (Exception ignored) {}
     }
 
     public void goToMyProfile() {
@@ -72,4 +73,5 @@ public class MyProfile extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
 }

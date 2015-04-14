@@ -10,7 +10,7 @@
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Squad_Fitness.Java.MyProfile">
   <children>
-    <SplitPane blendMode="MULTIPLY" dividerPositions="0.9197860962566845" focusTraversable="true" orientation="VERTICAL" prefHeight="750.0" prefWidth="400.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.04" AnchorPane.rightAnchor="-0.04" AnchorPane.topAnchor="1.0">
+    <SplitPane blendMode="MULTIPLY" dividerPositions="0.9197860962566845, 0.5" focusTraversable="true" orientation="VERTICAL" prefHeight="750.0" prefWidth="400.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.04" AnchorPane.rightAnchor="-0.04" AnchorPane.topAnchor="1.0">
       <items>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="405.0" prefWidth="398.0">
           <children>
@@ -22,6 +22,13 @@
             <Text layoutX="26.0" layoutY="538.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight" />
             <Circle fill="DODGERBLUE" layoutX="191.0" layoutY="179.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
             <Text layoutX="26.0" layoutY="582.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+                  <TextField fx:id="tfUsername" editable="false" layoutX="125.0" layoutY="291.0" />
+                  <TextField fx:id="tfPassword" editable="false" layoutX="125.0" layoutY="336.0" />
+                  <TextField fx:id="tfName" editable="false" layoutX="125.0" layoutY="385.0" />
+                  <TextField fx:id="tfAge" editable="false" layoutX="125.0" layoutY="427.0" />
+                  <TextField fx:id="tfSex" editable="false" layoutX="125.0" layoutY="473.0" />
+                  <TextField fx:id="tfWeight" editable="false" layoutX="125.0" layoutY="521.0" />
+                  <TextField fx:id="tfEmail" editable="false" layoutX="125.0" layoutY="574.0" />
           </children>
         </AnchorPane>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="142.0" prefWidth="398.0">
@@ -36,6 +43,7 @@
             <Text font="$x1" layoutX="-344.0" layoutY="366.0" scaleX="0.22785273156417873" scaleY="0.6419088122145077" strokeType="OUTSIDE" strokeWidth="0.0" text="How Long Can U Hold Deez Nutz" />
           </children>
         </AnchorPane>
+            <Label text="Label" />
       </items>
     </SplitPane>
     <Text id="Register_Button" fill="BLACK" fontSmoothingType="LCD" layoutX="81.0" layoutY="93.0" scaleX="0.7375539477256459" scaleY="0.546400879677058" strokeType="OUTSIDE" strokeWidth="0.0" text="My Profile">

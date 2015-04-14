@@ -6,44 +6,80 @@ package Squad_Fitness.Model;
 //Changes
 public class User {
 
-    String userName;
-    String password;
-    int UserID;
-    String FName;
-    String LName;
-    int Age;
-    String Gender;
-    int Weight;
-    String EMail;
+    private String username;
+    private String password;
+    private int userID;
+    private String name;
+    private int age;
+    private String sex;
+    private int weight;
+    private String email;
 
     public User(){}
 
-    public User (String username, String strPassword, int userid, String fname, String lname, int age, String gender,
-                 int weight, String email)
+    public User (String strUsername, String strPassword, int intUserID, String strName, int intAge, String strSex,
+                 int intWeight, String strEmail)
     {
-        userName = username;
+        username = strUsername;
         password = strPassword;
-        UserID = userid;
-        FName = fname;
-        LName = lname;
-        Age = age;
-        Gender = gender;
-        Weight = weight;
-        EMail = email;
+        userID = intUserID;
+        name = strName;
+        age = intAge;
+        sex = strSex;
+        weight = intWeight;
+        email = strEmail;
 
     }
 
     public User (User reference) {
-        userName = reference.userName;
+        username = reference.username;
         password = reference.password;
-        UserID = reference.UserID;
-        FName = reference.FName;
-        LName = reference.LName;
-        Age = reference.Age;
-        Gender = reference.Gender;
-        Weight = reference.Weight;
-        EMail = reference.EMail;
+        userID = reference.userID;
+        name = reference.name;
+        age = reference.age;
+        sex = reference.sex;
+        weight = reference.weight;
+        email = reference.email;
     }
 
+    public static User currentUser;
+    public static User getUser() {
+        return currentUser;
+    }
 
+    public static void setUser(User user) {
+        currentUser = user;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public int getUserID() {
+        return userID;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public String getEmail() {
+        return email;
+    }
 }

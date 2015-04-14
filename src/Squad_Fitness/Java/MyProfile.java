@@ -6,9 +6,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.awt.*;
+import java.awt.TextField;
 
 /**
  * Created by Kyle on 3/26/2015.
@@ -18,6 +20,10 @@ public class MyProfile extends Application {
     static Stage window;
     User currentUser;
 
+    @FXML
+    private TextField tfUsername, tfPassword, tfName, tfAge, tfWeight, tfSex, tfEmail;
+
+    @Override
     public void start(Stage primaryStage) throws Exception
     {
         window = primaryStage;
@@ -27,9 +33,15 @@ public class MyProfile extends Application {
         window.setTitle("Get Swole");
         window.show();
         //Get login screen so that we have access to the user.
-        LoginScreen screen = new LoginScreen();
-        currentUser = screen.getUser();
-        System.out.print(currentUser.FullName);
+        //LoginScreen screen = new LoginScreen();
+        /*currentUser = currentUser.getUser();
+        tfUsername.setText(currentUser.getUsername());
+        tfPassword.setText(currentUser.getPassword());
+        tfName.setText(currentUser.getName());
+        tfAge.setText(Integer.toString(currentUser.getAge()));
+        tfSex.setText(currentUser.getSex());
+        tfWeight.setText(Integer.toString(currentUser.getWeight()));
+        tfEmail.setText(currentUser.getEmail());*/
 
     }
 

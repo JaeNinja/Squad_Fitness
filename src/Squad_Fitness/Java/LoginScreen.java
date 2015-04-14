@@ -1,5 +1,6 @@
 package Squad_Fitness.Java;
 
+import Squad_Fitness.Model.User;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,6 +24,7 @@ public class LoginScreen extends Application {
     int dbResponse = -1;
     Connection connection;
     ResultSet login;
+    User currentUser;
 
     @FXML
     private TextField tfUserName;
@@ -50,8 +52,7 @@ public class LoginScreen extends Application {
             } catch (Exception e) {}
     }
 
-    public void goToMyProfile()
-    {
+    public void goToMyProfile() throws SQLException {
 
         if(tfUserName.getText().equals("") || tfPassword.getText().equals(""))
         {
@@ -75,12 +76,11 @@ public class LoginScreen extends Application {
                 login = state.executeQuery("SELECT * FROM user where username='" + strUserName + "'AND password='" + strPassword + "'");
             } catch (Exception x)
             {
-                System.out.println("Error: " + x);
+                System.out.println("Error 1: " + x);
             }
-            try {
-                System.out.println("String 1: " + login.getInt(1));
-            } catch (Exception e) {
-                e.printStackTrace();
+            if (login.next()) {
+                currentUser = new User(login.getString("username"), login.getString("password"), login.getInt("userID"), login.getString("name"), login.getInt("age"), login.getString("sex"), login.getInt("weight"), login.getString("email"));
+                currentUser.setUser(currentUser);
             }
             try{
                 new MyProfile().start(window);

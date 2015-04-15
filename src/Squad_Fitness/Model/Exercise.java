@@ -25,4 +25,13 @@ public class Exercise {
         bodyPart = bodypart;
         equipmentNeeded = equipmentneeded;
     }
+
+    public int getExerciseID() {
+        return exerciseID;
+    }
+
+    public void setExerciseID(int newExerciseID) {
+        exerciseID = newExerciseID;
+    }
+
 }

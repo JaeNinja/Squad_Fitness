@@ -21,13 +21,20 @@ import java.util.ResourceBundle;
 
     Scene loginScene;
     static Stage window;
-    User currentUser;
+    User currentUser = new User();
 
     @FXML
     private TextField tfUsername, tfName, tfAge, tfWeight, tfSex, tfEmail;
 
-    public void initialize(java.net.URL location, java.util.ResourceBundle resources) {
-        currentUser = MyProfile.getCurrentUser();
+    public void initialize(java.net.URL location, java.util.ResourceBundle resources)
+    {
+        if(currentUser.getRememberMeFromPreferences())
+        {
+            currentUser = currentUser.getUserFromPreferences(currentUser);
+        } else {
+            currentUser = MyProfile.getCurrentUser();
+        }
+
         tfUsername.setText(currentUser.getUsername());
         tfName.setText(currentUser.getName());
         tfAge.setText(Integer.toString(currentUser.getAge()));
@@ -43,6 +50,10 @@ import java.util.ResourceBundle;
         window.setScene(loginScene);
         window.setTitle("Get swole!");
         window.show();
+
+        User testUser = new User();
+        testUser = testUser.getUserFromPreferences(testUser);
+        System.out.print(testUser.getName());
     }
 
     public static User getCurrentUser() {
@@ -51,20 +62,11 @@ import java.util.ResourceBundle;
 
     public void goToRegistration() {
         System.out.println("It's connected");
-
-       /* btnRegister.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                try{
-                    new Register().start(window);
-                } catch (Exception e) {}
-
-            }
-        });
-        */
         try{
             new Register().start(window);
-        } catch (Exception ignored) {}
+        } catch (Exception ignored) {
+            ignored.printStackTrace();
+        }
     }
 
     public void logout() {
@@ -72,6 +74,8 @@ import java.util.ResourceBundle;
             new LoginScreen().start(window);
         } catch (Exception ignored) {}
         User.clearUser();
+        currentUser.clearRememberMeFromPreferences();
+
     }
 
     public void goToMyProfile() {

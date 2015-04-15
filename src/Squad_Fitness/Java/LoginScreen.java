@@ -24,6 +24,8 @@ public class LoginScreen extends Application {
     Connection connection;
     ResultSet login;
     User currentUser;
+    String jsonUser;
+
 
     @FXML
     private TextField tfUserName;
@@ -37,7 +39,8 @@ public class LoginScreen extends Application {
     private Label laConnection;
     @FXML
     private ProgressIndicator loading;
-
+    @FXML
+    private CheckBox chkRememberMe;
 
 
     public void start(Stage primaryStage) throws Exception
@@ -60,6 +63,7 @@ public class LoginScreen extends Application {
     public void goToMyProfile() throws SQLException {
 
         loading.setVisible(true);
+        Boolean rememberMe = chkRememberMe.isSelected();
 
         if(tfUserName.getText().equals("") || tfPassword.getText().equals(""))
         {
@@ -82,6 +86,7 @@ public class LoginScreen extends Application {
                 try {
                     connection = DriverManager.getConnection("jdbc:mysql://23.229.201.1:3306/Squadd", "Squadd", "deeptoot");
                 } catch (Exception e) {
+                    e.printStackTrace();
                     laInvalid.setVisible(false);
                     loading.setVisible(false);
                     laConnection.setVisible(true);
@@ -94,8 +99,20 @@ public class LoginScreen extends Application {
                 loading.setVisible(false);
             }
             if (login.next()) {
-                currentUser = new User(login.getString("username"), login.getString("password"), login.getInt("userID"), login.getString("name"), login.getInt("age"), login.getString("sex"), login.getInt("weight"), login.getString("email"));
+                currentUser = new User(login.getString("username"), login.getString("password"), login.getInt("userID"),
+                        login.getString("name"), login.getInt("age"), login.getString("sex"), login.getInt("weight"), login.getString("email"), rememberMe);
                 LoginScreen.setCurrentUser(currentUser);
+                if(rememberMe)
+                {
+                    currentUser.putUserInPreferences(currentUser);
+                } else {
+                    try{
+                        currentUser.clearUserPreferences(currentUser);
+                    } catch (Exception e)
+                    {
+                        e.printStackTrace();
+                    }
+                }
                 try{
                     new MyProfile().start(window);
                 } catch (Exception ignored) {}

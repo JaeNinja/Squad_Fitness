@@ -18,4 +18,12 @@ public class Goal {
         exercisE = exercise;
         accomplisheD = accomplished;
     }
+
+    public int getGoalID() {
+        return goalID;
+    }
+
+    public void setGoalID(int newGoalID) {
+        goalID= newGoalID;
+    }
 }

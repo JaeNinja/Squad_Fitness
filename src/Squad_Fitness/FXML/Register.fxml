@@ -19,19 +19,18 @@
         </Text>
         <Line endX="133.0" endY="1.0" layoutX="209.0" layoutY="24.0" startX="-100.0" />
         <Text layoutX="36.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
-        <Text layoutX="36.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+        <Text layoutX="36.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
         <TextField fx:id="tfUsername" layoutX="204.0" layoutY="186.0" prefWidth="200.0" promptText="Username" />
-        <TextField fx:id="tfPassword" layoutX="204.0" layoutY="231.0" prefWidth="200.0" promptText="Password" />
-        <Text layoutX="36.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
-        <Text layoutX="36.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age" />
-        <TextField fx:id="tfName" layoutX="204.0" layoutY="280.0" prefWidth="200.0" promptText="Name" />
-        <TextField fx:id="tfAge" layoutX="204.0" layoutY="325.0" prefWidth="200.0" promptText="Age" />
-        <Text layoutX="36.0" layoutY="393.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sex" />
-        <Text layoutX="36.0" layoutY="438.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight" />
-        <TextField fx:id="tfWeight" layoutX="204.0" layoutY="416.0" prefWidth="200.0" promptText="Weight" />
-        <Text layoutX="36.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
-        <TextField fx:id="tfEmail" layoutX="204.0" layoutY="460.0" prefWidth="200.0" promptText="Email Address" />
-        <ChoiceBox fx:id="ddSex" layoutX="216.0" layoutY="366.0" value="Sex">
+        <Text layoutX="36.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+        <Text layoutX="36.0" layoutY="403.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age" />
+        <TextField fx:id="tfName" layoutX="204.0" layoutY="336.0" prefWidth="200.0" promptText="Name" />
+        <TextField fx:id="tfAge" layoutX="204.0" layoutY="381.0" prefWidth="200.0" promptText="Age" />
+        <Text layoutX="36.0" layoutY="449.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sex" />
+        <Text layoutX="36.0" layoutY="494.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight" />
+        <TextField fx:id="tfWeight" layoutX="204.0" layoutY="472.0" prefWidth="200.0" promptText="Weight" />
+        <Text layoutX="36.0" layoutY="538.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+        <TextField fx:id="tfEmail" layoutX="204.0" layoutY="516.0" prefWidth="200.0" promptText="Email Address" />
+        <ChoiceBox fx:id="ddSex" layoutX="216.0" layoutY="422.0" value="Sex">
             <items>
                 <FXCollections fx:factory="observableArrayList">
                     <String fx:value="Male" />
@@ -41,12 +40,13 @@
                 </FXCollections>
             </items>
         </ChoiceBox>
-        <Button fx:id="Submit_Register" layoutX="301.0" layoutY="544.0" mnemonicParsing="false" onAction="#goToMyProfile" text="Register" />
-      <Label fx:id="lbInvalidAge" layoutX="410.0" layoutY="332.0" text="Invalid age.. You old fart" textFill="#f20909" visible="false">
-         <font>
-            <Font size="12.0" />
-         </font>
-      </Label>
+        <Button fx:id="Submit_Register" layoutX="328.0" layoutY="564.0" mnemonicParsing="false" onAction="#goToMyProfile" text="Register" />
+      <Label fx:id="lbInvalidAge" layoutX="409.0" layoutY="389.0" text="Invalid age.. You old fart." textFill="#f57575" visible="false" />
       <Button fx:id="buBack" layoutX="10.0" layoutY="11.0" mnemonicParsing="false" onAction="#goBack" text="Back" />
+      <PasswordField fx:id="pfPassword1" layoutX="204.0" layoutY="235.0" prefHeight="31.0" prefWidth="200.0" promptText="Password" />
+      <Text layoutX="36.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Re-enter Password" />
+      <PasswordField fx:id="pfPassword2" layoutX="204.0" layoutY="283.0" prefHeight="31.0" prefWidth="200.0" promptText="Password" />
+      <Label fx:id="lbInvalidPassword" layoutX="409.0" layoutY="288.0" text="Passwords don't match. " textFill="#f57575" visible="false" />
+      <Label fx:id="lbInvalidWeight" layoutX="419.0" layoutY="477.0" text="Your weight is invalid. Go see a doctor. " textFill="#f57575" visible="false" />
     </children>
 </AnchorPane>

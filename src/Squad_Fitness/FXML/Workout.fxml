@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="450.0" styleClass="pane, text" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Squad_Fitness.Java.Workout">
+  <children>
+    <Text fx:id="workoutName" layoutX="130.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Name of Workout" textAlignment="CENTER" textOrigin="BASELINE" AnchorPane.topAnchor="17.0">
+      <font>
+        <Font size="24.0" />
+      </font>
+    </Text>
+    <Line endX="249.0" endY="0.0" layoutX="146.0" layoutY="71.0" startX="-100.0" />
+    <Button fx:id="logout" layoutX="375.0" layoutY="22.0" mnemonicParsing="false" text="Logout" textAlignment="CENTER" />
+      <ImageView fx:id="workoutImage" fitHeight="150.0" fitWidth="200.0" layoutX="126.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="back" layoutX="20.0" layoutY="22.0" mnemonicParsing="false" text="Back" />
+      <TextArea fx:id="description" layoutX="61.0" layoutY="342.0" prefHeight="117.0" prefWidth="328.0" />
+      <Label layoutX="195.0" layoutY="325.0" text="Description" />
+      <Label layoutX="172.0" layoutY="91.0" text="Body Part:" />
+      <Label layoutX="152.0" layoutY="108.0" text="Exercise Type:" />
+      <Label fx:id="bodyPart" layoutX="237.0" layoutY="91.0" prefHeight="17.0" prefWidth="94.0" text="Bicep" />
+      <Label fx:id="exerciseType" layoutX="237.0" layoutY="108.0" text="Stretch" textAlignment="CENTER" />
+      <Label layoutX="119.0" layoutY="125.0" text="Equipment Needed:" />
+      <Label fx:id="equipmentNeeded" layoutX="237.0" layoutY="125.0" text="No" />
+      <TextArea fx:id="tips" layoutX="62.0" layoutY="483.0" prefHeight="85.0" prefWidth="328.0" />
+      <Label layoutX="210.0" layoutY="466.0" text="Tips" />
+  </children>
+ <!-- <stylesheets>
+    <URL value="@../../../../../GUI.css" />
+  </stylesheets> -->
+</AnchorPane>

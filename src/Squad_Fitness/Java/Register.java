@@ -138,7 +138,7 @@ public class Register extends Application implements Initializable {
                         pref.putInt("UserID", userID);
                         dbResponse = state.executeUpdate("INSERT INTO user (userID, username, password, name, age, sex, weight, email, rememberMe) VALUES ('" + userID + "', '" + strUserName + "', '"
                                 + strPassword + "', '" + strName + "', " + age + ", '" + strGender + "', "
-                                + weight + ", '" + strEmail + ", '" + false +  "');");
+                                + weight + ", '" + strEmail + "', " + false +  ");");
                     } catch (Exception x)
                     {
                         System.out.println("Error: " + x);

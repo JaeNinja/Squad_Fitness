@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import java.net.*?>
 <?import java.util.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
@@ -9,25 +10,29 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="450.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="450.0" styleClass="pane, text" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Squad_Fitness.Java.BodyMap">
   <children>
-    <Text layoutX="23.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose your Body Part">
+    <Text layoutX="111.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Where's Your Focus?" textAlignment="CENTER" textOrigin="BASELINE" AnchorPane.topAnchor="23.0">
       <font>
-        <Font name="Niagara Solid" size="75.0" />
+        <Font size="24.0" />
       </font>
     </Text>
-    <Line endX="249.0" endY="0.0" layoutX="146.0" layoutY="41.0" startX="-100.0" />
-    <Button layoutX="52.0" layoutY="178.0" mnemonicParsing="false" text="Neck" />
-    <Button layoutX="51.0" layoutY="229.0" mnemonicParsing="false" text="Bicep" />
-    <Button layoutX="48.0" layoutY="280.0" mnemonicParsing="false" text="Tricep" />
-    <Button layoutX="40.0" layoutY="331.0" mnemonicParsing="false" text="Forearm" />
-    <Button layoutX="54.0" layoutY="385.0" mnemonicParsing="false" text="Back" />
-    <Button layoutX="50.0" layoutY="443.0" mnemonicParsing="false" text="Chest" />
-    <Button layoutX="281.0" layoutY="178.0" mnemonicParsing="false" text="Abs" />
-    <Button layoutX="260.0" layoutY="229.0" mnemonicParsing="false" text="Obliques" />
-    <Button layoutX="250.0" layoutY="280.0" mnemonicParsing="false" text="Hamstrings" />
-    <Button layoutX="269.0" layoutY="331.0" mnemonicParsing="false" text="Thighs" />
-    <Button layoutX="270.0" layoutY="385.0" mnemonicParsing="false" text="Calves" />
-    <Button layoutX="270.0" layoutY="443.0" mnemonicParsing="false" text="Glutes" />
+    <Line endX="249.0" endY="0.0" layoutX="146.0" layoutY="71.0" startX="-100.0" />
+    <CheckBox layoutX="34.0" layoutY="160.0" mnemonicParsing="false" text="Biceps" />
+    <CheckBox layoutX="34.0" layoutY="129.0" mnemonicParsing="false" text="Triceps" />
+    <CheckBox layoutX="34.0" layoutY="191.0" mnemonicParsing="false" text="Neck" />
+    <CheckBox layoutX="34.0" layoutY="222.0" mnemonicParsing="false" text="Abs" />
+    <CheckBox layoutX="186.0" layoutY="129.0" mnemonicParsing="false" text="Glutes" />
+    <CheckBox layoutX="186.0" layoutY="160.0" mnemonicParsing="false" text="Calves" />
+    <CheckBox layoutX="186.0" layoutY="191.0" mnemonicParsing="false" text="Back" />
+    <CheckBox layoutX="186.0" layoutY="222.0" mnemonicParsing="false" text="Chest" />
+    <CheckBox layoutX="307.0" layoutY="129.0" mnemonicParsing="false" text="Obliques" />
+    <CheckBox layoutX="307.0" layoutY="160.0" mnemonicParsing="false" text="Thighs" />
+    <CheckBox layoutX="307.0" layoutY="191.0" mnemonicParsing="false" text="Shoulders" />
+    <CheckBox layoutX="307.0" layoutY="222.0" mnemonicParsing="false" text="Forearms" />
+    <Button layoutX="380.0" layoutY="592.0" mnemonicParsing="false" text="Next" textAlignment="CENTER" />
   </children>
+  <stylesheets>
+    <URL value="/GUI.css" />
+  </stylesheets>
 </AnchorPane>

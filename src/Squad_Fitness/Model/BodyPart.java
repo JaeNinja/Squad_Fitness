@@ -8,6 +8,7 @@ public class BodyPart {
     private boolean neck, shoulders, biceps, triceps, forearms, abs, obliques, back, glutes, quad, calves, hamstrings;
     private boolean bulk, cooldown, stretch, equipment;
     public static BodyPart currentBodyParts = new BodyPart();
+    public static int currentExercise;
 
     public BodyPart() {}
 
@@ -32,6 +33,14 @@ public class BodyPart {
 
     public static void setCurrentBodyParts(BodyPart body) {
         currentBodyParts = body;
+    }
+
+    public static void setCurrentExercise(int id) {
+        currentExercise = id;
+    }
+
+    public static int getCurrentExercise() {
+        return currentExercise;
     }
 
 }

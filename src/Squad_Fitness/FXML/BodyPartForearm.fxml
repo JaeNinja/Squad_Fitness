@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="450.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Squad_Fitness.Java.BodyMap">
+  <children>
+    <Text layoutX="72.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forearm">
+      <font>
+        <Font name="Niagara Solid" size="150.0" />
+      </font>
+    </Text>
+    <TextField fx:id="field1" layoutX="119.0" layoutY="280.0" promptText="" />
+    <TextField fx:id="field2" layoutX="119.0" layoutY="323.0" promptText="" />
+    <TextField fx:id="field3" layoutX="119.0" layoutY="364.0" promptText="" />
+    <TextField fx:id="field4" layoutX="120.0" layoutY="410.0" promptText="" />
+    <TextField fx:id="field5" layoutX="120.0" layoutY="457.0" promptText="" />
+    <Line endX="249.0" endY="0.0" layoutX="146.0" layoutY="41.0" startX="-100.0" />
+    <Text layoutX="82.0" layoutY="258.0" scaleX="0.5401034217316069" scaleY="0.2319943499783021" strokeType="OUTSIDE" strokeWidth="0.0" text="Exercises">
+      <font>
+        <Font name="Niagara Solid" size="120.0" />
+      </font>
+    </Text>
+  </children>
+</AnchorPane>

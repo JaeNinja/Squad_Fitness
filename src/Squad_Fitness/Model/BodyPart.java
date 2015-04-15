@@ -7,6 +7,8 @@ public class BodyPart {
 
     int bodyPartID;
     String Name;
+    String Neck;
+    String Obliques;
     String Shoulders;
     String Back;
     String Biceps;
@@ -18,10 +20,12 @@ public class BodyPart {
     String Hamstrings;
     String Calves;
 
-    public BodyPart(int bodypartid, String name, String shoulders, String back, String biceps, String triceps, String forearms,
+    public BodyPart(int bodypartid, String name, String neck, String obliques, String shoulders, String back, String biceps, String triceps, String forearms,
                     String chest, String abs, String quads, String hamstrings, String calves) {
         bodyPartID = bodypartid;
         Name = name;
+        Neck = neck;
+        Obliques = obliques;
         Shoulders = shoulders;
         Back = back;
         Biceps = biceps;
@@ -32,5 +36,13 @@ public class BodyPart {
         Quads = quads;
         Hamstrings = hamstrings;
         Calves = calves;
+    }
+
+    public int getBodyPartID() {
+        return bodyPartID;
+    }
+
+    public void setBodyPartID(int newBodyPartID) {
+        bodyPartID = newBodyPartID;
     }
 }

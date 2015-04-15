@@ -4,7 +4,7 @@ import java.util.prefs.BackingStoreException;
 import java.util.prefs.Preferences;
 
 /**
- * Created by Kyle on 3/16/2015.
+ * UEYFRHBOCIQ3LKHERNGFU89WITRJKFDHGVWNOIUERKJGVHRNWIUTKJFV
  */
 //Changes
 public class User {

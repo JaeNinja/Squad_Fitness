@@ -1,6 +1,7 @@
 
 package Squad_Fitness.Java;
 
+import Squad_Fitness.Model.User;
 import javafx.application.Application;
 
 import javafx.event.ActionEvent;
@@ -12,13 +13,14 @@ import javafx.stage.Stage;
 import java.util.prefs.Preferences;
 
 public class Splash_Screen extends Application  {
+
     //Stage is the entire window
     Stage window;
     //Scenes are the containers within stages
     Scene scene1;
     Button button1;
     Preferences preferences;
-    int UserID;
+    User storedUser;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -29,12 +31,11 @@ public class Splash_Screen extends Application  {
         LoginScreen login = new LoginScreen();
 
         preferences = Preferences.systemNodeForPackage(this.getClass());
-        /**
-         * If the UserID is greater than 0 that means the user opted for us to save their credentials and for the program
-         * to go straight to my profile instead of logging in.
-         */
-        UserID = preferences.getInt("UserID", -1);
-        if(UserID > 0)
+        storedUser = new User();
+        storedUser = storedUser.getUserFromPreferences(storedUser);
+        System.out.print(storedUser.getName());
+
+        if(storedUser.getRememberMe())
         {
             button1.setOnAction(new EventHandler<ActionEvent>() {
 
@@ -45,7 +46,9 @@ public class Splash_Screen extends Application  {
                     new MyProfile().start(window);
                     System.out.println("Something saved.");
 
-                } catch (Exception e) {}
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
             }
         });
@@ -60,7 +63,9 @@ public class Splash_Screen extends Application  {
                         new LoginScreen().start(window);
                         System.out.println("It's connected");
 
-                    } catch (Exception e) {}
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
 
                 }
             });
@@ -77,7 +82,7 @@ public class Splash_Screen extends Application  {
         VBox layout1= new VBox(20);
         layout1.getChildren().addAll(button1);
         scene1 = new Scene(layout1, 1000,850);
-        scene1.getStylesheets().add("Squad_Fitness/Start_Screen.css");
+        scene1.getStylesheets().add("Squad_Fitness/CSS/Start_Screen.css");
 
         window.setScene(scene1);
         window.setTitle("Welcome to the SQUAD!");

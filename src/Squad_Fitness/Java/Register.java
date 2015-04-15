@@ -126,14 +126,14 @@ public class Register extends Application implements Initializable {
                 }
                 //Save the UserID so that we can skip log in screen next time
                 pref.putInt("UserID", userID);
-                dbResponse = state.executeUpdate("INSERT INTO user (userID, username, password, name, age, sex, weight, email) VALUES ('" + userID + "', '" + strUserName + "', '"
+                dbResponse = state.executeUpdate("INSERT INTO user (userID, username, password, name, age, sex, weight, email, rememberMe) VALUES ('" + userID + "', '" + strUserName + "', '"
                         + strPassword + "', '" + strName + "', " + age + ", '" + strGender + "', "
-                        + weight + ", '" + strEmail + "');");
+                        + weight + ", '" + strEmail + ", '" + false +  "');");
             } catch (Exception x)
             {
                 System.out.println("Error: " + x);
             }
-            User currentUser = new User(strUserName, strPassword, userID, strName, age, strGender, weight, strEmail);
+            User currentUser = new User(strUserName, strPassword, userID, strName, age, strGender, weight, strEmail, false);
             User.setUser(currentUser);
              /**
              * A response of 1 means that 1 successful row was added to the database

@@ -5,44 +5,33 @@ package Squad_Fitness.Model;
  */
 public class BodyPart {
 
-    int bodyPartID;
-    String Name;
-    String Neck;
-    String Obliques;
-    String Shoulders;
-    String Back;
-    String Biceps;
-    String Triceps;
-    String Forearms;
-    String Chest;
-    String Abs;
-    String Quads;
-    String Hamstrings;
-    String Calves;
+    private boolean neck, shoulders, biceps, triceps, forearms, abs, obliques, back, glutes, quad, calves, hamstrings;
+    private boolean bulk, cooldown, stretch, equipment;
+    public static BodyPart currentBodyParts = new BodyPart();
 
-    public BodyPart(int bodypartid, String name, String neck, String obliques, String shoulders, String back, String biceps, String triceps, String forearms,
-                    String chest, String abs, String quads, String hamstrings, String calves) {
-        bodyPartID = bodypartid;
-        Name = name;
-        Neck = neck;
-        Obliques = obliques;
-        Shoulders = shoulders;
-        Back = back;
-        Biceps = biceps;
-        Triceps = triceps;
-        Forearms = forearms;
-        Chest = chest;
-        Abs = abs;
-        Quads = quads;
-        Hamstrings = hamstrings;
-        Calves = calves;
+    public BodyPart() {}
+
+    public BodyPart(boolean Neck, boolean Shoulders, boolean Biceps, boolean Triceps, boolean Forearms, boolean Abs, boolean Obliques, boolean Back, boolean Glutes, boolean Quad, boolean Calves, boolean Hamstrings, boolean Bulk, boolean Cooldown, boolean Stretch, boolean Equipment) {
+        neck = Neck;
+        shoulders = Shoulders;
+        biceps = Biceps;
+        triceps = Triceps;
+        forearms = Forearms;
+        abs = Abs;
+        obliques = Obliques;
+        back = Back;
+        glutes = Glutes;
+        quad = Quad;
+        calves = Calves;
+        hamstrings = Hamstrings;
+        bulk = Bulk;
+        cooldown = Cooldown;
+        stretch = Stretch;
+        equipment = Equipment;
     }
 
-    public int getBodyPartID() {
-        return bodyPartID;
+    public static void setCurrentBodyParts(BodyPart body) {
+        currentBodyParts = body;
     }
 
-    public void setBodyPartID(int newBodyPartID) {
-        bodyPartID = newBodyPartID;
-    }
 }

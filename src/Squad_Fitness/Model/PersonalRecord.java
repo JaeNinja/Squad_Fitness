@@ -19,4 +19,12 @@ public class PersonalRecord {
         exercisE = exercise;
         userName = username;
     }
+
+    public int getPersonalRecordID() {
+        return personalRecordID;
+    }
+
+    public void setPersonalRecordID(int newPersonalRecordID) {
+        personalRecordID = newPersonalRecordID;
+    }
 }

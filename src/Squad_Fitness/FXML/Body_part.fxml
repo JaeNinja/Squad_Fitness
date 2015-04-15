@@ -9,85 +9,25 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Squad_Fitness.Java.BodyMap">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="450.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
   <children>
-    <TabPane mouseTransparent="false" prefHeight="579.0" prefWidth="450.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="171.0">
-      <tabs>
-        <Tab text="Arms">
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <children>
-                <Text layoutX="14.0" layoutY="132.0" scaleX="1.0" scaleY="0.9999958231360168" strokeType="OUTSIDE" strokeWidth="0.0" text="There theoretically">
-                  <font>
-                    <Font size="50.0" fx:id="x1" />
-                  </font>
-                </Text>
-                <Text font="$x1" layoutX="21.0" layoutY="213.0" scaleX="1.0" scaleY="0.9999958231360168" strokeType="OUTSIDE" strokeWidth="0.0" text="should be som'n" />
-                <Text font="$x1" layoutX="21.0" layoutY="286.0" scaleX="1.0" scaleY="0.9999958231360168" strokeType="OUTSIDE" strokeWidth="0.0" text="here.. but there" />
-                <Text font="$x1" layoutX="90.0" layoutY="372.0" scaleX="1.0" scaleY="0.9999958231360168" strokeType="OUTSIDE" strokeWidth="0.0" text="ain't Nan" />
-              </children>
-            </AnchorPane>
-          </content>
-        </Tab>
-        <Tab text="Legs">
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <children>
-                <Text font="$x1" layoutX="21.0" layoutY="165.0" scaleX="1.0" scaleY="0.9999958231360168" strokeType="OUTSIDE" strokeWidth="0.0" text="Buuuttt.... here's" />
-                <Text font="$x1" layoutX="28.0" layoutY="246.0" scaleX="1.0" scaleY="0.9999958231360168" strokeType="OUTSIDE" strokeWidth="0.0" text="this cool thing...." />
-                <Text font="$x1" layoutX="28.0" layoutY="319.0" scaleX="1.0" scaleY="0.9999958231360168" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
-              </children>
-            </AnchorPane>
-          </content>
-        </Tab>
-        <Tab text="Torso">
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <children>
-                <Text font="$x1" layoutX="49.0" layoutY="286.0" scaleX="1.0" scaleY="0.9999958231360168" strokeType="OUTSIDE" strokeWidth="0.0" text="Its towards the" />
-                <Text font="$x1" layoutX="49.0" layoutY="368.0" scaleX="1.0" scaleY="0.9999958231360168" strokeType="OUTSIDE" strokeWidth="0.0" text="end of this thing" />
-              </children>
-            </AnchorPane>
-          </content>
-        </Tab>
-        <Tab text="Back">
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <children>
-                <Text font="$x1" layoutX="62.0" layoutY="286.0" scaleX="1.0" scaleY="0.9999958231360168" strokeType="OUTSIDE" strokeWidth="0.0" text="Keep going...." />
-              </children>
-            </AnchorPane>
-          </content>
-        </Tab>
-        <Tab text="Cardio">
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <children>
-                <Text font="$x1" layoutX="62.0" layoutY="286.0" scaleX="1.0" scaleY="0.9999958231360168" strokeType="OUTSIDE" strokeWidth="0.0" text="wait one more.." />
-              </children>
-            </AnchorPane>
-          </content>
-        </Tab>
-        <Tab text="Deez Nutz">
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <children>
-                <ImageView id="haha.jpg" fitHeight="319.0" fitWidth="250.0" layoutX="100.0" layoutY="156.0">
-                  <image>
-                    <!-- <Image preserveRatio="true" smooth="true" url="" /> -->
-                  </image>
-                </ImageView>
-              </children>
-            </AnchorPane>
-          </content>
-        </Tab>
-      </tabs>
-    </TabPane>
-    <Text layoutX="42.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose yout desired workout Area">
+    <Text layoutX="23.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose your Body Part">
       <font>
-        <Font size="24.0" />
+        <Font name="Niagara Solid" size="75.0" />
       </font>
     </Text>
     <Line endX="249.0" endY="0.0" layoutX="146.0" layoutY="41.0" startX="-100.0" />
+    <Button layoutX="52.0" layoutY="178.0" mnemonicParsing="false" text="Neck" />
+    <Button layoutX="51.0" layoutY="229.0" mnemonicParsing="false" text="Bicep" />
+    <Button layoutX="48.0" layoutY="280.0" mnemonicParsing="false" text="Tricep" />
+    <Button layoutX="40.0" layoutY="331.0" mnemonicParsing="false" text="Forearm" />
+    <Button layoutX="54.0" layoutY="385.0" mnemonicParsing="false" text="Back" />
+    <Button layoutX="50.0" layoutY="443.0" mnemonicParsing="false" text="Chest" />
+    <Button layoutX="281.0" layoutY="178.0" mnemonicParsing="false" text="Abs" />
+    <Button layoutX="260.0" layoutY="229.0" mnemonicParsing="false" text="Obliques" />
+    <Button layoutX="250.0" layoutY="280.0" mnemonicParsing="false" text="Hamstrings" />
+    <Button layoutX="269.0" layoutY="331.0" mnemonicParsing="false" text="Thighs" />
+    <Button layoutX="270.0" layoutY="385.0" mnemonicParsing="false" text="Calves" />
+    <Button layoutX="270.0" layoutY="443.0" mnemonicParsing="false" text="Glutes" />
   </children>
 </AnchorPane>

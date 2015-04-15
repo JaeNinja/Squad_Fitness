@@ -32,7 +32,7 @@
     <CheckBox layoutX="307.0" layoutY="222.0" mnemonicParsing="false" text="Forearms" />
     <Button layoutX="380.0" layoutY="592.0" mnemonicParsing="false" text="Next" textAlignment="CENTER" />
   </children>
-  <stylesheets>
-    <URL value="/GUI.css" />
-  </stylesheets>
+ <!--<stylesheets>
+    <URL value="/Squad_Fitness/CSS/GUI.css" />
+  </stylesheets>-->
 </AnchorPane>

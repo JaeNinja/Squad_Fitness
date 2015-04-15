@@ -27,7 +27,7 @@ public class Workout extends Application implements Initializable {
         Scene workoutScene;
         static Stage window;
         User currentUser = new User();
-        private int currentExercise = 1001;
+        private int currentExercise = 2004;
         private int ID;
         int dbResponse = -1;
         Connection connection;
@@ -77,7 +77,6 @@ public class Workout extends Application implements Initializable {
             } catch (SQLException e) {
                 System.out.println("Exception 3 " + e);
             }
-
         }
 
         public void start(Stage primaryStage) throws Exception {

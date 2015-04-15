@@ -75,7 +75,6 @@ import java.util.ResourceBundle;
         } catch (Exception ignored) {}
         User.clearUser();
         currentUser.clearRememberMeFromPreferences();
-
     }
 
     public void goToMyProfile() {

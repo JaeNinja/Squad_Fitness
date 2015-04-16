@@ -28,7 +28,7 @@ public class Workout extends Application implements Initializable {
         static Stage window;
         User currentUser = new User();
         private int currentExercise, array, max;
-        private int[] currentExercises = new int[]{1001, 1002, 2001, 2004};
+        private int[] currentExercises;
         private int ID;
         int dbResponse = -1;
         Connection connection;
@@ -43,8 +43,8 @@ public class Workout extends Application implements Initializable {
 
 
         public void initialize(java.net.URL location, java.util.ResourceBundle resources) {
-            //currentUser = User.getUser();
-            //currentExercise = BodyPart.getCurrentExercise();
+            currentUser = User.getUser();
+            currentExercises = BodyMap.exerciseArray;
             array = 0;
             currentExercise = currentExercises[array];
             max = currentExercises.length;
@@ -114,5 +114,21 @@ public class Workout extends Application implements Initializable {
                 System.out.println("Exception 3 " + e);
             }
         }
+
+        public void goBack() {
+            try {
+                new BodyMap().start(window);
+            } catch (Exception ignored) {
+                ignored.printStackTrace();
+            }
+        }
+
+    public void logout() {
+        try {
+            new LoginScreen().start(window);
+        } catch (Exception ignored) {}
+        User.clearUser();
+        currentUser.clearRememberMeFromPreferences();
+    }
 
 }

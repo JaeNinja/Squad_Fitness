@@ -28,6 +28,7 @@ public class BodyMap extends Application {
     ResultSet rsExerciseIDs;
     ArrayList<Integer> listExerciseIDs = new ArrayList<>();
     String strListOfExerciseNames ="";
+    static int[] exerciseArray;
 
     @FXML
     private Button btnNext;
@@ -107,9 +108,9 @@ public class BodyMap extends Application {
 
         for(int i= 0; i < listOfExercise.size(); i ++)
         {
-            strListOfExerciseNames += listOfExercise.get(i) + " OR ";
+            strListOfExerciseNames += listOfExercise.get(i) + " OR bodyPart = ";
         }
-        strListOfExerciseNames = strListOfExerciseNames.substring(0, strListOfExerciseNames.length()-4);
+        strListOfExerciseNames = strListOfExerciseNames.substring(0, strListOfExerciseNames.length()-14);
             /**
              * Fancy db stored procedures. Insert into database
              */
@@ -129,9 +130,12 @@ public class BodyMap extends Application {
                    listExerciseIDs.add(exerciseID);
                }
 
+               exerciseArray = new int[listExerciseIDs.size()];
+
                for(int i= 0; i < listExerciseIDs.size(); i ++)
                {
                     System.out.println(listExerciseIDs.get(i));
+                   exerciseArray[i] = listExerciseIDs.get(i);
                }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -139,11 +143,11 @@ public class BodyMap extends Application {
             }
 
 
-        /*try {
+        try {
             new Workout().start(window);
         } catch (Exception ignored) {
             ignored.printStackTrace();
-        }*/
+        }
     }
 
 

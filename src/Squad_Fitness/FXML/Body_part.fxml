@@ -32,6 +32,8 @@
     <CheckBox fx:id="chkForearms" layoutX="34.0" layoutY="194.0" mnemonicParsing="false" text="Forearms" />
     <Button fx:id="btnNext" layoutX="380.0" layoutY="592.0" mnemonicParsing="false" onAction="#goToWorkOut" text="Next" textAlignment="CENTER" />
       <CheckBox fx:id="chkHamstrings" layoutX="308.0" layoutY="233.0" mnemonicParsing="false" text="Hamstrings" />
+      <Button fx:id="goBack" layoutX="20.0" layoutY="28.0" mnemonicParsing="false" onAction="#goBack" text="Back" />
+      <Button fx:id="logout" layoutX="370.0" layoutY="28.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
   </children>
  <!--<stylesheets>
     <URL value="/Squad_Fitness/CSS/GUI.css" />

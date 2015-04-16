@@ -68,7 +68,7 @@ public class BodyMap extends Application {
         window.setScene(bodyMapScene);
         window.setTitle("Interactive Body Map");
         window.show();
-        currentUser = MyProfile.getCurrentUser();
+        currentUser = User.getUser();
     }
 
     public static void main(String[] args)
@@ -134,7 +134,6 @@ public class BodyMap extends Application {
 
                for(int i= 0; i < listExerciseIDs.size(); i ++)
                {
-                    System.out.println(listExerciseIDs.get(i));
                    exerciseArray[i] = listExerciseIDs.get(i);
                }
             } catch (Exception e) {
@@ -148,6 +147,22 @@ public class BodyMap extends Application {
         } catch (Exception ignored) {
             ignored.printStackTrace();
         }
+    }
+
+    public void goBack() {
+        try {
+            new MyProfile().start(window);
+        } catch (Exception ignored) {
+            ignored.printStackTrace();
+        }
+    }
+
+    public void logout() {
+        try {
+            new LoginScreen().start(window);
+        } catch (Exception ignored) {}
+        User.clearUser();
+        currentUser.clearRememberMeFromPreferences();
     }
 
 

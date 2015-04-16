@@ -101,7 +101,7 @@ public class LoginScreen extends Application {
             if (loginDatabaseResponse.next()) {
                 currentUser = new User(loginDatabaseResponse.getString("username"), loginDatabaseResponse.getString("password"), loginDatabaseResponse.getInt("userID"),
                         loginDatabaseResponse.getString("name"), loginDatabaseResponse.getInt("age"), loginDatabaseResponse.getString("sex"), loginDatabaseResponse.getInt("weight"),
-                        loginDatabaseResponse.getString("email"), rememberMe);
+                        loginDatabaseResponse.getInt("height"), loginDatabaseResponse.getString("email"), rememberMe);
                 LoginScreen.setCurrentUser(currentUser);
                 if(rememberMe)
                 {

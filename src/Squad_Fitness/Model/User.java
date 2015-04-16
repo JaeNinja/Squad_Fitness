@@ -16,6 +16,7 @@ public class User {
     private int age;
     private String sex;
     private int weight;
+    private int height;
     private String email;
     private Boolean rememberMe;
     public static User currentUser;
@@ -23,7 +24,7 @@ public class User {
     public User(){}
 
     public User (String strUsername, String strPassword, int intUserID, String strName, int intAge, String strSex,
-                 int intWeight, String strEmail, Boolean rememberme)
+                 int intWeight, int intHeight, String strEmail, Boolean rememberme)
     {
         username = strUsername;
         password = strPassword;
@@ -32,6 +33,7 @@ public class User {
         age = intAge;
         sex = strSex;
         weight = intWeight;
+        height = intHeight;
         email = strEmail;
         rememberMe = rememberme;
 
@@ -45,6 +47,7 @@ public class User {
         age = reference.age;
         sex = reference.sex;
         weight = reference.weight;
+        height = reference.height;
         email = reference.email;
         rememberMe = reference.rememberMe;
     }
@@ -85,6 +88,10 @@ public class User {
 
     public int getWeight() {
         return weight;
+    }
+
+    public int getHeight() {
+        return height;
     }
 
     public Boolean getRememberMe() {
@@ -135,6 +142,10 @@ public class User {
         weight = intWeight;
     }
 
+    public void setHeight(int intHeight) {
+        height = intHeight;
+    }
+
     public void setEmail(String strEmail) {
         email = strEmail;
     }
@@ -158,6 +169,7 @@ public class User {
         preferences.putInt("Age", currentUser.age);
         preferences.put("Sex", currentUser.sex);
         preferences.putInt("Weight", currentUser.weight);
+        preferences.putInt("Height", currentUser.height);
         preferences.put("Email", currentUser.email);
         preferences.putBoolean("rememberMe", currentUser.rememberMe);
     }
@@ -172,6 +184,7 @@ public class User {
         currentUser.age = preferences.getInt("Age", 0);
         currentUser.sex =  preferences.get("Sex", "");
         currentUser.weight = preferences.getInt("Weight", 0);
+        currentUser.height = preferences.getInt("Height", 0);
         currentUser.email = preferences.get("Email", "");
         currentUser.rememberMe = preferences.getBoolean("rememberMe", false);
 

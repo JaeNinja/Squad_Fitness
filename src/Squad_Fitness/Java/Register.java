@@ -24,7 +24,7 @@ public class Register extends Application implements Initializable {
     static Stage window;
     Connection connection;
     String strUserName, strPassword, strPassword2, strName, strGender, strEmail;
-    int weight, age;
+    int weight, height, age;
     int dbResponse = -1;
     Random intUserID = new Random();
     int userID;
@@ -33,6 +33,8 @@ public class Register extends Application implements Initializable {
 
     @FXML
     private TextField tfWeight;
+    @FXML
+    private TextField tfHeight;
     @FXML
     private PasswordField pfPassword1;
     @FXML
@@ -79,7 +81,7 @@ public class Register extends Application implements Initializable {
          */
         if(tfUsername.getText().equals("") || pfPassword1.getText().equals("") || pfPassword2.getText().equals("") ||tfName.getText().equals("") ||
                 tfEmail.getText().equals("") || ddSex.getValue().toString().equals("") || tfAge.getText().equals("")
-                || tfWeight.getText().equals(""))
+                || tfWeight.getText().equals("")|| tfHeight.getText().equals(""))
         {
             if(tfUsername.getText().equals("")) {
                 tfUsername.setStyle("  -fx-control-inner-background: red");
@@ -102,6 +104,9 @@ public class Register extends Application implements Initializable {
             if(tfWeight.getText().equals("")){
                 tfWeight.setStyle("  -fx-control-inner-background: red");
             }
+            if(tfHeight.getText().equals("")){
+                tfHeight.setStyle("  -fx-control-inner-background: red");
+            }
         }
         else {
             strUserName = tfUsername.getText();
@@ -112,6 +117,8 @@ public class Register extends Application implements Initializable {
             strGender = ddSex.getValue().toString();
             age = Integer.parseInt(tfAge.getText());
             weight = Integer.parseInt(tfWeight.getText());
+            height = Integer.parseInt(tfHeight.getText());
+
         }
         if(strPassword.equals(strPassword2))
         {
@@ -136,14 +143,14 @@ public class Register extends Application implements Initializable {
                         }
                         //Save the UserID so that we can skip log in screen next time
                         pref.putInt("UserID", userID);
-                        dbResponse = state.executeUpdate("INSERT INTO user (userID, username, password, name, age, sex, weight, email, rememberMe) VALUES ('" + userID + "', '" + strUserName + "', '"
+                        dbResponse = state.executeUpdate("INSERT INTO user (userID, username, password, name, age, sex, weight, height, email, rememberMe) VALUES ('" + userID + "', '" + strUserName + "', '"
                                 + strPassword + "', '" + strName + "', " + age + ", '" + strGender + "', "
-                                + weight + ", '" + strEmail + "', " + false +  ");");
+                                + weight + ", " + height + ", '" + strEmail + "', " + false +  ");");
                     } catch (Exception x)
                     {
                         System.out.println("Error: " + x);
                     }
-                    User currentUser = new User(strUserName, strPassword, userID, strName, age, strGender, weight, strEmail, false);
+                    User currentUser = new User(strUserName, strPassword, userID, strName, age, strGender, weight, height, strEmail, false);
                     User.setUser(currentUser);
                     /**
                      * A response of 1 means that 1 successful row was added to the database

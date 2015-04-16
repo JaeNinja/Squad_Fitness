@@ -162,6 +162,7 @@ public class BodyMap extends Application {
             new LoginScreen().start(window);
         } catch (Exception ignored) {}
         User.clearUser();
-        currentUser.clearRememberMeFromPreferences();
+        if(!currentUser.getName().equals("") || !currentUser.getName().isEmpty() )
+            currentUser.clearRememberMeFromPreferences();
     }
 }

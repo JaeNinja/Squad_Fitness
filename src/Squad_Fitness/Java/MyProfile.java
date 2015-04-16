@@ -151,51 +151,57 @@ import java.util.prefs.Preferences;
             newPassword = password1;
         else
             newPassword = currentUser.getPassword();
-        try {
+        if((newHeight > 48 && newHeight < 90) && (newAge <= 100 && newAge > 0) && (newWeight > 60 && newWeight < 725))
+        {
+            try {
 
-            Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://23.229.201.1:3306/Squadd", "Squadd", "deeptoot");
-            Statement state = connection.createStatement();
-            String sqlQuery = "UPDATE user SET username='" + newUsername + "', password='" + newPassword + "' , name='" + newName + "', age=" + newAge +
-                    ", weight=" + newWeight + ", height=" + newHeight + ", email='" + newEmail + "' WHERE userID=" + userID + ";";
-            dbResponse = state.executeUpdate(sqlQuery);
-        } catch (Exception x) {
-            System.out.println("Error: " + x);
-        }
+                Class.forName("com.mysql.jdbc.Driver");
+                connection = DriverManager.getConnection("jdbc:mysql://23.229.201.1:3306/Squadd", "Squadd", "deeptoot");
+                Statement state = connection.createStatement();
+                String sqlQuery = "UPDATE user SET username='" + newUsername + "', password='" + newPassword + "' , name='" + newName + "', age=" + newAge +
+                        ", weight=" + newWeight + ", height=" + newHeight + ", email='" + newEmail + "' WHERE userID=" + userID + ";";
+                dbResponse = state.executeUpdate(sqlQuery);
+            } catch (Exception x) {
+                System.out.println("Error: " + x);
+            }
 
-        /**
-         * Successfully saved stuff
-         */
-        if (dbResponse == 1) {
-            tfUsername.setText(newUsername);
-            tfName.setText(newName);
-            tfAge.setText(String.valueOf(newAge));
-            tfEmail.setText(newEmail);
-            tfWeight.setText(String.valueOf(newWeight));
-            tfHeight.setText(String.valueOf(newHeight));
+            /**
+             * Successfully saved stuff
+             */
+            if (dbResponse == 1) {
+                tfUsername.setText(newUsername);
+                tfName.setText(newName);
+                tfAge.setText(String.valueOf(newAge));
+                tfEmail.setText(newEmail);
+                tfWeight.setText(String.valueOf(newWeight));
+                tfHeight.setText(String.valueOf(newHeight));
 
-            btnCancel.setVisible(false);
-            btnSave.setVisible(false);
+                btnCancel.setVisible(false);
+                btnSave.setVisible(false);
 
-            tfUsername.setEditable(false);
-            tfName.setEditable(false);
-            tfAge.setEditable(false);
-            tfEmail.setEditable(false);
-            tfWeight.setEditable(false);
-            tfHeight.setEditable(false);
-            pfPassword1.setVisible(false);
-            pfPassword2.setVisible(false);
-            lbPassword1.setVisible(false);
-            lbPassword2.setVisible(false);
+                tfUsername.setEditable(false);
+                tfName.setEditable(false);
+                tfAge.setEditable(false);
+                tfEmail.setEditable(false);
+                tfWeight.setEditable(false);
+                tfHeight.setEditable(false);
+                pfPassword1.setVisible(false);
+                pfPassword2.setVisible(false);
+                lbPassword1.setVisible(false);
+                lbPassword2.setVisible(false);
+            } else {
+                lbSaveError.setVisible(true);
+            }
+
+            if (currentUser.getRememberMe()){
+                currentUser = currentUser.updateUser(currentUser, newUsername, newName, newAge, newWeight, newHeight, newEmail);
+                currentUser.putUserInPreferences(currentUser);
+            }else
+                currentUser = currentUser.updateUser(currentUser, newUsername, newName,newAge, newWeight, newHeight, newEmail);
+
         } else {
             lbSaveError.setVisible(true);
         }
-
-        if (currentUser.getRememberMe()){
-            currentUser = currentUser.updateUser(currentUser, newUsername, newName, newAge, newWeight, newHeight, newEmail);
-            currentUser.putUserInPreferences(currentUser);
-        }else
-           currentUser = currentUser.updateUser(currentUser, newUsername, newName,newAge, newWeight, newHeight, newEmail);
 
     }
 

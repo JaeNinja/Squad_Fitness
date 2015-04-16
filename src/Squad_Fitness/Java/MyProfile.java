@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 
 import javafx.scene.control.TextField;
 
+import javax.swing.text.html.ImageView;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -84,7 +85,9 @@ import java.util.ResourceBundle;
     public void goToBodyMap() {
         try {
             new BodyMap().start(window);
-        } catch (Exception ignored) {}
+        } catch (Exception ignored) {
+            ignored.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {

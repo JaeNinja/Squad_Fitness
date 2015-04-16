@@ -22,7 +22,7 @@ public class LoginScreen extends Application {
     String strUserName, strPassword;
     int dbResponse = -1;
     Connection connection;
-    ResultSet login;
+    ResultSet loginDatabaseResponse;
     User currentUser;
     String jsonUser;
 
@@ -92,15 +92,16 @@ public class LoginScreen extends Application {
                     laConnection.setVisible(true);
                 }
                 Statement state = connection.createStatement();
-                login = state.executeQuery("SELECT * FROM user WHERE username='" + strUserName + "'AND password='" + strPassword + "'");
+                loginDatabaseResponse = state.executeQuery("SELECT * FROM user WHERE username='" + strUserName + "'AND password='" + strPassword + "'");
             } catch (Exception x)
             {
                 System.out.println("Error 1: " + x);
                 loading.setVisible(false);
             }
-            if (login.next()) {
-                currentUser = new User(login.getString("username"), login.getString("password"), login.getInt("userID"),
-                        login.getString("name"), login.getInt("age"), login.getString("sex"), login.getInt("weight"), login.getString("email"), rememberMe);
+            if (loginDatabaseResponse.next()) {
+                currentUser = new User(loginDatabaseResponse.getString("username"), loginDatabaseResponse.getString("password"), loginDatabaseResponse.getInt("userID"),
+                        loginDatabaseResponse.getString("name"), loginDatabaseResponse.getInt("age"), loginDatabaseResponse.getString("sex"), loginDatabaseResponse.getInt("weight"),
+                        loginDatabaseResponse.getString("email"), rememberMe);
                 LoginScreen.setCurrentUser(currentUser);
                 if(rememberMe)
                 {
@@ -115,7 +116,9 @@ public class LoginScreen extends Application {
                 }
                 try{
                     new MyProfile().start(window);
-                } catch (Exception ignored) {}
+                } catch (Exception ignored) {
+                    ignored.printStackTrace();
+                }
             }
             else {
                 System.out.println("Invalid username or password");

@@ -25,7 +25,7 @@
                </font>
             </Text>
             <TextField fx:id="tfUserName" layoutX="271.0" layoutY="232.0" promptText="Username" />
-            <PasswordField fx:id="tfPassword" layoutX="271.0" layoutY="298.0" promptText="Password" />
+            <PasswordField fx:id="tfPassword" layoutX="272.0" layoutY="297.0" promptText="Password" />
             <Button fx:id="btnLogin" layoutX="402.0" layoutY="371.0" mnemonicParsing="false" onAction="#goToMyProfile" text="Login" />
             <Button fx:id="btnRegister" layoutX="328.0" layoutY="542.0" mnemonicParsing="false" onAction="#goToRegistration" onMousePressed="#goToRegistration" text="Register" />
             <Label fx:id="laInvalid" layoutX="265.0" layoutY="195.0" text="Invalid username or password." textFill="RED" visible="false" />

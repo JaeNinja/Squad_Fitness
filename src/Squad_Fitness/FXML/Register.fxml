@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.effect.*?>
 <?import java.lang.*?>
-<?import java.util.*?>
 <?import javafx.collections.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
+<!-- Kyle added a comment -->
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="450.0" styleClass="pane" stylesheets="@../CSS/GUI.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Squad_Fitness.Java.Register">
     <children>
         <Text id="Register_Button" fill="BLACK" fontSmoothingType="LCD" layoutX="62.0" layoutY="164.0" scaleX="0.7375539477256459" scaleY="0.546400879677058" strokeType="OUTSIDE" strokeWidth="0.0" text="Register">

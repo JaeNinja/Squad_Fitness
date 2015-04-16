@@ -10,11 +10,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import javafx.scene.control.TextField;
 
+import javax.imageio.ImageIO;
+import java.io.File;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
@@ -33,6 +38,9 @@ public class Workout extends Application implements Initializable {
         int dbResponse = -1;
         Connection connection;
         ResultSet workout, bodyPartName;
+        private Image img;
+        private String path;
+
 
         @FXML
         private TextArea description, tips;
@@ -40,6 +48,8 @@ public class Workout extends Application implements Initializable {
         private Label bodyPart, exerciseType, equipmentNeeded;
         @FXML
         private Text workoutName;
+        @FXML
+        private ImageView workoutImage;
 
 
         public void initialize(java.net.URL location, java.util.ResourceBundle resources) {
@@ -102,6 +112,9 @@ public class Workout extends Application implements Initializable {
                 exerciseType.setText(workout.getString("type"));
                 description.setText(workout.getString("description"));
                 tips.setText(workout.getString("tips"));
+                path = workout.getString("imageURL");
+                img = new Image(path);
+                workoutImage.setImage(img);
                 if (workout.getBoolean("equipmentNeeded")) {
                     equipmentNeeded.setText("Yes");
                 } else {

@@ -164,7 +164,4 @@ public class BodyMap extends Application {
         User.clearUser();
         currentUser.clearRememberMeFromPreferences();
     }
-
-
-
 }

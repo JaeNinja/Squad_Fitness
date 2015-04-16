@@ -18,20 +18,20 @@
       </font>
     </Text>
     <Line endX="249.0" endY="0.0" layoutX="146.0" layoutY="71.0" startX="-100.0" />
-    <CheckBox fx:id="chkBiceps" layoutX="34.0" layoutY="160.0" mnemonicParsing="false" text="Biceps" />
-    <CheckBox fx:id="chkTriceps" layoutX="34.0" layoutY="129.0" mnemonicParsing="false" text="Triceps" />
-    <CheckBox fx:id="chkNeck" layoutX="173.0" layoutY="233.0" mnemonicParsing="false" text="Neck" />
+    <CheckBox fx:id="chkBiceps" layoutX="41.0" layoutY="160.0" mnemonicParsing="false" text="Biceps" />
+    <CheckBox fx:id="chkTriceps" layoutX="41.0" layoutY="130.0" mnemonicParsing="false" onMouseClicked="#swapVisible" text="Triceps" />
+    <CheckBox fx:id="chkNeck" layoutX="177.0" layoutY="220.0" mnemonicParsing="false" text="Neck" />
     <CheckBox fx:id="chkAbs" layoutX="177.0" layoutY="130.0" mnemonicParsing="false" text="Abs" />
-    <CheckBox fx:id="chkGlutes" layoutX="308.0" layoutY="129.0" mnemonicParsing="false" text="Glutes" />
-    <CheckBox fx:id="chkCalves" layoutX="308.0" layoutY="194.0" mnemonicParsing="false" text="Calves" />
-    <CheckBox fx:id="chkBack" layoutX="34.0" layoutY="274.0" mnemonicParsing="false" text="Back" />
-    <CheckBox fx:id="chkChest" layoutX="177.0" layoutY="194.0" mnemonicParsing="false" text="Chest" />
+    <CheckBox fx:id="chkGlutes" layoutX="308.0" layoutY="130.0" mnemonicParsing="false" text="Glutes" />
+    <CheckBox fx:id="chkCalves" layoutX="308.0" layoutY="190.0" mnemonicParsing="false" text="Calves" />
+    <CheckBox fx:id="chkBack" layoutX="41.0" layoutY="250.0" mnemonicParsing="false" text="Back" />
+    <CheckBox fx:id="chkChest" layoutX="177.0" layoutY="190.0" mnemonicParsing="false" text="Chest" />
     <CheckBox fx:id="chkObliques" layoutX="177.0" layoutY="160.0" mnemonicParsing="false" text="Obliques" />
-    <CheckBox fx:id="chkThighs" layoutX="307.0" layoutY="160.0" mnemonicParsing="false" text="Thighs" />
-    <CheckBox fx:id="chkShoulders" layoutX="34.0" layoutY="233.0" mnemonicParsing="false" text="Shoulders" />
-    <CheckBox fx:id="chkForearms" layoutX="34.0" layoutY="194.0" mnemonicParsing="false" text="Forearms" />
+    <CheckBox fx:id="chkThighs" layoutX="308.0" layoutY="160.0" mnemonicParsing="false" text="Thighs" />
+    <CheckBox fx:id="chkShoulders" layoutX="41.0" layoutY="220.0" mnemonicParsing="false" text="Shoulders" />
+    <CheckBox fx:id="chkForearms" layoutX="41.0" layoutY="190.0" mnemonicParsing="false" text="Forearms" />
     <Button fx:id="btnNext" layoutX="380.0" layoutY="592.0" mnemonicParsing="false" onAction="#goToWorkOut" text="Next" textAlignment="CENTER" />
-      <CheckBox fx:id="chkHamstrings" layoutX="308.0" layoutY="233.0" mnemonicParsing="false" text="Hamstrings" />
+      <CheckBox fx:id="chkHamstrings" layoutX="308.0" layoutY="220.0" mnemonicParsing="false" text="Hamstrings" />
       <Button fx:id="goBack" layoutX="20.0" layoutY="28.0" mnemonicParsing="false" onAction="#goBack" text="Back" />
       <Button fx:id="logout" layoutX="370.0" layoutY="28.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
   </children>

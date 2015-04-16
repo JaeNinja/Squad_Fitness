@@ -165,4 +165,8 @@ public class BodyMap extends Application {
         if(!currentUser.getName().equals("") || !currentUser.getName().isEmpty() )
             currentUser.clearRememberMeFromPreferences();
     }
+
+    public void swapVisible() {
+
+    }
 }

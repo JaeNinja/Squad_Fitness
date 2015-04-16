@@ -1,4 +1,3 @@
-
 package Squad_Fitness.Java;
 
 import Squad_Fitness.Model.User;
@@ -6,7 +5,10 @@ import javafx.application.Application;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -18,14 +20,14 @@ public class Splash_Screen extends Application  {
     Stage window;
     //Scenes are the containers within stages
     Scene scene1;
-    Button button1;
+
     Preferences preferences;
     User storedUser;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         window = primaryStage;
-        
+        Button button1;
         button1 = new Button("BEGIN");
 
         LoginScreen login = new LoginScreen();
@@ -40,18 +42,18 @@ public class Splash_Screen extends Application  {
             button1.setOnAction(new EventHandler<ActionEvent>() {
 
 
-            @Override
-            public void handle(ActionEvent event) {
-                try{
-                    new MyProfile().start(window);
-                    System.out.println("Something saved.");
+                @Override
+                public void handle(ActionEvent event) {
+                    try{
+                        new MyProfile().start(window);
+                        System.out.println("Something saved.");
 
-                } catch (Exception e) {
-                    e.printStackTrace();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
                 }
-
-            }
-        });
+            });
 
         } else {
             button1.setOnAction(new EventHandler<ActionEvent>() {
@@ -78,12 +80,18 @@ public class Splash_Screen extends Application  {
         //Button2
         Button button2 = new Button("Uh");
         button2.setOnAction(e -> window.setScene(scene1));
-
-        VBox layout1= new VBox(20);
-        layout1.getChildren().addAll(button1);
-        scene1 = new Scene(layout1, 1000,850);
+        GridPane grid = new GridPane();
+        grid.setAlignment(Pos.BOTTOM_CENTER);
+        grid.setHgap(1);
+        grid.setVgap(1);
+        //VBox layout1= new VBox(20);
+        /*layout1.getChildren().addAll(button1);*/
+        scene1 = new Scene(grid, 1000,850);
         scene1.getStylesheets().add("Squad_Fitness/CSS/Start_Screen.css");
-
+        HBox hbBtn = new HBox(1);
+        hbBtn.setAlignment(Pos.BOTTOM_CENTER);
+        hbBtn.getChildren().add(button1);
+        grid.add(hbBtn, 1, 1);
         window.setScene(scene1);
         window.setTitle("Welcome to the SQUAD!");
         window.show();

@@ -7,6 +7,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
 
@@ -14,6 +16,11 @@ import javafx.scene.control.TextField;
 
 import javafx.scene.image.ImageView;
 
+import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 
 
 /**
@@ -29,6 +36,8 @@ import javafx.scene.image.ImageView;
     private TextField tfUsername, tfName, tfAge, tfWeight, tfSex, tfEmail;
     @FXML
     private ImageView imgProfile;
+    @FXML
+    private Button btnChangeProfile;
 
     public void initialize(java.net.URL location, java.util.ResourceBundle resources)
     {
@@ -80,6 +89,18 @@ import javafx.scene.image.ImageView;
         } catch (Exception ignored) {}
         User.clearUser();
         currentUser.clearRememberMeFromPreferences();
+    }
+
+    public void changeProfilePicture() throws IOException {
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Resource File");
+        FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("Image Files", "jpg", "png", "gif", "jpeg");
+        //fileChooser.getExtensionFilters().add(filter);
+        File file = fileChooser.showOpenDialog(window);
+        System.out.print(file.getAbsolutePath());
+        imgProfile.setImage(new Image(file.toURI().toString()));
+
     }
 
     public void goToMyProfile() {

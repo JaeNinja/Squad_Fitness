@@ -35,6 +35,7 @@
                         <Image url="@../CSS/workout.jpg" />
                      </image>
                   </ImageView>
+                  <Button fx:id="btnChangeProfile" layoutX="161.0" layoutY="255.0" mnemonicParsing="false" onAction="#changeProfilePicture" text="Change Image" />
           </children>
         </AnchorPane>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="142.0" prefWidth="398.0">

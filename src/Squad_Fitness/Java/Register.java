@@ -55,6 +55,8 @@ public class Register extends Application implements Initializable {
     private Label lbInvalidPassword;
     @FXML
     private Label lbInvalidWeight;
+    @FXML
+    private Label lbInvalidHeight;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         userID = intUserID.nextInt(999999999);
@@ -76,6 +78,7 @@ public class Register extends Application implements Initializable {
         lbInvalidAge.setVisible(false);
         lbInvalidPassword.setVisible(false);
         lbInvalidWeight.setVisible(false);
+        lbInvalidHeight.setVisible(false);
         /*
          * Logic to make sure there are no blank fields
          */
@@ -126,54 +129,59 @@ public class Register extends Application implements Initializable {
             {
                 if(weight > 60 && weight < 725)
                 {
-                    try {
-                        pref = Preferences.systemNodeForPackage(this.getClass());
-                        /**
-                         * Fancy db stored procedures. Insert into database and what not
-                         */
-                        Class.forName("com.mysql.jdbc.Driver");
-                        connection = DriverManager.getConnection("jdbc:mysql://23.229.201.1:3306/Squadd", "Squadd", "deeptoot");
-                        Statement state = connection.createStatement();
-
-                        //checks to see if random userID is already in use, if it is a new number is generated
-                        checkUserID = state.executeQuery("SELECT * FROM user WHERE userID='" + userID + "'");
-                        while (checkUserID.last()) {
-                            userID = intUserID.nextInt(999999999);
-                            checkUserID = state.executeQuery("SELECT * FROM user WHERE userID='" + userID + "'");
-                        }
-                        //Save the UserID so that we can skip log in screen next time
-                        pref.putInt("UserID", userID);
-                        dbResponse = state.executeUpdate("INSERT INTO user (userID, username, password, name, age, sex, weight, height, email, rememberMe) VALUES ('" + userID + "', '" + strUserName + "', '"
-                                + strPassword + "', '" + strName + "', " + age + ", '" + strGender + "', "
-                                + weight + ", " + height + ", '" + strEmail + "', " + false +  ");");
-                    } catch (Exception x)
+                    if(height > 48 && height < 90)
                     {
-                        System.out.println("Error: " + x);
-                    }
-                    User currentUser = new User(strUserName, strPassword, userID, strName, age, strGender, weight, height, strEmail, false);
-                    User.setUser(currentUser);
-                    /**
-                     * A response of 1 means that 1 successful row was added to the database
-                     */
-                    if(dbResponse > 0 ) {
                         try {
-                            new MyProfile().start(window);
-                        } catch (Exception e)
-                        {
-                            e.printStackTrace();
-                        }
-                        try {
-                            if (connection != null)
-                            {
-                                connection.close();
-                                System.out.println("Connection closed");
-                            }
+                            pref = Preferences.systemNodeForPackage(this.getClass());
+                            /**
+                             * Fancy db stored procedures. Insert into database and what not
+                             */
+                            Class.forName("com.mysql.jdbc.Driver");
+                            connection = DriverManager.getConnection("jdbc:mysql://23.229.201.1:3306/Squadd", "Squadd", "deeptoot");
+                            Statement state = connection.createStatement();
 
-                        } catch (Exception e) {
-                            System.out.println("Error - Unable to close connection: " + e);
+                            //checks to see if random userID is already in use, if it is a new number is generated
+                            checkUserID = state.executeQuery("SELECT * FROM user WHERE userID='" + userID + "'");
+                            while (checkUserID.last()) {
+                                userID = intUserID.nextInt(999999999);
+                                checkUserID = state.executeQuery("SELECT * FROM user WHERE userID='" + userID + "'");
+                            }
+                            //Save the UserID so that we can skip log in screen next time
+                            pref.putInt("UserID", userID);
+                            dbResponse = state.executeUpdate("INSERT INTO user (userID, username, password, name, age, sex, weight, height, email, rememberMe) VALUES ('" + userID + "', '" + strUserName + "', '"
+                                    + strPassword + "', '" + strName + "', " + age + ", '" + strGender + "', "
+                                    + weight + ", " + height + ", '" + strEmail + "', " + false +  ");");
+                            } catch (Exception x) {
+                            System.out.println("Error: " + x);
+                            }
+                            User currentUser = new User(strUserName, strPassword, userID, strName, age, strGender, weight, height, strEmail, false);
+                            User.setUser(currentUser);
+                            /**
+                             * A response of 1 means that 1 successful row was added to the database
+                             */
+                            if(dbResponse > 0 ) {
+                                try {
+                                    new MyProfile().start(window);
+                                } catch (Exception e)
+                                {
+                                    e.printStackTrace();
+                                }
+                                try {
+                                    if (connection != null)
+                                    {
+                                        connection.close();
+                                        System.out.println("Connection closed");
+                                    }
+
+                                } catch (Exception e) {
+                                    System.out.println("Error - Unable to close connection: " + e);
+                                }
                         }
+                    } else {
+                        lbInvalidHeight.setVisible(true);
                     }
-                } else {
+                }
+                else {
                     lbInvalidWeight.setVisible(true);
                 }
             } else {

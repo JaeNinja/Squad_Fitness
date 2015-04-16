@@ -52,6 +52,18 @@ public class User {
         rememberMe = reference.rememberMe;
     }
 
+    public User updateUser(User currentUser, String UserName, String Name, int Age, int Weight, int Height, String Email)
+    {
+        currentUser.username = UserName;
+        currentUser.name = Name;
+        currentUser.age = Age;
+        currentUser.weight = Weight;
+        currentUser.height = Height;
+        currentUser.email = Email;
+
+        return currentUser;
+    }
+
 
 
     public static User getUser() {

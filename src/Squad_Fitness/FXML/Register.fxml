@@ -50,5 +50,6 @@
       <Label fx:id="lbInvalidPassword" layoutX="409.0" layoutY="288.0" text="Passwords don't match. " textFill="#f57575" visible="false" />
       <Label fx:id="lbInvalidWeight" layoutX="419.0" layoutY="477.0" text="Your weight is invalid. Go see a doctor. " textFill="#f57575" visible="false" />
       <Text layoutX="38.0" layoutY="543.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Height (inch)" />
+      <Label fx:id="lbInvalidHeight" layoutX="409.0" layoutY="523.0" text="Invalid weight, go away troll." textFill="#f57575" visible="false" />
     </children>
 </AnchorPane>

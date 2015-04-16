@@ -8,6 +8,7 @@
 <?import javafx.scene.text.*?>
 
 <!-- Kyle added a comment -->
+
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="450.0" styleClass="pane" stylesheets="@../CSS/GUI.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Squad_Fitness.Java.Register">
     <children>
         <Text id="Register_Button" fill="BLACK" fontSmoothingType="LCD" layoutX="62.0" layoutY="164.0" scaleX="0.7375539477256459" scaleY="0.546400879677058" strokeType="OUTSIDE" strokeWidth="0.0" text="Register">
@@ -48,6 +49,6 @@
       <Text layoutX="36.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Re-enter Password" />
       <Label fx:id="lbInvalidPassword" layoutX="409.0" layoutY="288.0" text="Passwords don't match. " textFill="#f57575" visible="false" />
       <Label fx:id="lbInvalidWeight" layoutX="419.0" layoutY="477.0" text="Your weight is invalid. Go see a doctor. " textFill="#f57575" visible="false" />
-      <Text layoutX="38.0" layoutY="543.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Height (cm)" />
+      <Text layoutX="38.0" layoutY="543.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Height (inch)" />
     </children>
 </AnchorPane>

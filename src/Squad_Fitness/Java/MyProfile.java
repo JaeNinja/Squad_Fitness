@@ -33,9 +33,9 @@ import java.io.IOException;
     User currentUser = new User();
 
     @FXML
-    private TextField tfUsername, tfName, tfAge, tfWeight, tfSex, tfEmail;
+    private TextField tfUsername, tfName, tfAge, tfWeight, tfHeight, tfSex, tfEmail, tfBMI, tfMaxPress;
     @FXML
-    private ImageView imgProfile;
+    private ImageView imgProfile, imgBMIChart;
     @FXML
     private Button btnChangeProfile;
 
@@ -47,14 +47,14 @@ import java.io.IOException;
         } else {
             currentUser = MyProfile.getCurrentUser();
         }
-        //Image img = new Image("/Squad_Fitness/CSS/workout.jpg");
-        //imgProfile.
         tfUsername.setText(currentUser.getUsername());
         tfName.setText(currentUser.getName());
         tfAge.setText(Integer.toString(currentUser.getAge()));
         tfSex.setText(currentUser.getSex());
         tfWeight.setText(Integer.toString(currentUser.getWeight()));
+        tfHeight.setText(Integer.toString(currentUser.getHeight()));
         tfEmail.setText(currentUser.getEmail());
+        tfMaxPress.setText(Integer.toString(195));
     }
 
     public void start(Stage primaryStage) throws Exception {
@@ -91,12 +91,19 @@ import java.io.IOException;
         currentUser.clearRememberMeFromPreferences();
     }
 
+    public void calculateBMI()
+    {
+        int userWeight = currentUser.getWeight();
+        int userHeight = currentUser.getHeight();
+        double BMI = (userWeight * 703)/ (userHeight * userHeight);
+        tfBMI.setText(String.valueOf(BMI));
+    }
+
     public void changeProfilePicture() throws IOException {
 
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Resource File");
         FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("Image Files", "jpg", "png", "gif", "jpeg");
-        //fileChooser.getExtensionFilters().add(filter);
         File file = fileChooser.showOpenDialog(window);
         System.out.print(file.getAbsolutePath());
         imgProfile.setImage(new Image(file.toURI().toString()));

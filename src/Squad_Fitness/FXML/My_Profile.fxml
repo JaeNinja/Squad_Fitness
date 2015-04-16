@@ -12,9 +12,9 @@
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Squad_Fitness.Java.MyProfile">
   <children>
-    <SplitPane blendMode="MULTIPLY" dividerPositions="0.9197860962566845, 0.5" focusTraversable="true" orientation="VERTICAL" prefHeight="750.0" prefWidth="400.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.04" AnchorPane.rightAnchor="-0.04" AnchorPane.topAnchor="1.0">
+    <SplitPane blendMode="MULTIPLY" dividerPositions="0.24331550802139038" focusTraversable="true" orientation="VERTICAL" prefHeight="750.0" prefWidth="400.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.04" AnchorPane.rightAnchor="-0.04" AnchorPane.topAnchor="1.0">
       <items>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="405.0" prefWidth="398.0" styleClass="pane" stylesheets="@../CSS/GUI.css">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="461.0" prefWidth="398.0" styleClass="pane" stylesheets="@../CSS/GUI.css">
           <children>
             <Text layoutX="23.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
             <Text layoutX="25.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
@@ -26,31 +26,43 @@
                   <TextField fx:id="tfName" editable="false" layoutX="125.0" layoutY="330.0" />
                   <TextField fx:id="tfAge" editable="false" layoutX="125.0" layoutY="369.0" />
                   <TextField fx:id="tfSex" editable="false" layoutX="125.0" layoutY="405.0" />
+                  <TextField fx:id="tfEmail" editable="false" layoutX="125.0" layoutY="479.0" />
                   <TextField fx:id="tfWeight" editable="false" layoutX="125.0" layoutY="442.0" />
-                  <TextField fx:id="tfEmail" editable="false" layoutX="125.0" layoutY="478.0" />
-                  <Button fx:id="buLogout" layoutX="332.0" layoutY="14.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
-                  <Button fx:id="buBeginExercise" layoutX="145.0" layoutY="520.0" mnemonicParsing="false" onAction="#goToBodyMap" text="Begin Exercise" />
+                  <TextField fx:id="tfHeight" editable="false" layoutX="125.0" layoutY="518.0" />
+              <Button fx:id="buLogout" layoutX="332.0" layoutY="14.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
+                  <Button fx:id="buBeginExercise" layoutX="199.0" layoutY="570.0" mnemonicParsing="false" onAction="#goToBodyMap" text="Begin Exercise" />
                   <ImageView fx:id="imgProfile" fitHeight="150.0" fitWidth="200.0" layoutX="102.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../CSS/workout.jpg" />
                      </image>
                   </ImageView>
                   <Button fx:id="btnChangeProfile" layoutX="161.0" layoutY="255.0" mnemonicParsing="false" onAction="#changeProfilePicture" text="Change Image" />
+                  <Text layoutX="23.0" layoutY="539.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Height" />
           </children>
         </AnchorPane>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="142.0" prefWidth="398.0">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="142.0" prefWidth="398.0" stylesheets="@../CSS/GUI.css">
           <children>
             <Text layoutX="119.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pull Up For Stats" />
-            <Text layoutX="59.0" layoutY="128.0" scaleX="0.6950543485505626" scaleY="0.7985420535482131" strokeType="OUTSIDE" strokeWidth="0.0" text="Calories">
+            <Text layoutX="20.0" layoutY="94.0" scaleX="0.6950543485505626" scaleY="0.7985420535482131" strokeType="OUTSIDE" strokeWidth="0.0" text="BMI">
               <font>
-                <Font size="72.0" fx:id="x1" />
+                <Font size="21.0" fx:id="x1" />
               </font>
             </Text>
-            <Text font="$x1" layoutX="-36.0" layoutY="249.0" scaleX="0.6950543485505626" scaleY="0.7985420535482131" strokeType="OUTSIDE" strokeWidth="0.0" text="Avg Heartrate" />
+            <Text layoutX="11.0" layoutY="144.0" scaleX="0.6950543485505626" scaleY="0.7985420535482131" strokeType="OUTSIDE" strokeWidth="0.0" text="Max Press">
+                     <font>
+                        <Font size="21.0" />
+                     </font></Text>
             <Text font="$x1" layoutX="-344.0" layoutY="366.0" scaleX="0.22785273156417873" scaleY="0.6419088122145077" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <TextField fx:id="tfBMI" editable="false" layoutX="106.0" layoutY="70.0" stylesheets="@../CSS/GUI.css" />
+                  <TextField fx:id="tfMaxPress" editable="false" layoutX="106.0" layoutY="120.0" />
+                  <Button fx:id="btnCalculate" layoutX="308.0" layoutY="70.0" mnemonicParsing="false" onAction="#calculateBMI" text="Calculate" />
+                  <ImageView fx:id="imgBMIChart" fitHeight="526.0" fitWidth="1010.0" layoutX="14.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../CSS/Standard-BMI-chart.png" />
+                     </image>
+                  </ImageView>
           </children>
         </AnchorPane>
-            <Label text="Label" />
       </items>
     </SplitPane>
     <Text id="Register_Button" fill="BLACK" fontSmoothingType="LCD" layoutX="81.0" layoutY="93.0" scaleX="0.7375539477256459" scaleY="0.546400879677058" strokeType="OUTSIDE" strokeWidth="0.0" text="My Profile">

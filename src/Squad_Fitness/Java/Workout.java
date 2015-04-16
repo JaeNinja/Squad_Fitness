@@ -71,7 +71,7 @@ public class Workout extends Application implements Initializable {
         }
 
         public void nextExercise() {
-            if (array == max) {
+            if (array == max-1) {
                 array = 0;
             } else {
                 array += 1;

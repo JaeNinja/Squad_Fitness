@@ -172,7 +172,7 @@ import java.util.prefs.Preferences;
             tfAge.setText(String.valueOf(newAge));
             tfEmail.setText(newEmail);
             tfWeight.setText(String.valueOf(newWeight));
-            tfHeight.setText(String.valueOf(newWeight));
+            tfHeight.setText(String.valueOf(newHeight));
 
             btnCancel.setVisible(false);
             btnSave.setVisible(false);

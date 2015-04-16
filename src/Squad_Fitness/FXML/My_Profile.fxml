@@ -20,8 +20,8 @@
             <Text layoutX="25.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
             <Text layoutX="30.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age" />
             <Text layoutX="32.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sex" />
-            <Text layoutX="23.0" layoutY="495.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight" />
-            <Text layoutX="27.0" layoutY="459.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+            <Text layoutX="27.0" layoutY="496.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+            <Text layoutX="27.0" layoutY="459.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight" />
                   <TextField fx:id="tfUsername" layoutX="125.0" layoutY="291.0" />
                   <TextField fx:id="tfName" editable="false" layoutX="125.0" layoutY="330.0" />
                   <TextField fx:id="tfAge" editable="false" layoutX="125.0" layoutY="369.0" />
@@ -37,7 +37,7 @@
                      </image>
                   </ImageView>
                   <Button fx:id="btnChangeProfile" layoutX="1.0" layoutY="241.0" mnemonicParsing="false" onAction="#changeProfilePicture" text="Change Image" />
-                  <Text layoutX="23.0" layoutY="539.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Height" />
+                  <Text layoutX="28.0" layoutY="535.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Height" />
                   <Button fx:id="btnEditProfile" layoutX="-1.0" layoutY="14.0" mnemonicParsing="false" onAction="#editMyProfile" text="Edit Profile" />
                   <Button fx:id="btnSave" layoutY="54.0" mnemonicParsing="false" onAction="#saveInformation" text="Save" visible="false" />
                   <Button fx:id="btnCancel" layoutX="333.0" layoutY="54.0" mnemonicParsing="false" onAction="#cancelSaveInformation" text="Cancel" visible="false" />

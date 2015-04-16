@@ -30,13 +30,13 @@
                   <TextField fx:id="tfWeight" editable="false" layoutX="125.0" layoutY="442.0" />
                   <TextField fx:id="tfHeight" editable="false" layoutX="125.0" layoutY="518.0" />
               <Button fx:id="buLogout" layoutX="332.0" layoutY="14.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
-                  <Button fx:id="buBeginExercise" layoutX="273.0" layoutY="241.0" mnemonicParsing="false" onAction="#goToBodyMap" text="Begin Exercise" />
+                  <Button fx:id="buBeginExercise" layoutX="282.0" layoutY="241.0" mnemonicParsing="false" onAction="#goToBodyMap" text="Begin Exercise" />
                   <ImageView fx:id="imgProfile" fitHeight="150.0" fitWidth="200.0" layoutX="102.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../CSS/workout.jpg" />
                      </image>
                   </ImageView>
-                  <Button fx:id="btnChangeProfile" layoutX="14.0" layoutY="241.0" mnemonicParsing="false" onAction="#changeProfilePicture" text="Change Image" />
+                  <Button fx:id="btnChangeProfile" layoutX="1.0" layoutY="241.0" mnemonicParsing="false" onAction="#changeProfilePicture" text="Change Image" />
                   <Text layoutX="23.0" layoutY="539.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Height" />
                   <Button fx:id="btnEditProfile" layoutX="-1.0" layoutY="14.0" mnemonicParsing="false" onAction="#editMyProfile" text="Edit Profile" />
                   <Button fx:id="btnSave" layoutY="54.0" mnemonicParsing="false" onAction="#saveInformation" text="Save" visible="false" />

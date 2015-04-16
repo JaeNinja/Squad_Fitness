@@ -130,8 +130,7 @@ import java.util.prefs.Preferences;
 
     }
 
-    public void saveInformation()
-    {
+    public void saveInformation() {
 
         lbSaveError.setVisible(false);
 
@@ -148,7 +147,7 @@ import java.util.prefs.Preferences;
         /**
          * Validate for length greater than 0 and same string
          */
-        if(password1.equals(password2) && ((password1.length() > 0) || (password2.length() > 0)))
+        if (password1.equals(password2) && ((password1.length() > 0) || (password2.length() > 0)))
             newPassword = password1;
         else
             newPassword = currentUser.getPassword();
@@ -157,7 +156,7 @@ import java.util.prefs.Preferences;
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://23.229.201.1:3306/Squadd", "Squadd", "deeptoot");
             Statement state = connection.createStatement();
-            String sqlQuery = "UPDATE user SET username='" + newUsername + "', password='" + newPassword  + "' , name='" + newName + "', age=" + newAge +
+            String sqlQuery = "UPDATE user SET username='" + newUsername + "', password='" + newPassword + "' , name='" + newName + "', age=" + newAge +
                     ", weight=" + newWeight + ", height=" + newHeight + ", email='" + newEmail + "' WHERE userID=" + userID + ";";
             dbResponse = state.executeUpdate(sqlQuery);
         } catch (Exception x) {
@@ -167,8 +166,7 @@ import java.util.prefs.Preferences;
         /**
          * Successfully saved stuff
          */
-        if(dbResponse == 1)
-        {
+        if (dbResponse == 1) {
             tfUsername.setText(newUsername);
             tfName.setText(newName);
             tfAge.setText(String.valueOf(newAge));
@@ -193,7 +191,12 @@ import java.util.prefs.Preferences;
             lbSaveError.setVisible(true);
         }
 
-        currentUser = currentUser.updateUser(currentUser, newUsername, newName,newAge, newWeight, newHeight, newEmail);
+        if (currentUser.getRememberMe()){
+            currentUser = currentUser.updateUser(currentUser, newUsername, newName, newAge, newWeight, newHeight, newEmail);
+            currentUser.putUserInPreferences(currentUser);
+        }else
+           currentUser = currentUser.updateUser(currentUser, newUsername, newName,newAge, newWeight, newHeight, newEmail);
+
     }
 
     public void cancelSaveInformation()

@@ -29,11 +29,11 @@
         <TextField fx:id="tfAge" layoutX="204.0" layoutY="381.0" prefWidth="200.0" promptText="Age" stylesheets="@../CSS/GUI.css" />
         <Text layoutX="36.0" layoutY="449.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sex" />
         <Text layoutX="36.0" layoutY="494.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight (lb)" />
-        <TextField fx:id="tfWeight" layoutX="204.0" layoutY="472.0" prefWidth="200.0" promptText="Weight" stylesheets="@../CSS/GUI.css" />
+        <TextField fx:id="tfWeight" layoutX="203.0" layoutY="472.0" prefWidth="200.0" promptText="Weight" stylesheets="@../CSS/GUI.css" />
         <Text layoutX="38.0" layoutY="585.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
         <TextField fx:id="tfHeight" layoutX="202.0" layoutY="518.0" prefWidth="200.0" promptText="Height" stylesheets="@../CSS/GUI.css" />
         <TextField fx:id="tfEmail" layoutX="201.0" layoutY="564.0" prefWidth="200.0" promptText="Email Address" stylesheets="@../CSS/GUI.css" />
-        <ChoiceBox fx:id="ddSex" layoutX="216.0" layoutY="422.0" value="Sex">
+        <ChoiceBox fx:id="ddSex" layoutX="205.0" layoutY="424.0" value="Sex">
             <items>
                 <FXCollections fx:factory="observableArrayList">
                     <String fx:value="Male" />
@@ -43,7 +43,7 @@
                 </FXCollections>
             </items>
         </ChoiceBox>
-        <Button fx:id="Submit_Register" layoutX="328.0" layoutY="592.0" mnemonicParsing="false" onAction="#goToMyProfile" stylesheets="@../CSS/GUI.css" text="Register" />
+        <Button fx:id="Submit_Register" layoutX="328.0" layoutY="600.0" mnemonicParsing="false" onAction="#goToMyProfile" stylesheets="@../CSS/GUI.css" text="Register" />
       <Label fx:id="lbInvalidAge" layoutX="409.0" layoutY="389.0" text="Invalid age.. You old fart." textFill="#f57575" visible="false" />
       <Button fx:id="buBack" layoutX="10.0" layoutY="11.0" mnemonicParsing="false" onAction="#goBack" stylesheets="@../CSS/GUI.css" text="Back" />
       <Text layoutX="36.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Re-enter Password" />

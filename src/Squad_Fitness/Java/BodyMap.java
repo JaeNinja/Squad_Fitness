@@ -26,6 +26,7 @@ public class BodyMap extends Application {
     User currentUser;
     Connection connection;
     ResultSet rsExerciseIDs;
+    ArrayList<Integer> listExerciseIDs = new ArrayList<>();
     String strListOfExerciseNames ="";
 
     @FXML
@@ -33,6 +34,8 @@ public class BodyMap extends Application {
 
     @FXML
     private CheckBox chkObliques;
+    @FXML
+    private CheckBox chkHamstrings;
     @FXML
     private CheckBox chkGlutes;
     @FXML
@@ -89,7 +92,8 @@ public class BodyMap extends Application {
             listOfExercise.add(6);
         if(chkObliques.isSelected())
             listOfExercise.add(7);
-        //Missing Hamstrings
+        if(chkHamstrings.isSelected())
+            listOfExercise.add(8);
         if(chkThighs.isSelected())
             listOfExercise.add(9);
         if(chkCalves.isSelected())
@@ -98,17 +102,14 @@ public class BodyMap extends Application {
             listOfExercise.add(11);
         if(chkForearms.isSelected())
             listOfExercise.add(12);
-        /*
         if(chkShoulders.isSelected())
-            listOfExercise.add(chkShoulders.getText());
-            */
+            listOfExercise.add(13);
+
         for(int i= 0; i < listOfExercise.size(); i ++)
         {
             strListOfExerciseNames += listOfExercise.get(i) + " OR ";
         }
         strListOfExerciseNames = strListOfExerciseNames.substring(0, strListOfExerciseNames.length()-4);
-        System.out.print(strListOfExerciseNames);
-
             /**
              * Fancy db stored procedures. Insert into database
              */
@@ -118,18 +119,25 @@ public class BodyMap extends Application {
                 Statement state = connection.createStatement();
                 String sqlQuery = "SELECT exerciseID FROM exercise WHERE bodyPart=" + strListOfExerciseNames;
                 rsExerciseIDs = state.executeQuery(sqlQuery);
-
-               if(rsExerciseIDs.next())
+               /**
+                * Result set returns 1 column but multiple rows... Iterate through those rows and add each exerciseID to
+                * the array list.
+                 */
+               while(rsExerciseIDs.next())
                {
-                   rsExerciseIDs.getArray(1);
-                   System.out.print("\n" + rsExerciseIDs.getInt(1));
-                   System.out.print("\n" + rsExerciseIDs.getInt(2));
+                   int exerciseID = rsExerciseIDs.getInt(1);
+                   listExerciseIDs.add(exerciseID);
+               }
 
+               for(int i= 0; i < listExerciseIDs.size(); i ++)
+               {
+                    System.out.println(listExerciseIDs.get(i));
                }
             } catch (Exception e) {
                 e.printStackTrace();
 
             }
+
 
         /*try {
             new Workout().start(window);

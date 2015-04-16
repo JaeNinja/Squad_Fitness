@@ -8,12 +8,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.scene.image.Image;
 
 import javafx.scene.control.TextField;
 
-import javax.swing.text.html.ImageView;
-import java.net.URL;
-import java.util.ResourceBundle;
+import javafx.scene.image.ImageView;
+
+
 
 /**
  * Created by Kyle on 3/26/2015.
@@ -26,6 +27,8 @@ import java.util.ResourceBundle;
 
     @FXML
     private TextField tfUsername, tfName, tfAge, tfWeight, tfSex, tfEmail;
+    @FXML
+    private ImageView imgProfile;
 
     public void initialize(java.net.URL location, java.util.ResourceBundle resources)
     {
@@ -35,7 +38,8 @@ import java.util.ResourceBundle;
         } else {
             currentUser = MyProfile.getCurrentUser();
         }
-
+        //Image img = new Image("/Squad_Fitness/CSS/workout.jpg");
+        //imgProfile.
         tfUsername.setText(currentUser.getUsername());
         tfName.setText(currentUser.getName());
         tfAge.setText(Integer.toString(currentUser.getAge()));

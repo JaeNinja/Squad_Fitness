@@ -27,7 +27,8 @@ public class Workout extends Application implements Initializable {
         Scene workoutScene;
         static Stage window;
         User currentUser = new User();
-        private int currentExercise = 2004;
+        private int currentExercise, array, max;
+        private int[] currentExercises = new int[]{1001, 1002, 2001, 2004};
         private int ID;
         int dbResponse = -1;
         Connection connection;
@@ -44,6 +45,41 @@ public class Workout extends Application implements Initializable {
         public void initialize(java.net.URL location, java.util.ResourceBundle resources) {
             //currentUser = User.getUser();
             //currentExercise = BodyPart.getCurrentExercise();
+            array = 0;
+            currentExercise = currentExercises[array];
+            max = currentExercises.length;
+            newExercise();
+        }
+
+        public void start(Stage primaryStage) throws Exception {
+            window = primaryStage;
+            Parent root = FXMLLoader.load(getClass().getResource("/Squad_Fitness/FXML/Workout.fxml"));
+            workoutScene = new Scene(root, 1000, 850);
+            window.setScene(workoutScene);
+            window.setTitle("Put in work!");
+            window.show();
+
+        }
+
+        public void previousExercise() {
+            if (array == 0) {
+                array = max-1;
+            } else {
+                array -= 1;
+            }
+            newExercise();
+        }
+
+        public void nextExercise() {
+            if (array == max) {
+                array = 0;
+            } else {
+                array += 1;
+            }
+            newExercise();
+        }
+
+        public void newExercise() {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 try {
@@ -53,7 +89,7 @@ public class Workout extends Application implements Initializable {
                 }
                 Statement state1 = connection.createStatement();
                 Statement state2 = connection.createStatement();
-                workout = state1.executeQuery("SELECT * FROM exercise WHERE exerciseID=" + currentExercise);
+                workout = state1.executeQuery("SELECT * FROM exercise WHERE exerciseID=" + currentExercises[array]);
                 if (workout.next()) {
                     ID = workout.getInt("bodyPart");
                 }
@@ -77,16 +113,6 @@ public class Workout extends Application implements Initializable {
             } catch (SQLException e) {
                 System.out.println("Exception 3 " + e);
             }
-        }
-
-        public void start(Stage primaryStage) throws Exception {
-            window = primaryStage;
-            Parent root = FXMLLoader.load(getClass().getResource("/Squad_Fitness/FXML/Workout.fxml"));
-            workoutScene = new Scene(root, 1000, 850);
-            window.setScene(workoutScene);
-            window.setTitle("Put in work!");
-            window.show();
-
         }
 
 }

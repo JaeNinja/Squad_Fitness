@@ -31,6 +31,8 @@
       <Label fx:id="equipmentNeeded" layoutX="237.0" layoutY="125.0" text="No" />
       <TextArea fx:id="tips" layoutX="62.0" layoutY="483.0" prefHeight="85.0" prefWidth="328.0" />
       <Label layoutX="210.0" layoutY="466.0" text="Tips" />
+      <Button fx:id="next" layoutX="390.0" layoutY="579.0" mnemonicParsing="false" onAction="#nextExercise" text="Next" />
+      <Button fx:id="previous" layoutX="20.0" layoutY="579.0" mnemonicParsing="false" onAction="#previousExercise" text="Previous" />
   </children>
  <!-- <stylesheets>
     <URL value="@../../../../../GUI.css" />

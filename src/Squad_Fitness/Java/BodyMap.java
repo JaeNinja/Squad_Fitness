@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.sql.Connection;
@@ -59,6 +60,8 @@ public class BodyMap extends Application {
     private CheckBox chkCalves;
     @FXML
     private CheckBox chkShoulders;
+    @FXML
+    private ImageView imgAbs, imgBack, imgBiceps, imgCalves, imgChest, imgForearms, imgGlutes, imgNeck, imgObliques, imgShoulders, imgThighs, imgTriceps;
 
 
     public void start(Stage primaryStage) throws Exception {
@@ -79,32 +82,57 @@ public class BodyMap extends Application {
     public void goToWorkOut()
     {
         List<Integer> listOfExercise = new ArrayList<>();
-        if(chkNeck.isSelected())
+        if(chkNeck.isSelected()) {
             listOfExercise.add(1);
-        if(chkBiceps.isSelected())
+        }
+
+        if(chkBiceps.isSelected()) {
             listOfExercise.add(2);
-        if(chkTriceps.isSelected())
+        }
+
+        if(chkTriceps.isSelected()) {
             listOfExercise.add(3);
-        if(chkChest.isSelected())
+        }
+
+        if(chkChest.isSelected()) {
             listOfExercise.add(4);
-        if(chkBack.isSelected())
+        }
+
+        if(chkBack.isSelected()) {
             listOfExercise.add(5);
-        if(chkAbs.isSelected())
+        }
+
+        if(chkAbs.isSelected()) {
             listOfExercise.add(6);
-        if(chkObliques.isSelected())
+        }
+
+        if(chkObliques.isSelected()) {
             listOfExercise.add(7);
-        if(chkHamstrings.isSelected())
+        }
+
+        if(chkHamstrings.isSelected()) {
             listOfExercise.add(8);
-        if(chkThighs.isSelected())
+        }
+
+        if(chkThighs.isSelected()) {
             listOfExercise.add(9);
-        if(chkCalves.isSelected())
+        }
+
+        if(chkCalves.isSelected()) {
             listOfExercise.add(10);
-        if(chkGlutes.isSelected())
+        }
+
+        if(chkGlutes.isSelected()) {
             listOfExercise.add(11);
-        if(chkForearms.isSelected())
+        }
+
+        if(chkForearms.isSelected()) {
             listOfExercise.add(12);
-        if(chkShoulders.isSelected())
+        }
+
+        if(chkShoulders.isSelected()) {
             listOfExercise.add(13);
+        }
 
         for(int i= 0; i < listOfExercise.size(); i ++)
         {
@@ -167,6 +195,64 @@ public class BodyMap extends Application {
     }
 
     public void swapVisible() {
+        if(chkNeck.isSelected()) {
+            imgNeck.setVisible(true);
+        }
+        else imgNeck.setVisible(false);
 
+        if(chkBiceps.isSelected()) {
+            imgBiceps.setVisible(true);
+        }
+        else imgBiceps.setVisible(false);
+
+        if(chkTriceps.isSelected()) {
+            imgTriceps.setVisible(true);
+        }
+        else imgTriceps.setVisible(false);
+
+        if(chkChest.isSelected()) {
+            imgChest.setVisible(true);
+        }
+        else imgChest.setVisible(false);
+
+        if(chkBack.isSelected()) {
+            imgBack.setVisible(true);
+        }
+        else imgBack.setVisible(false);
+
+        if(chkAbs.isSelected()) {
+            imgAbs.setVisible(true);
+        }
+        else imgAbs.setVisible(false);
+
+        if(chkObliques.isSelected()) {
+            imgObliques.setVisible(true);
+        }
+        else imgObliques.setVisible(false);
+
+        if(chkThighs.isSelected()) {
+            imgThighs.setVisible(true);
+        }
+        else imgThighs.setVisible(false);
+
+        if(chkCalves.isSelected() || chkHamstrings.isSelected()) {
+            imgCalves.setVisible(true);
+        }
+        else imgCalves.setVisible(false);
+
+        if(chkGlutes.isSelected()) {
+            imgGlutes.setVisible(true);
+        }
+        else imgGlutes.setVisible(false);
+
+        if(chkForearms.isSelected()) {
+            imgForearms.setVisible(true);
+        }
+        else imgForearms.setVisible(false);
+
+        if(chkShoulders.isSelected()) {
+            imgShoulders.setVisible(true);
+        }
+        else imgShoulders.setVisible(false);
     }
 }

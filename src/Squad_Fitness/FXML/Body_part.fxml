@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="450.0" styleClass="pane, text" stylesheets="@../CSS/GUI.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Squad_Fitness.Java.BodyMap">
+<AnchorPane id="AnchorPane" fx:id="imgBody" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="450.0" styleClass="pane, text" stylesheets="@../CSS/GUI.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Squad_Fitness.Java.BodyMap">
   <children>
     <Text layoutX="111.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Where's Your Focus?" textAlignment="CENTER" textOrigin="BASELINE" AnchorPane.topAnchor="23.0">
       <font>
@@ -18,22 +18,87 @@
       </font>
     </Text>
     <Line endX="249.0" endY="0.0" layoutX="146.0" layoutY="71.0" startX="-100.0" />
-    <CheckBox fx:id="chkBiceps" layoutX="41.0" layoutY="160.0" mnemonicParsing="false" text="Biceps" />
-    <CheckBox fx:id="chkTriceps" layoutX="41.0" layoutY="130.0" mnemonicParsing="false" onMouseClicked="#swapVisible" text="Triceps" />
-    <CheckBox fx:id="chkNeck" layoutX="177.0" layoutY="220.0" mnemonicParsing="false" text="Neck" />
-    <CheckBox fx:id="chkAbs" layoutX="177.0" layoutY="130.0" mnemonicParsing="false" text="Abs" />
-    <CheckBox fx:id="chkGlutes" layoutX="308.0" layoutY="130.0" mnemonicParsing="false" text="Glutes" />
-    <CheckBox fx:id="chkCalves" layoutX="308.0" layoutY="190.0" mnemonicParsing="false" text="Calves" />
-    <CheckBox fx:id="chkBack" layoutX="41.0" layoutY="250.0" mnemonicParsing="false" text="Back" />
-    <CheckBox fx:id="chkChest" layoutX="177.0" layoutY="190.0" mnemonicParsing="false" text="Chest" />
-    <CheckBox fx:id="chkObliques" layoutX="177.0" layoutY="160.0" mnemonicParsing="false" text="Obliques" />
-    <CheckBox fx:id="chkThighs" layoutX="308.0" layoutY="160.0" mnemonicParsing="false" text="Thighs" />
-    <CheckBox fx:id="chkShoulders" layoutX="41.0" layoutY="220.0" mnemonicParsing="false" text="Shoulders" />
-    <CheckBox fx:id="chkForearms" layoutX="41.0" layoutY="190.0" mnemonicParsing="false" text="Forearms" />
+    <CheckBox fx:id="chkBiceps" layoutX="41.0" layoutY="160.0" mnemonicParsing="false" onAction="#swapVisible" text="Biceps" />
+    <CheckBox fx:id="chkTriceps" layoutX="41.0" layoutY="130.0" mnemonicParsing="false" onAction="#swapVisible" onMouseClicked="#swapVisible" text="Triceps" />
+    <CheckBox fx:id="chkNeck" layoutX="177.0" layoutY="220.0" mnemonicParsing="false" onAction="#swapVisible" text="Neck" />
+    <CheckBox fx:id="chkAbs" layoutX="177.0" layoutY="130.0" mnemonicParsing="false" onAction="#swapVisible" text="Abs" />
+    <CheckBox fx:id="chkGlutes" layoutX="308.0" layoutY="130.0" mnemonicParsing="false" onAction="#swapVisible" text="Glutes" />
+    <CheckBox fx:id="chkCalves" layoutX="308.0" layoutY="190.0" mnemonicParsing="false" onAction="#swapVisible" text="Calves" />
+    <CheckBox fx:id="chkBack" layoutX="41.0" layoutY="250.0" mnemonicParsing="false" onAction="#swapVisible" text="Back" />
+    <CheckBox fx:id="chkChest" layoutX="177.0" layoutY="190.0" mnemonicParsing="false" onAction="#swapVisible" text="Chest" />
+    <CheckBox fx:id="chkObliques" layoutX="177.0" layoutY="160.0" mnemonicParsing="false" onAction="#swapVisible" text="Obliques" />
+    <CheckBox fx:id="chkThighs" layoutX="308.0" layoutY="160.0" mnemonicParsing="false" onAction="#swapVisible" text="Thighs" />
+    <CheckBox fx:id="chkShoulders" layoutX="41.0" layoutY="220.0" mnemonicParsing="false" onAction="#swapVisible" text="Shoulders" />
+    <CheckBox fx:id="chkForearms" layoutX="41.0" layoutY="190.0" mnemonicParsing="false" onAction="#swapVisible" text="Forearms" />
     <Button fx:id="btnNext" layoutX="380.0" layoutY="592.0" mnemonicParsing="false" onAction="#goToWorkOut" text="Next" textAlignment="CENTER" />
-      <CheckBox fx:id="chkHamstrings" layoutX="308.0" layoutY="220.0" mnemonicParsing="false" text="Hamstrings" />
+      <CheckBox fx:id="chkHamstrings" layoutX="308.0" layoutY="220.0" mnemonicParsing="false" onAction="#swapVisible" text="Hamstrings" />
       <Button fx:id="goBack" layoutX="20.0" layoutY="28.0" mnemonicParsing="false" onAction="#goBack" text="Back" />
       <Button fx:id="logout" layoutX="370.0" layoutY="28.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
+      <ImageView fitHeight="262.0" fitWidth="450.0" layoutX="1.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../CSS/BodyMap/Body.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgAbs" fitHeight="262.0" fitWidth="450.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../CSS/BodyMap/Abs.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgBack" fitHeight="262.0" fitWidth="450.0" layoutX="1.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../CSS/BodyMap/Back.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgBiceps" fitHeight="262.0" fitWidth="450.0" layoutX="1.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../CSS/BodyMap/Biceps.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgCalves" fitHeight="262.0" fitWidth="450.0" layoutX="1.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../CSS/BodyMap/Calves.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgChest" fitHeight="262.0" fitWidth="450.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../CSS/BodyMap/Chest.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgForearms" fitHeight="262.0" fitWidth="450.0" layoutX="1.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../CSS/BodyMap/Forearm.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgGlutes" fitHeight="262.0" fitWidth="450.0" layoutX="1.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../CSS/BodyMap/Glutes.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgNeck" fitHeight="262.0" fitWidth="450.0" layoutX="-1.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../CSS/BodyMap/Neck.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgObliques" fitHeight="262.0" fitWidth="450.0" layoutX="1.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../CSS/BodyMap/Obliques.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgShoulders" fitHeight="262.0" fitWidth="450.0" layoutX="1.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../CSS/BodyMap/Shoulder.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgThighs" fitHeight="262.0" fitWidth="450.0" layoutX="1.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../CSS/BodyMap/Thighs.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgTriceps" fitHeight="262.0" fitWidth="450.0" layoutX="1.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../CSS/BodyMap/Triceps.png" />
+         </image>
+      </ImageView>
   </children>
  <!--<stylesheets>
     <URL value="/Squad_Fitness/CSS/GUI.css" />

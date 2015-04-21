@@ -99,6 +99,11 @@
             <Image url="@../CSS/BodyMap/Triceps.png" />
          </image>
       </ImageView>
+      <CheckBox fx:id="chkStretch" layoutX="41.0" layoutY="540.0" mnemonicParsing="false" onAction="#typeOfWorkout" text="Stretch" />
+      <CheckBox fx:id="chkBulk" layoutX="177.0" layoutY="540.0" mnemonicParsing="false" onAction="#typeOfWorkout" text="Bulk" />
+      <CheckBox fx:id="chkCooldown" layoutX="308.0" layoutY="540.0" mnemonicParsing="false" onAction="#typeOfWorkout" text="Cooldown" />
+      <Label layoutX="91.0" layoutY="512.0" text="Check the type of activities you would like to do:" />
+      <CheckBox fx:id="chkEquipment" layoutX="41.0" layoutY="566.0" mnemonicParsing="false" onAction="#equipment" text="Check this box if you have access to equipment" />
   </children>
  <!--<stylesheets>
     <URL value="/Squad_Fitness/CSS/GUI.css" />

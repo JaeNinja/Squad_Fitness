@@ -29,6 +29,8 @@ public class BodyMap extends Application {
     ResultSet rsExerciseIDs;
     ArrayList<Integer> listExerciseIDs = new ArrayList<>();
     String strListOfExerciseNames ="";
+    String typeOfExercises = "";
+    String equipmentNeeded = " AND equipmentNeeded=0";
     static int[] exerciseArray;
 
     @FXML
@@ -60,6 +62,8 @@ public class BodyMap extends Application {
     private CheckBox chkCalves;
     @FXML
     private CheckBox chkShoulders;
+    @FXML
+    private CheckBox chkStretch, chkBulk, chkCooldown, chkEquipment;
     @FXML
     private ImageView imgAbs, imgBack, imgBiceps, imgCalves, imgChest, imgForearms, imgGlutes, imgNeck, imgObliques, imgShoulders, imgThighs, imgTriceps;
 
@@ -146,7 +150,7 @@ public class BodyMap extends Application {
                 Class.forName("com.mysql.jdbc.Driver");
                 connection = DriverManager.getConnection("jdbc:mysql://23.229.201.1:3306/Squadd", "Squadd", "deeptoot");
                 Statement state = connection.createStatement();
-                String sqlQuery = "SELECT exerciseID FROM exercise WHERE bodyPart=" + strListOfExerciseNames;
+                String sqlQuery = "SELECT exerciseID FROM exercise WHERE bodyPart=" + strListOfExerciseNames + typeOfExercises + equipmentNeeded;
                 rsExerciseIDs = state.executeQuery(sqlQuery);
                /**
                 * Result set returns 1 column but multiple rows... Iterate through those rows and add each exerciseID to
@@ -254,5 +258,71 @@ public class BodyMap extends Application {
             imgShoulders.setVisible(true);
         }
         else imgShoulders.setVisible(false);
+    }
+
+    public void typeOfWorkout() {
+        String stretch, bulk, cooldown;
+        int intStretch, intBulk, intCooldown;
+        int sum = 0;
+        int current = 0;
+        String[] types = new String[3];
+        String or = " OR ";
+        if (chkStretch.isSelected()) {
+            stretch = "type='Stretch'";
+            intStretch = 1;
+        }
+        else {
+            stretch = "";
+            intStretch = 0;
+        }
+        if (chkBulk.isSelected()) {
+            bulk = "type='Bulk'";
+            intBulk = 1;
+        }
+        else {
+            bulk = "";
+            intBulk = 0;
+        }
+        if (chkCooldown.isSelected()) {
+            cooldown = "type='Cooldown'";
+            intCooldown = 1;
+        }
+        else {
+            cooldown = "";
+            intCooldown = 0;
+        }
+        sum = intStretch + intBulk + intCooldown;
+        if (sum > 0) {
+            if (intStretch == 1) {
+                types[current] = stretch;
+                current += 1;
+            }
+            if (intBulk == 1) {
+                types[current] = bulk;
+                current += 1;
+            }
+            if (intCooldown == 1) {
+                types[current] = cooldown;
+            }
+            typeOfExercises = " AND (";
+            current = 0;
+            do {
+                typeOfExercises += types[current];
+                typeOfExercises += " OR ";
+                current += 1;
+            } while (current < sum);
+            typeOfExercises = typeOfExercises.substring(0, typeOfExercises.length()-4);
+            typeOfExercises += ")";
+        }
+        else {
+            typeOfExercises = "";
+        }
+    }
+
+    public void equipment() {
+        if (chkEquipment.isSelected())
+            equipmentNeeded = "";
+        else
+            equipmentNeeded = " AND equipmentNeeded=0";
     }
 }

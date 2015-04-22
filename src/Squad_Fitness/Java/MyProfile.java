@@ -175,6 +175,7 @@ import java.util.Calendar;
         double BMI = (userWeight * 703)/ (userHeight * userHeight);
         tfBMI.setText(String.valueOf(BMI));
     }
+
     public void editGoals()
     {
         btnSaveGoals.setVisible(true);
@@ -196,6 +197,7 @@ import java.util.Calendar;
         btnUpdateGoals.setVisible(true);
         btnSaveGoals.setVisible(false);
     }
+
     public void editMyProfile()
     {
         tfUsername.setEditable(true);

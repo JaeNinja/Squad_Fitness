@@ -4,6 +4,7 @@ import Squad_Fitness.Model.User;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -13,9 +14,11 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
+import java.net.URL;
+import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
 
-public class Splash_Screen extends Application  {
+public class Splash_Screen extends Application implements Initializable {
 
     //Stage is the entire window
     Stage window;
@@ -26,20 +29,28 @@ public class Splash_Screen extends Application  {
     Preferences preferences;
     User storedUser;
 
+    Boolean rememberMe;
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources)
+    {
+        LoginScreen login = new LoginScreen();
+
+
+    }
     @Override
     public void start(Stage primaryStage) throws Exception {
         window = primaryStage;
         Button button1;
         button1 = new Button("BEGIN");
 
-        LoginScreen login = new LoginScreen();
-
         preferences = Preferences.systemNodeForPackage(this.getClass());
         storedUser = new User();
         storedUser = storedUser.getUserFromPreferences(storedUser);
+        rememberMe = storedUser.getRememberMe();
         System.out.print(storedUser.getName());
-
-        if(storedUser.getRememberMe())
+        if(rememberMe)
         {
             button1.setOnAction(new EventHandler<ActionEvent>() {
 

@@ -32,7 +32,9 @@ public class Workout extends Application implements Initializable {
         Scene workoutScene;
         static Stage window;
         User currentUser = new User();
-        private int currentExercise, array, max;
+        private int currentExercise = 0;
+        private int array = 0;
+        private int max = 0;
         private int[] currentExercises;
         private int ID;
         int dbResponse = -1;
@@ -43,9 +45,15 @@ public class Workout extends Application implements Initializable {
 
 
         @FXML
-        private TextArea description, tips;
+        private TextArea description;
         @FXML
-        private Label bodyPart, exerciseType, equipmentNeeded;
+        private TextArea tips;
+        @FXML
+        private Label bodyPart;
+        @FXML
+        private Label exerciseType;
+        @FXML
+        private Label equipmentNeeded;
         @FXML
         private Text workoutName;
         @FXML

@@ -23,8 +23,15 @@ public class Register extends Application implements Initializable {
     Scene registerScene;
     static Stage window;
     Connection connection;
-    String strUserName, strPassword, strPassword2, strName, strGender, strEmail;
-    int weight, height, age;
+    String strUserName = "";
+    String strPassword = "";
+    String strPassword2 = "";
+    String strName = "";
+    String strGender = "";
+    String strEmail = "";
+    int weight = 0;
+    int height = 0;
+    int age = 0;
     int dbResponse = -1;
     Random intUserID = new Random();
     int userID;
@@ -57,6 +64,7 @@ public class Register extends Application implements Initializable {
     private Label lbInvalidWeight;
     @FXML
     private Label lbInvalidHeight;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         userID = intUserID.nextInt(999999999);

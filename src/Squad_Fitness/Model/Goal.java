@@ -39,7 +39,6 @@ public class Goal {
         return accomplished;
     }
 
-
     public void setGoalID(int newGoalID) {
         goalID= newGoalID;
     }

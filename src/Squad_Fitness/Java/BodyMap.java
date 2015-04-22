@@ -178,40 +178,58 @@ public class BodyMap extends Application {
             listOfExercise.add(13);
         }
 
-        for(int i= 0; i < listOfExercise.size(); i ++)
-        {
-            strListOfExerciseNames += listOfExercise.get(i) + " OR bodyPart = ";
+        if (listOfExercise.size() == 0) {
+            exerciseArray = new int[1];
+            exerciseArray[0] = 999;
         }
-        strListOfExerciseNames = strListOfExerciseNames.substring(0, strListOfExerciseNames.length()-14);
+
+        else {
+
+            for (int i = 0; i < listOfExercise.size(); i++) {
+                strListOfExerciseNames += listOfExercise.get(i) + " OR bodyPart = ";
+            }
+            strListOfExerciseNames = strListOfExerciseNames.substring(0, strListOfExerciseNames.length() - 14);
             /**
              * Fancy db stored procedures. Insert into database
              */
-           try {
+            try {
                 Class.forName("com.mysql.jdbc.Driver");
                 connection = DriverManager.getConnection("jdbc:mysql://23.229.201.1:3306/Squadd", "Squadd", "deeptoot");
                 Statement state = connection.createStatement();
                 String sqlQuery = "SELECT exerciseID FROM exercise WHERE bodyPart=" + strListOfExerciseNames + typeOfExercises + equipmentNeeded;
                 rsExerciseIDs = state.executeQuery(sqlQuery);
-               /**
-                * Result set returns 1 column but multiple rows... Iterate through those rows and add each exerciseID to
-                * the array list.
+                /**
+                 * Result set returns 1 column but multiple rows... Iterate through those rows and add each exerciseID to
+                 * the array list.
                  */
-               while(rsExerciseIDs.next())
-               {
-                   int exerciseID = rsExerciseIDs.getInt(1);
-                   listExerciseIDs.add(exerciseID);
-               }
+                if (!rsExerciseIDs.next()) {
+                    exerciseArray = new int[1];
+                    exerciseArray[0] = 999;
+                }
+                else {
+                    rsExerciseIDs.previous();
 
-               exerciseArray = new int[listExerciseIDs.size()];
+                    while (rsExerciseIDs.next()) {
+                        int exerciseID = rsExerciseIDs.getInt(1);
+                        listExerciseIDs.add(exerciseID);
+                    }
 
-               for(int i= 0; i < listExerciseIDs.size(); i ++)
-               {
-                   exerciseArray[i] = listExerciseIDs.get(i);
-               }
+
+                    exerciseArray = new int[listExerciseIDs.size()];
+
+                    for (int i = 0; i < listExerciseIDs.size(); i++) {
+                        exerciseArray[i] = listExerciseIDs.get(i);
+                    }
+                }
             } catch (Exception e) {
                 e.printStackTrace();
 
             }
+
+        }
+
+
+
 
 
         try {

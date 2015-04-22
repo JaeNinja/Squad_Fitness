@@ -68,7 +68,7 @@ public class LoginScreen extends Application {
         if(tfUserName.getText().equals("") || tfPassword.getText().equals(""))
         {
             /**
-             * Make error messages pop up here
+             * No Blank textfields
              */
             System.out.println("No blank fields allowed");
             loading.setVisible(false);

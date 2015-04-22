@@ -2,16 +2,21 @@ package Squad_Fitness.Java;
 
 import Squad_Fitness.Model.User;
 import javafx.application.Application;
-
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.scene.Scene;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
+
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.prefs.Preferences;
 
 public class Splash_Screen extends Application  {
@@ -20,6 +25,7 @@ public class Splash_Screen extends Application  {
     Stage window;
     //Scenes are the containers within stages
     Scene scene1;
+
 
     Preferences preferences;
     User storedUser;
@@ -41,10 +47,13 @@ public class Splash_Screen extends Application  {
         {
             button1.setOnAction(new EventHandler<ActionEvent>() {
 
-
                 @Override
                 public void handle(ActionEvent event) {
                     try{
+                        String file = (this.getClass().getClassLoader().getResource("Squad_Fitness/Squad.wav")).toString();
+                        Media media = new Media(file);
+                        MediaPlayer mp = new MediaPlayer(media);
+                        mp.play();
                         new MyProfile().start(window);
                         System.out.println("Something saved.");
 
@@ -62,6 +71,11 @@ public class Splash_Screen extends Application  {
                 @Override
                 public void handle(ActionEvent event) {
                     try{
+                        String soundFile = (this.getClass().getClassLoader().getResource("src/Squad_Fitness/Squad.wav")).toString();
+                        InputStream is = new FileInputStream(soundFile);
+                        AudioStream as = new AudioStream(is);
+                        AudioPlayer.player.start(as);
+                        new MyProfile().start(window);
                         new LoginScreen().start(window);
                         System.out.println("It's connected");
 

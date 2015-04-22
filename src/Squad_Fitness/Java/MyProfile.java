@@ -7,27 +7,20 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javafx.scene.image.Image;
 
-import javafx.scene.image.ImageView;
-import sun.security.util.Password;
-
-import javax.swing.*;
-import javax.swing.filechooser.FileNameExtensionFilter;
-import java.awt.*;
-import java.awt.datatransfer.StringSelection;
 import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
-import java.util.prefs.Preferences;
 
 
 /**
@@ -144,9 +137,11 @@ import java.util.prefs.Preferences;
         String password1 = pfPassword1.getText();
         String password2 = pfPassword2.getText();
         String newPassword;
+
         /**
          * Validate for length greater than 0 and same string
          */
+
         if (password1.equals(password2) && ((password1.length() > 0) || (password2.length() > 0)))
             newPassword = password1;
         else

@@ -1,8 +1,6 @@
 <component name="libraryTable">
   <library name="Statistic">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/src/Statistic.jar!/" />
-    </CLASSES>
+    <CLASSES />
     <JAVADOC />
     <SOURCES />
   </library>

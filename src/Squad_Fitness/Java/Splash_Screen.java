@@ -12,11 +12,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
 
-import java.io.FileInputStream;
-import java.io.InputStream;
 import java.util.prefs.Preferences;
 
 public class Splash_Screen extends Application  {
@@ -50,7 +46,7 @@ public class Splash_Screen extends Application  {
                 @Override
                 public void handle(ActionEvent event) {
                     try{
-                        String file = (this.getClass().getClassLoader().getResource("Squad_Fitness/Squad.wav")).toString();
+                        String file = (this.getClass().getClassLoader().getResource("Squad_Fitness/Resources/Squad.wav")).toString();
                         Media media = new Media(file);
                         MediaPlayer mp = new MediaPlayer(media);
                         mp.play();
@@ -71,11 +67,10 @@ public class Splash_Screen extends Application  {
                 @Override
                 public void handle(ActionEvent event) {
                     try{
-                        String soundFile = (this.getClass().getClassLoader().getResource("src/Squad_Fitness/Squad.wav")).toString();
-                        InputStream is = new FileInputStream(soundFile);
-                        AudioStream as = new AudioStream(is);
-                        AudioPlayer.player.start(as);
-                        new MyProfile().start(window);
+                        String file = (this.getClass().getClassLoader().getResource("Squad_Fitness/Resources/Squad.wav")).toString();
+                        Media media = new Media(file);
+                        MediaPlayer mp = new MediaPlayer(media);
+                        mp.play();
                         new LoginScreen().start(window);
                         System.out.println("It's connected");
 

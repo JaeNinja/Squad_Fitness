@@ -1,7 +1,12 @@
 package Squad_Fitness.Java;
 
 import Squad_Fitness.Model.User;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -15,12 +20,15 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
+import java.text.DateFormat;
+import java.util.Calendar;
 
 
 /**
@@ -33,18 +41,62 @@ import java.sql.Statement;
     User currentUser = new User();
     Connection connection;
     int dbResponse = -1;
+    String newWeight = "";
+    String newMiles = "";
+    String newPress = "";
 
-
     @FXML
-    private TextField tfUsername, tfName, tfAge, tfWeight, tfHeight, tfSex, tfEmail, tfBMI, tfMaxPress;
+    private TextField tfUsername;
     @FXML
-    private PasswordField pfPassword1, pfPassword2;
+    private TextField tfName;
     @FXML
-    private Label lbSaveError, lbPassword1, lbPassword2;
+    private TextField tfAge;
     @FXML
-    private ImageView imgProfile, imgBMIChart;
+    private TextField tfWeight;
     @FXML
-    private Button btnChangeProfile, btnSave, btnCancel;
+    private TextField tfHeight;
+    @FXML
+    private TextField tfSex;
+    @FXML
+    private TextField tfEmail;
+    @FXML
+    private TextField tfBMI;
+    @FXML
+    private TextField tfMaxPress;
+    @FXML
+    private TextField tfTargetWeight;
+    @FXML
+    private TextField tfMileTime;
+    @FXML
+    private PasswordField pfPassword1;
+    @FXML
+    private PasswordField pfPassword2;
+    @FXML
+    private Label lbSaveError;
+    @FXML
+    private Label lbPassword1;
+    @FXML
+    private Label lbPassword2;
+    @FXML
+    private Label lbClock;
+    @FXML
+    private Label lbClock2;
+    @FXML
+    private Label lbClock3;
+    @FXML
+    private ImageView imgProfile;
+    @FXML
+    private ImageView imgBMIChart;
+    @FXML
+    private Button btnChangeProfile;
+    @FXML
+    private Button btnSave;
+    @FXML
+    private Button btnCancel;
+    @FXML
+    private Button btnUpdateGoals;
+    @FXML
+    private Button btnSaveGoals;
 
     public void initialize(java.net.URL location, java.util.ResourceBundle resources)
     {
@@ -62,6 +114,21 @@ import java.sql.Statement;
         tfHeight.setText(Integer.toString(currentUser.getHeight()));
         tfEmail.setText(currentUser.getEmail());
         tfMaxPress.setText(Integer.toString(195));
+        tfTargetWeight.setText(String.valueOf(currentUser.getWeight()));
+        tfMileTime.setText("6:00");
+
+        DateFormat format = DateFormat.getInstance();
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                final Calendar cal = Calendar.getInstance();
+                lbClock.setText(format.format(cal.getTime()));
+                lbClock2.setText(format.format(cal.getTime()));
+                lbClock3.setText(format.format(cal.getTime()));
+            }
+        }));
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
     }
 
     public void start(Stage primaryStage) throws Exception {
@@ -75,6 +142,7 @@ import java.sql.Statement;
         User testUser = new User();
         testUser = testUser.getUserFromPreferences(testUser);
         System.out.print(testUser.getName());
+
     }
 
     public static User getCurrentUser() {
@@ -93,7 +161,9 @@ import java.sql.Statement;
     public void logout() {
         try {
             new LoginScreen().start(window);
-        } catch (Exception ignored) {}
+        } catch (Exception ignored) {
+            ignored.printStackTrace();
+        }
         User.clearUser();
         currentUser.clearRememberMeFromPreferences();
     }
@@ -105,7 +175,27 @@ import java.sql.Statement;
         double BMI = (userWeight * 703)/ (userHeight * userHeight);
         tfBMI.setText(String.valueOf(BMI));
     }
+    public void editGoals()
+    {
+        btnSaveGoals.setVisible(true);
+        btnUpdateGoals.setVisible(false);
+        tfWeight.setEditable(true);
+        tfMileTime.setEditable(true);
+        tfMaxPress.setEditable(true);
+    }
 
+    public void updateGoals()
+    {
+        newWeight = tfWeight.getText();
+        newMiles = tfMileTime.getText();
+        newPress = tfMaxPress.getText();
+        currentUser.setWeight(Integer.valueOf(newWeight));
+        tfWeight.setEditable(false);
+        tfMileTime.setEditable(false);
+        tfMaxPress.setEditable(false);
+        btnUpdateGoals.setVisible(true);
+        btnSaveGoals.setVisible(false);
+    }
     public void editMyProfile()
     {
         tfUsername.setEditable(true);

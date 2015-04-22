@@ -12,10 +12,15 @@
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Squad_Fitness.Java.MyProfile">
   <children>
-    <SplitPane blendMode="MULTIPLY" dividerPositions="0.93048128342246" focusTraversable="true" orientation="VERTICAL" prefHeight="750.0" prefWidth="400.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.04" AnchorPane.rightAnchor="-0.04" AnchorPane.topAnchor="1.0">
+    <SplitPane blendMode="MULTIPLY" dividerPositions="0.3917112299465241, 0.5909090909090909" focusTraversable="true" orientation="VERTICAL" prefHeight="750.0" prefWidth="400.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.04" AnchorPane.rightAnchor="-0.04" AnchorPane.topAnchor="1.0">
       <items>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="461.0" prefWidth="398.0" styleClass="pane" stylesheets="@../CSS/GUI.css">
           <children>
+                <Text id="Register_Button" fill="BLACK" fontSmoothingType="LCD" layoutX="93.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My Profile">
+                  <font>
+                    <Font name="Niagara Solid" size="100.0" />
+                  </font>
+                </Text>
             <Text layoutX="23.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
             <Text layoutX="25.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
             <Text layoutX="30.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age" />
@@ -33,12 +38,12 @@
                   <Button fx:id="buBeginExercise" layoutX="282.0" layoutY="241.0" mnemonicParsing="false" onAction="#goToBodyMap" text="Begin Exercise" />
                   <ImageView fx:id="imgProfile" fitHeight="150.0" fitWidth="200.0" layoutX="102.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../CSS/workout.jpg" />
+                        <Image url="@../Resources/workout.jpg" />
                      </image>
                   </ImageView>
                   <Button fx:id="btnChangeProfile" layoutX="1.0" layoutY="241.0" mnemonicParsing="false" onAction="#changeProfilePicture" text="Change Image" />
                   <Text layoutX="28.0" layoutY="535.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Height" />
-                  <Button fx:id="btnEditProfile" layoutX="-1.0" layoutY="14.0" mnemonicParsing="false" onAction="#editMyProfile" text="Edit Profile" />
+                  <Button fx:id="btnEditProfile" layoutX="-4.0" layoutY="14.0" mnemonicParsing="false" onAction="#editMyProfile" text="Edit Profile" />
                   <Button fx:id="btnSave" layoutY="54.0" mnemonicParsing="false" onAction="#saveInformation" text="Save" visible="false" />
                   <Button fx:id="btnCancel" layoutX="333.0" layoutY="54.0" mnemonicParsing="false" onAction="#cancelSaveInformation" text="Cancel" visible="false" />
                   <Label fx:id="lbPassword1" layoutX="26.0" layoutY="569.0" text="Password" visible="false" />
@@ -46,6 +51,12 @@
                   <PasswordField fx:id="pfPassword2" layoutX="125.0" layoutY="604.0" visible="false" />
                   <Label fx:id="lbPassword2" layoutX="8.0" layoutY="611.0" text="Confrim Password" visible="false" />
                   <Label fx:id="lbSaveError" layoutX="11.0" layoutY="96.0" text="Error Occured :(" textFill="#f57575" visible="false" />
+                  <Label fx:id="lbClock" layoutX="332.0" layoutY="128.0" stylesheets="@../CSS/GUI.css">
+                     <font>
+                        <Font name="Comic Sans MS" size="25.0" />
+                     </font>
+                  </Label>
+                  <Line endX="100.0" layoutX="212.0" layoutY="29.0" startX="-100.0" />
           </children>
         </AnchorPane>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="433.0" prefWidth="398.0" stylesheets="@../CSS/GUI.css">
@@ -56,28 +67,49 @@
                 <Font size="21.0" fx:id="x1" />
               </font>
             </Text>
-            <Text layoutX="11.0" layoutY="144.0" scaleX="0.6950543485505626" scaleY="0.7985420535482131" strokeType="OUTSIDE" strokeWidth="0.0" text="Max Press">
-                     <font>
-                        <Font size="21.0" />
-                     </font></Text>
             <Text font="$x1" layoutX="-344.0" layoutY="366.0" scaleX="0.22785273156417873" scaleY="0.6419088122145077" strokeType="OUTSIDE" strokeWidth="0.0" />
                   <TextField fx:id="tfBMI" editable="false" layoutX="106.0" layoutY="70.0" stylesheets="@../CSS/GUI.css" />
-                  <TextField fx:id="tfMaxPress" editable="false" layoutX="106.0" layoutY="120.0" />
                   <Button fx:id="btnCalculate" layoutX="308.0" layoutY="70.0" mnemonicParsing="false" onAction="#calculateBMI" text="Calculate" />
                   <ImageView fx:id="imgBMIChart" fitHeight="526.0" fitWidth="1010.0" layoutX="14.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../CSS/Standard-BMI-chart.png" />
+                        <Image url="@../Resources/Standard-BMI-chart.png" />
                      </image>
                   </ImageView>
+                  <Label fx:id="lbClock2" layoutX="21.0" layoutY="130.0">
+                     <font>
+                        <Font name="Comic Sans MS" size="25.0" />
+                     </font>
+                  </Label>
           </children>
         </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="463.0" prefWidth="398.0" stylesheets="@../CSS/GUI.css">
+               <children>
+                  <Text layoutX="119.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pull up for goals" />
+                  <Text layoutX="7.0" layoutY="93.0" scaleX="0.6950543485505626" scaleY="0.7985420535482131" strokeType="OUTSIDE" strokeWidth="0.0" text="Mile time">
+                     <font>
+                        <Font size="21.0" fx:id="x11" />
+                     </font>
+                  </Text>
+                  <Text layoutX="11.0" layoutY="144.0" scaleX="0.6950543485505626" scaleY="0.7985420535482131" strokeType="OUTSIDE" strokeWidth="0.0" text="Max Press">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Text>
+                  <Text font="$x11" layoutX="-344.0" layoutY="366.0" scaleX="0.22785273156417873" scaleY="0.6419088122145077" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <TextField fx:id="tfMileTime" editable="false" layoutX="106.0" layoutY="70.0" stylesheets="@../CSS/GUI.css" />
+                  <TextField fx:id="tfMaxPress" editable="false" layoutX="106.0" layoutY="120.0" />
+                  <Button fx:id="btnUpdateGoals" layoutX="308.0" layoutY="70.0" mnemonicParsing="false" onAction="#editGoals" text="Update " />
+                  <Label layoutX="7.0" layoutY="179.0" text="Target Weight" />
+                  <TextField fx:id="tfTargetWeight" layoutX="106.0" layoutY="172.0" />
+                  <Button fx:id="btnSaveGoals" layoutX="308.0" layoutY="203.0" mnemonicParsing="false" onAction="#updateGoals" text="Save" visible="false" />
+                  <Label fx:id="lbClock3" layoutX="308.0" layoutY="24.0">
+                     <font>
+                        <Font name="Comic Sans MS" size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
       </items>
     </SplitPane>
-    <Text id="Register_Button" fill="BLACK" fontSmoothingType="LCD" layoutX="81.0" layoutY="93.0" scaleX="0.7375539477256459" scaleY="0.546400879677058" strokeType="OUTSIDE" strokeWidth="0.0" text="My Profile">
-      <font>
-        <Font name="Niagara Solid" size="100.0" />
-      </font>
-    </Text>
-      <Line endX="100.0" layoutX="213.0" layoutY="29.0" startX="-100.0" />
   </children>
 </AnchorPane>

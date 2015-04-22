@@ -32,6 +32,11 @@
             <Label fx:id="laConnection" layoutX="224.0" layoutY="195.0" text="Unable to establish connection with database." textFill="RED" visible="false" />
             <ProgressIndicator fx:id="loading" layoutX="309.0" layoutY="402.0" visible="false" />
             <CheckBox fx:id="chkRememberMe" layoutX="271.0" layoutY="376.0" mnemonicParsing="false" text="Remember Me" />
+            <Label fx:id="lbClock" layoutX="47.0" layoutY="44.0">
+               <font>
+                  <Font name="Comic Sans MS" size="25.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>

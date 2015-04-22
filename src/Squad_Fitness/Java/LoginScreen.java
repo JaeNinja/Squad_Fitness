@@ -1,25 +1,35 @@
 package Squad_Fitness.Java;
 
 import Squad_Fitness.Model.User;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.sql.*;
+import java.text.DateFormat;
+import java.util.Calendar;
 
 /*
  * Created by Kyle on 3/24/2015.
  * Kyle hold deez nuts
  */
 
-public class LoginScreen extends Application {
+public class LoginScreen extends Application  implements Initializable {
     Scene loginScene;
     static Stage window;
-    String strUserName, strPassword;
+    String strUserName = "";
+    String strPassword = "";
     int dbResponse = -1;
     Connection connection;
     ResultSet loginDatabaseResponse;
@@ -38,11 +48,26 @@ public class LoginScreen extends Application {
     @FXML
     private Label laConnection;
     @FXML
+    private Label lbClock;
+    @FXML
     private ProgressIndicator loading;
     @FXML
     private CheckBox chkRememberMe;
 
 
+    public void initialize(java.net.URL location, java.util.ResourceBundle resources)
+    {
+        DateFormat format = DateFormat.getInstance();
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                final Calendar cal = Calendar.getInstance();
+                lbClock.setText(format.format(cal.getTime()));
+            }
+        }));
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
+    }
     public void start(Stage primaryStage) throws Exception
     {
         window = primaryStage;
@@ -51,7 +76,9 @@ public class LoginScreen extends Application {
         window.setScene(loginScene);
         window.setTitle("Enter Login Information");
         window.show();
+
     }
+
 
     public void goToRegistration() {
         loading.setVisible(true);

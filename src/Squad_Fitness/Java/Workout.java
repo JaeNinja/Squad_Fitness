@@ -93,16 +93,20 @@ public class Workout extends Application implements Initializable {
             newExercise();
         }
 
-        public void nextExercise() {
-            if (array == max-1) {
+        public void nextExercise()
+        {
+            if (array == max-1)
+            {
                 array = 0;
-            } else {
+            } else
+            {
                 array += 1;
             }
             newExercise();
         }
 
-        public void newExercise() {
+        public void newExercise()
+        {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 try {
@@ -113,7 +117,8 @@ public class Workout extends Application implements Initializable {
                 Statement state1 = connection.createStatement();
                 Statement state2 = connection.createStatement();
                 workout = state1.executeQuery("SELECT * FROM exercise WHERE exerciseID=" + currentExercises[array]);
-                if (workout.next()) {
+                if (workout.next())
+                {
                     ID = workout.getInt("bodyPart");
                 }
                 bodyPartName = state2.executeQuery("SELECT name FROM bodyPart WHERE bodyPartID=" + ID);
@@ -128,12 +133,15 @@ public class Workout extends Application implements Initializable {
                 path = workout.getString("imageURL");
                 img = new Image(path);
                 workoutImage.setImage(img);
-                if (workout.getBoolean("equipmentNeeded")) {
+                if (workout.getBoolean("equipmentNeeded"))
+                {
                     equipmentNeeded.setText("Yes");
-                } else {
+                } else
+                {
                     equipmentNeeded.setText("No");
                 }
-                if (bodyPartName.next()) {
+                if (bodyPartName.next())
+                {
                     bodyPart.setText(bodyPartName.getString("name"));
                 }
             } catch (SQLException e) {
@@ -141,7 +149,8 @@ public class Workout extends Application implements Initializable {
             }
         }
 
-        public void goBack() {
+        public void goBack()
+        {
             try {
                 new BodyMap().start(window);
             } catch (Exception ignored) {
@@ -149,7 +158,8 @@ public class Workout extends Application implements Initializable {
             }
         }
 
-    public void logout() {
+    public void logout()
+    {
         try {
             new LoginScreen().start(window);
         } catch (Exception ignored) {}

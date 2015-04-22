@@ -281,10 +281,22 @@ import java.util.Calendar;
             }
 
             if (currentUser.getRememberMe()){
-                currentUser = currentUser.updateUser(currentUser, newUsername, newName, newAge, newWeight, newHeight, newEmail);
+                currentUser = currentUser.updateUser(currentUser,
+                        newUsername,
+                        newName,
+                        newAge,
+                        newWeight,
+                        newHeight,
+                        newEmail);
                 currentUser.putUserInPreferences(currentUser);
             }else
-                currentUser = currentUser.updateUser(currentUser, newUsername, newName,newAge, newWeight, newHeight, newEmail);
+                currentUser = currentUser.updateUser(currentUser,
+                        newUsername,
+                        newName,
+                        newAge,
+                        newWeight,
+                        newHeight,
+                        newEmail);
 
         } else {
             lbSaveError.setVisible(true);

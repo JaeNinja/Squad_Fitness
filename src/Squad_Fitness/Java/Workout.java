@@ -60,7 +60,8 @@ public class Workout extends Application implements Initializable {
         private ImageView workoutImage;
 
 
-        public void initialize(java.net.URL location, java.util.ResourceBundle resources) {
+        public void initialize(java.net.URL location, java.util.ResourceBundle resources)
+        {
             currentUser = User.getUser();
             currentExercises = BodyMap.exerciseArray;
             array = 0;
@@ -69,7 +70,8 @@ public class Workout extends Application implements Initializable {
             newExercise();
         }
 
-        public void start(Stage primaryStage) throws Exception {
+        public void start(Stage primaryStage) throws Exception
+        {
             window = primaryStage;
             Parent root = FXMLLoader.load(getClass().getResource("/Squad_Fitness/FXML/Workout.fxml"));
             workoutScene = new Scene(root, 1000, 850);
@@ -79,10 +81,13 @@ public class Workout extends Application implements Initializable {
 
         }
 
-        public void previousExercise() {
-            if (array == 0) {
+        public void previousExercise()
+        {
+            if (array == 0)
+            {
                 array = max-1;
-            } else {
+            } else
+            {
                 array -= 1;
             }
             newExercise();

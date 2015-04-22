@@ -12,7 +12,8 @@ public class BodyPart {
 
     public BodyPart() {}
 
-    public BodyPart(boolean Neck, boolean Shoulders, boolean Biceps, boolean Triceps, boolean Forearms, boolean Abs, boolean Obliques, boolean Back, boolean Glutes, boolean Quad, boolean Calves, boolean Hamstrings, boolean Bulk, boolean Cooldown, boolean Stretch, boolean Equipment) {
+    public BodyPart(boolean Neck, boolean Shoulders, boolean Biceps, boolean Triceps, boolean Forearms, boolean Abs, boolean Obliques, boolean Back, boolean Glutes, boolean Quad, boolean Calves, boolean Hamstrings, boolean Bulk, boolean Cooldown, boolean Stretch, boolean Equipment)
+    {
         neck = Neck;
         shoulders = Shoulders;
         biceps = Biceps;
@@ -31,15 +32,18 @@ public class BodyPart {
         equipment = Equipment;
     }
 
-    public static void setCurrentBodyParts(BodyPart body) {
+    public static void setCurrentBodyParts(BodyPart body)
+    {
         currentBodyParts = body;
     }
 
-    public static void setCurrentExercise(int id) {
+    public static void setCurrentExercise(int id)
+    {
         currentExercise = id;
     }
 
-    public static int getCurrentExercise() {
+    public static int getCurrentExercise()
+    {
         return currentExercise;
     }
 

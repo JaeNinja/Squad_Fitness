@@ -63,10 +63,37 @@ public class BodyMap extends Application {
     @FXML
     private CheckBox chkShoulders;
     @FXML
-    private CheckBox chkStretch, chkBulk, chkCooldown, chkEquipment;
+    private CheckBox chkStretch;
     @FXML
-    private ImageView imgAbs, imgBack, imgBiceps, imgCalves, imgChest, imgForearms, imgGlutes, imgNeck, imgObliques, imgShoulders, imgThighs, imgTriceps;
-
+    private CheckBox chkBulk;
+    @FXML
+    private CheckBox chkCooldown;
+    @FXML
+    private CheckBox chkEquipment;
+    @FXML
+    private ImageView imgAbs;
+    @FXML
+    private CheckBox imgBack;
+    @FXML
+    private CheckBox imgBiceps;
+    @FXML
+    private CheckBox imgCalves;
+    @FXML
+    private CheckBox imgChest;
+    @FXML
+    private CheckBox imgForearms;
+    @FXML
+    private CheckBox imgGlutes;
+    @FXML
+    private CheckBox imgNeck;
+    @FXML
+    private CheckBox imgObliques;
+    @FXML
+    private CheckBox imgShoulders;
+    @FXML
+    private CheckBox imgThighs;
+    @FXML
+    private CheckBox imgTriceps;
 
     public void start(Stage primaryStage) throws Exception {
         window = primaryStage;

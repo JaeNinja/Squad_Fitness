@@ -161,6 +161,13 @@ public class LoginScreen extends Application  implements Initializable {
     }
 
     public static void main(String[] args) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information Dialog");
+        alert.setHeaderText("Look, an Information Dialog");
+        alert.setContentText("I have a great message for you!");
+
+        alert.showAndWait();
+
         launch(args);
     }
 }

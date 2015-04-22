@@ -9,6 +9,23 @@
 	-fx-font-weight: bold;
 	 -fx-background-color: linear-gradient(#2E2E2E, #2E2E2E);
 	-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+	-fx-padding: 5 22 5 22;
+	-fx-border-color: #e2e2e2;
+	-fx-border-width: 2;
+	-fx-background-radius: 0;
+	-fx-font-size: 11pt;
+	-fx-background-insets: 0 0 0 0, 0, 1, 2;
+}
+.button:pressed, .button:default:hover:pressed {
+	-fx-background-color: white;
+	-fx-text-fill: #1d1d1d;
+}
+.button:focused {
+	-fx-border-color: white, white;
+	-fx-border-width: 1, 1;
+	-fx-border-style: solid, segments(1, 1);
+	-fx-border-radius: 0, 0;
+	-fx-border-insets: 1 1 1 1, 0;
 }
 
 .button:hover{
@@ -20,8 +37,63 @@
 	-fx-background-color: #C8D7D4;
 }
 
+#tfUsername{
+	-fx-background-color: linear-gradient(#c8d7d4, #ffffff, #c8d7d4);
+	-fx-underline: true;
+}
+
+#tfAge{
+	-fx-background-color: linear-gradient(#c8d7d4, #ffffff, #c8d7d4);
+	-fx-underline: true;
+}
+
+#tfBMI{
+	-fx-background-color: linear-gradient(#c8d7d4, #ffffff, #c8d7d4);
+	-fx-underline: true;
+}
+
+#tfEmail{
+	-fx-background-color: linear-gradient(#c8d7d4, #ffffff, #c8d7d4);
+	-fx-underline: true;
+}
+
+#tfHeight{
+	-fx-background-color: linear-gradient(#c8d7d4, #ffffff, #c8d7d4);
+	-fx-underline: true;
+}
+
+#tfSex{
+	-fx-background-color: linear-gradient(#c8d7d4, #ffffff, #c8d7d4);
+	-fx-underline: true;
+}
+
+#tfMaxPress{
+	-fx-background-color: linear-gradient(#c8d7d4, #ffffff, #c8d7d4);
+	-fx-underline: true;
+}
+
+#tfName{
+	-fx-background-color: linear-gradient(#c8d7d4, #ffffff, #c8d7d4);
+	-fx-underline: true;
+}
+
+#tfPassword{
+	-fx-background-color: linear-gradient(#c8d7d4, #ffffff, #c8d7d4);
+	-fx-underline: true;
+}
+
+#tfWeight{
+	-fx-background-color: linear-gradient(#c8d7d4, #ffffff, #c8d7d4);
+	-fx-underline: true;
+}
+
+
+
+
 .text{
 -fx-font-family: "Times New Roman";
+	-fx-font-size: 12px;
+	-fx-underline: true;
    }
 
 .circle{
@@ -31,3 +103,101 @@
 .circle:hover{
 
 }
+.label {
+	-fx-font-size: 12px;
+	-fx-font-weight: bold;
+	-fx-text-fill: #333333;
+	-fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+
+#chkAbs{
+	-fx-font-size: 12px;
+	-fx-font-weight: 200;
+	-fx-underline: true;
+}
+#chkBack{
+	-fx-font-size: 12px;
+	-fx-font-weight: 200;
+	-fx-underline: true;
+}
+
+#chkBiceps {
+	-fx-font-size: 12px;
+	-fx-font-weight: 200;
+	-fx-underline: true;
+}
+#chkCalves{
+	-fx-font-size: 12px;
+	-fx-font-weight: 200;
+	-fx-underline: true;
+}
+
+#chkChest{
+	-fx-font-size: 12px;
+	-fx-font-weight: 200;
+	-fx-underline: true;
+}
+
+#chkForearms{
+	-fx-font-size: 12px;
+	-fx-font-weight: 200;
+	-fx-underline: true;
+}
+
+#chkGlutes{
+	-fx-font-size: 12px;
+	-fx-font-weight: 200;
+	-fx-underline: true;
+}
+
+#chkHamstrings{
+	-fx-font-size: 12px;
+	-fx-font-weight: 200;
+	-fx-underline: true;
+}
+
+#chkNeck{
+	-fx-font-size: 12px;
+	-fx-font-weight: 200;
+	-fx-underline: true;
+}
+
+#chkObliques{
+	-fx-font-size: 12px;
+	-fx-font-weight: 200;
+	-fx-underline: true;
+}
+
+#chkShoulders{
+	-fx-font-size: 12px;
+	-fx-font-weight: 200;
+	-fx-underline: true;
+}
+
+#chkThighs{
+	-fx-font-size: 12px;
+	-fx-font-weight: 200;
+	-fx-underline: true;
+}
+
+#chkTriceps{
+	-fx-font-size: 12px;
+	-fx-font-weight: 200;
+	-fx-underline: true;
+}
+
+
+/* Larger than mobile */
+@media (min-width: 400px) {}
+
+/* Larger than tabket */
+@media (min-width: 550px) {}
+
+/* Larger than tablet */
+@media (min-width: 750px) {}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}

@@ -16,8 +16,16 @@
                 <Font name="Niagara Solid" size="175.0" />
             </font>
         </Text>
-        <Line endX="133.0" endY="1.0" layoutX="209.0" layoutY="24.0" startX="-100.0" />
-        <Text layoutX="36.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+        <Line endX="133.0"
+              endY="1.0"
+              layoutX="209.0"
+              layoutY="24.0"
+              startX="-100.0" />
+        <Text layoutX="36.0"
+              layoutY="208.0"
+              strokeType="OUTSIDE"
+              strokeWidth="0.0"
+              text="Username" />
         <Text layoutX="36.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
         <TextField fx:id="tfUsername" layoutX="204.0" layoutY="186.0" prefWidth="200.0" promptText="Username" stylesheets="@../CSS/GUI.css" />
         <PasswordField fx:id="pfPassword1" layoutX="204.0" layoutY="235.0" prefHeight="31.0" prefWidth="200.0" promptText="Password" stylesheets="@../CSS/GUI.css" />

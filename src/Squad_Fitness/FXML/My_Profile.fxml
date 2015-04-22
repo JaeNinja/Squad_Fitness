@@ -27,7 +27,7 @@
             <Text layoutX="32.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sex" />
             <Text layoutX="27.0" layoutY="496.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
             <Text layoutX="27.0" layoutY="459.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight" />
-                  <TextField fx:id="tfUsername" layoutX="125.0" layoutY="291.0" />
+                  <TextField fx:id="tfUsername" editable="false" layoutX="125.0" layoutY="291.0" />
                   <TextField fx:id="tfName" editable="false" layoutX="125.0" layoutY="330.0" />
                   <TextField fx:id="tfAge" editable="false" layoutX="125.0" layoutY="369.0" />
                   <TextField fx:id="tfSex" editable="false" layoutX="125.0" layoutY="405.0" />

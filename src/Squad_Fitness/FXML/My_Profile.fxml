@@ -12,7 +12,7 @@
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Squad_Fitness.Java.MyProfile">
   <children>
-    <SplitPane blendMode="MULTIPLY" dividerPositions="0.3917112299465241, 0.5909090909090909" focusTraversable="true" orientation="VERTICAL" prefHeight="750.0" prefWidth="400.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.04" AnchorPane.rightAnchor="-0.04" AnchorPane.topAnchor="1.0">
+    <SplitPane blendMode="MULTIPLY" dividerPositions="0.8009090909090909, 0.9009090909090909" focusTraversable="true" orientation="VERTICAL" prefHeight="750.0" prefWidth="400.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.04" AnchorPane.rightAnchor="-0.04" AnchorPane.topAnchor="1.0">
       <items>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="461.0" prefWidth="398.0" styleClass="pane" stylesheets="@../CSS/GUI.css">
           <children>

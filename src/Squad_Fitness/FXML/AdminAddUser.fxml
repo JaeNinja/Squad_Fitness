@@ -11,7 +11,7 @@
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="450.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Squad_Fitness.Java.Register">
   <children>
-    <Text id="Register_Button" fill="BLACK" fontSmoothingType="LCD" layoutX="-95.0" layoutY="148.0" scaleX="0.6287792769089755" scaleY="0.4503446012121398" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Add User">
+    <Text id="Register_Button" fill="BLACK" fontSmoothingType="LCD" layoutX="-95.0" layoutY="148.0" scaleX="0.6287792769089755" scaleY="0.4503446012121398" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="AdminAddUser" text="Admin Add User">
       <font>
         <Font name="Niagara Solid" size="175.0" />
       </font>

@@ -12,7 +12,12 @@ public class PersonalRecord {
     int exercisE;
     String userName;
 
-    public PersonalRecord(int personalrecordid, String prtype, int print, int exercise, String username){
+    public PersonalRecord(int personalrecordid,
+                          String prtype,
+                          int print,
+                          int exercise,
+                          String username)
+    {
         personalRecordID = personalrecordid;
         prType = prtype;
         prInt = print;

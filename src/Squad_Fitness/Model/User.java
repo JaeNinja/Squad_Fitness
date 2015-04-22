@@ -4,7 +4,7 @@ import java.util.prefs.BackingStoreException;
 import java.util.prefs.Preferences;
 
 /**
- * UEYFRHBOCIQ3LKHERNGFU89WITRJKFDHGVWNOIUERKJGVHRNWIUTKJFV
+ *
  */
 //Changes
 public class User {
@@ -23,8 +23,16 @@ public class User {
 
     public User(){}
 
-    public User (String strUsername, String strPassword, int intUserID, String strName, int intAge, String strSex,
-                 int intWeight, int intHeight, String strEmail, Boolean rememberme)
+    public User (String strUsername,
+                 String strPassword,
+                 int intUserID,
+                 String strName,
+                 int intAge,
+                 String strSex,
+                 int intWeight,
+                 int intHeight,
+                 String strEmail,
+                 Boolean rememberme)
     {
         username = strUsername;
         password = strPassword;
@@ -53,7 +61,13 @@ public class User {
         rememberMe = reference.rememberMe;
     }
 
-    public User updateUser(User currentUser, String UserName, String Name, int Age, int Weight, int Height, String Email)
+    public User updateUser(User currentUser,
+                           String UserName,
+                           String Name,
+                           int Age,
+                           int Weight,
+                           int Height,
+                           String Email)
     {
         currentUser.username = UserName;
         currentUser.name = Name;

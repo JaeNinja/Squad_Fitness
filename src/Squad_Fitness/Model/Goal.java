@@ -11,7 +11,11 @@ public class Goal {
     int exercise;
     Boolean accomplished;
 
-    public Goal(int goaldid, String goaltype, int goalint, int Exercise, boolean Accomplished) {
+    public Goal(int goaldid,
+                String goaltype,
+                int goalint,
+                int Exercise,
+                boolean Accomplished) {
         goalID = goaldid;
         goalType = goaltype;
         goalInt = goalint;

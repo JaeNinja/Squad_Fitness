@@ -69,7 +69,7 @@
             </Text>
             <Text font="$x1" layoutX="-344.0" layoutY="366.0" scaleX="0.22785273156417873" scaleY="0.6419088122145077" strokeType="OUTSIDE" strokeWidth="0.0" />
                   <TextField fx:id="tfBMI" editable="false" layoutX="106.0" layoutY="70.0" stylesheets="@../CSS/GUI.css" />
-                  <Button fx:id="btnCalculate" layoutX="308.0" layoutY="70.0" mnemonicParsing="false" onAction="#calculateBMI" text="Calculate" />
+                  <Button fx:id="btnCalculate" layoutX="308.0" layoutY="70.0" mnemonicParsing="false" onAction="#calculateBMI" text="Calculate" stylesheets="@../CSS/GUI.css" />
                   <ImageView fx:id="imgBMIChart" fitHeight="526.0" fitWidth="1010.0" layoutX="14.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Resources/Standard-BMI-chart.png" />

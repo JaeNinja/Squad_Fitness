@@ -113,55 +113,68 @@ public class BodyMap extends Application {
     public void goToWorkOut()
     {
         List<Integer> listOfExercise = new ArrayList<>();
-        if(chkNeck.isSelected()) {
+        if(chkNeck.isSelected())
+        {
             listOfExercise.add(1);
         }
 
-        if(chkBiceps.isSelected()) {
+        if(chkBiceps.isSelected())
+        {
             listOfExercise.add(2);
         }
 
-        if(chkTriceps.isSelected()) {
+        if(chkTriceps.isSelected())
+        {
             listOfExercise.add(3);
         }
 
-        if(chkChest.isSelected()) {
+        if(chkChest.isSelected())
+        {
             listOfExercise.add(4);
         }
 
-        if(chkBack.isSelected()) {
+        if(chkBack.isSelected())
+        {
             listOfExercise.add(5);
         }
 
-        if(chkAbs.isSelected()) {
+        if(chkAbs.isSelected())
+        {
             listOfExercise.add(6);
         }
 
-        if(chkObliques.isSelected()) {
+        if(chkObliques.isSelected())
+        {
             listOfExercise.add(7);
         }
 
-        if(chkHamstrings.isSelected()) {
+        if(chkHamstrings.isSelected())
+        {
             listOfExercise.add(8);
         }
 
-        if(chkThighs.isSelected()) {
+        if(chkThighs.isSelected())
+        {
             listOfExercise.add(9);
         }
 
-        if(chkCalves.isSelected()) {
+        if(chkCalves.isSelected())
+        {
             listOfExercise.add(10);
         }
 
-        if(chkGlutes.isSelected()) {
+        if(chkGlutes.isSelected())
+        {
             listOfExercise.add(11);
         }
 
-        if(chkForearms.isSelected()) {
+        if(chkForearms.isSelected())
+        {
             listOfExercise.add(12);
         }
 
-        if(chkShoulders.isSelected()) {
+        if(chkShoulders.isSelected())
+        {
             listOfExercise.add(13);
         }
 
@@ -226,65 +239,113 @@ public class BodyMap extends Application {
     }
 
     public void swapVisible() {
-        if(chkNeck.isSelected()) {
+        if(chkNeck.isSelected())
+        {
             imgNeck.setVisible(true);
         }
-        else imgNeck.setVisible(false);
+        else
+        {
+            imgNeck.setVisible(false);
+        }
 
-        if(chkBiceps.isSelected()) {
+        if(chkBiceps.isSelected())
+        {
             imgBiceps.setVisible(true);
         }
-        else imgBiceps.setVisible(false);
+        else
+        {
+            imgBiceps.setVisible(false);
+        }
 
-        if(chkTriceps.isSelected()) {
+        if(chkTriceps.isSelected())
+        {
             imgTriceps.setVisible(true);
         }
-        else imgTriceps.setVisible(false);
+        else
+        {
+            imgTriceps.setVisible(false);
+        }
 
-        if(chkChest.isSelected()) {
+        if(chkChest.isSelected())
+        {
             imgChest.setVisible(true);
         }
-        else imgChest.setVisible(false);
+        else
+        {
+            imgChest.setVisible(false);
+        }
 
-        if(chkBack.isSelected()) {
+        if(chkBack.isSelected())
+        {
             imgBack.setVisible(true);
         }
-        else imgBack.setVisible(false);
+        else
+        {
+            imgBack.setVisible(false);
+        }
 
-        if(chkAbs.isSelected()) {
+        if(chkAbs.isSelected())
+        {
             imgAbs.setVisible(true);
         }
-        else imgAbs.setVisible(false);
+        else
+        {
+            imgAbs.setVisible(false);
+        }
 
-        if(chkObliques.isSelected()) {
+        if(chkObliques.isSelected())
+        {
             imgObliques.setVisible(true);
         }
-        else imgObliques.setVisible(false);
+        else
+        {
+            imgObliques.setVisible(false);
+        }
 
-        if(chkThighs.isSelected()) {
+        if(chkThighs.isSelected())
+        {
             imgThighs.setVisible(true);
         }
-        else imgThighs.setVisible(false);
+        else
+        {
+            imgThighs.setVisible(false);
+        }
 
-        if(chkCalves.isSelected() || chkHamstrings.isSelected()) {
+        if(chkCalves.isSelected() || chkHamstrings.isSelected())
+        {
             imgCalves.setVisible(true);
         }
-        else imgCalves.setVisible(false);
+        else
+        {
+            imgCalves.setVisible(false);
+        }
 
-        if(chkGlutes.isSelected()) {
+        if(chkGlutes.isSelected())
+        {
             imgGlutes.setVisible(true);
         }
-        else imgGlutes.setVisible(false);
+        else
+        {
+            imgGlutes.setVisible(false);
+        }
 
-        if(chkForearms.isSelected()) {
+        if(chkForearms.isSelected())
+        {
             imgForearms.setVisible(true);
         }
-        else imgForearms.setVisible(false);
+        else
+        {
+            imgForearms.setVisible(false);
+        }
 
-        if(chkShoulders.isSelected()) {
+        if(chkShoulders.isSelected())
+        {
             imgShoulders.setVisible(true);
         }
-        else imgShoulders.setVisible(false);
+        else
+        {
+            imgShoulders.setVisible(false);
+        }
     }
 
     public void typeOfWorkout() {
@@ -294,41 +355,51 @@ public class BodyMap extends Application {
         int current = 0;
         String[] types = new String[3];
         String or = " OR ";
-        if (chkStretch.isSelected()) {
+        if (chkStretch.isSelected())
+        {
             stretch = "type='Stretch'";
             intStretch = 1;
         }
-        else {
+        else
+        {
             stretch = "";
             intStretch = 0;
         }
-        if (chkBulk.isSelected()) {
+        if (chkBulk.isSelected())
+        {
             bulk = "type='Bulk'";
             intBulk = 1;
         }
-        else {
+        else
+        {
             bulk = "";
             intBulk = 0;
         }
-        if (chkCooldown.isSelected()) {
+        if (chkCooldown.isSelected())
+        {
             cooldown = "type='Cooldown'";
             intCooldown = 1;
         }
-        else {
+        else
+        {
             cooldown = "";
             intCooldown = 0;
         }
         sum = intStretch + intBulk + intCooldown;
-        if (sum > 0) {
-            if (intStretch == 1) {
+        if (sum > 0)
+        {
+            if (intStretch == 1)
+            {
                 types[current] = stretch;
                 current += 1;
             }
-            if (intBulk == 1) {
+            if (intBulk == 1)
+            {
                 types[current] = bulk;
                 current += 1;
             }
-            if (intCooldown == 1) {
+            if (intCooldown == 1)
+            {
                 types[current] = cooldown;
             }
             typeOfExercises = " AND (";
@@ -341,7 +412,8 @@ public class BodyMap extends Application {
             typeOfExercises = typeOfExercises.substring(0, typeOfExercises.length()-4);
             typeOfExercises += ")";
         }
-        else {
+        else
+        {
             typeOfExercises = "";
         }
     }

@@ -59,7 +59,7 @@
                   <Line endX="100.0" layoutX="212.0" layoutY="29.0" startX="-100.0" />
           </children>
         </AnchorPane>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="433.0" prefWidth="398.0" stylesheets="@../CSS/GUI.css">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="40.0" prefWidth="398.0" stylesheets="@../CSS/GUI.css">
           <children>
             <Text layoutX="119.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pull Up For Stats" />
             <Text layoutX="20.0" layoutY="94.0" scaleX="0.6950543485505626" scaleY="0.7985420535482131" strokeType="OUTSIDE" strokeWidth="0.0" text="BMI">
@@ -82,7 +82,7 @@
                   </Label>
           </children>
         </AnchorPane>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="463.0" prefWidth="398.0" stylesheets="@../CSS/GUI.css">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="20.0" prefWidth="398.0" stylesheets="@../CSS/GUI.css">
                <children>
                   <Text layoutX="119.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pull up for goals" />
                   <Text layoutX="7.0" layoutY="93.0" scaleX="0.6950543485505626" scaleY="0.7985420535482131" strokeType="OUTSIDE" strokeWidth="0.0" text="Mile time">

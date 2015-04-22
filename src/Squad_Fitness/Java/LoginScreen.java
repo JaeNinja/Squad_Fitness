@@ -22,10 +22,11 @@ import java.util.Calendar;
 
 /*
  * Created by Kyle on 3/24/2015.
- * Kyle hold deez nuts
+ *
  */
 
-public class LoginScreen extends Application  implements Initializable {
+public class LoginScreen extends Application  implements Initializable
+{
     Scene loginScene;
     static Stage window;
     String strUserName = "";
@@ -58,9 +59,11 @@ public class LoginScreen extends Application  implements Initializable {
     public void initialize(java.net.URL location, java.util.ResourceBundle resources)
     {
         DateFormat format = DateFormat.getInstance();
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>()
+        {
             @Override
-            public void handle(ActionEvent event) {
+            public void handle(ActionEvent event)
+            {
                 final Calendar cal = Calendar.getInstance();
                 lbClock.setText(format.format(cal.getTime()));
             }
@@ -80,7 +83,8 @@ public class LoginScreen extends Application  implements Initializable {
     }
 
 
-    public void goToRegistration() {
+    public void goToRegistration()
+    {
         loading.setVisible(true);
             try{
                 new Register().start(window);
@@ -125,7 +129,8 @@ public class LoginScreen extends Application  implements Initializable {
                 System.out.println("Error 1: " + x);
                 loading.setVisible(false);
             }
-            if (loginDatabaseResponse.next()) {
+            if (loginDatabaseResponse.next())
+            {
                 currentUser = new User(loginDatabaseResponse.getString("username"),
                         loginDatabaseResponse.getString("password"),
                         loginDatabaseResponse.getInt("userID"),
@@ -153,7 +158,8 @@ public class LoginScreen extends Application  implements Initializable {
                     ignored.printStackTrace();
                 }
             }
-            else {
+            else
+            {
                 System.out.println("Invalid username or password");
                 laConnection.setVisible(false);
                 loading.setVisible(false);
@@ -162,11 +168,13 @@ public class LoginScreen extends Application  implements Initializable {
         }
     }
 
-    public static void setCurrentUser(User user) {
+    public static void setCurrentUser(User user)
+    {
         User.setUser(user);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Information Dialog");
         alert.setHeaderText("Look, an Information Dialog");

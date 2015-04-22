@@ -39,7 +39,8 @@ public class User {
 
     }
 
-    public User (User reference) {
+    public User (User reference)
+    {
         username = reference.username;
         password = reference.password;
         userID = reference.userID;
@@ -66,15 +67,18 @@ public class User {
 
 
 
-    public static User getUser() {
+    public static User getUser()
+    {
         return currentUser;
     }
 
-    public static void setUser(User user) {
+    public static void setUser(User user)
+    {
         currentUser = user;
     }
 
-    public String getUsername() {
+    public String getUsername()
+    {
         return username;
     }
 
@@ -82,31 +86,38 @@ public class User {
         return password;
     }
 
-    public int getUserID() {
+    public int getUserID()
+    {
         return userID;
     }
 
-    public String getName() {
+    public String getName()
+    {
         return name;
     }
 
-    public int getAge() {
+    public int getAge()
+    {
         return age;
     }
 
-    public String getSex() {
+    public String getSex()
+    {
         return sex;
     }
 
-    public int getWeight() {
+    public int getWeight()
+    {
         return weight;
     }
 
-    public int getHeight() {
+    public int getHeight()
+    {
         return height;
     }
 
-    public Boolean getRememberMe() {
+    public Boolean getRememberMe()
+    {
         return rememberMe;
     }
 
@@ -122,51 +133,63 @@ public class User {
         preferences.putBoolean("rememberMe", false);
     }
 
-    public String getEmail() {
+    public String getEmail()
+    {
         return email;
     }
 
-    public void setUsername(String strUsername) {
+    public void setUsername(String strUsername)
+    {
         username = strUsername;
     }
 
-    public void setPassword(String strPassword) {
+    public void setPassword(String strPassword)
+    {
         password = strPassword;
     }
 
-    public void setUserID(int intUserID) {
+    public void setUserID(int intUserID)
+    {
         userID = intUserID;
     }
 
-    public void setName(String strName) {
+    public void setName(String strName)
+    {
         name = strName;
     }
 
-    public void setAge(int intAge) {
+    public void setAge(int intAge)
+    {
         age = intAge;
     }
 
-    public void setSex(String strSex) {
+    public void setSex(String strSex)
+    {
         sex = strSex;
     }
 
-    public void setWeight(int intWeight) {
+    public void setWeight(int intWeight)
+    {
         weight = intWeight;
     }
 
-    public void setHeight(int intHeight) {
+    public void setHeight(int intHeight)
+    {
         height = intHeight;
     }
 
-    public void setEmail(String strEmail) {
+    public void setEmail(String strEmail)
+    {
         email = strEmail;
     }
 
-    public void setRemmemberMe(Boolean rememberMe) {
+    public void setRemmemberMe(Boolean rememberMe)
+    {
         rememberMe = rememberMe;
     }
 
-    public static void clearUser() {
+    public static void clearUser()
+    {
         currentUser = new User();
     }
 
@@ -203,7 +226,8 @@ public class User {
         return currentUser;
     }
 
-    public void clearUserPreferences(User currentUser) throws BackingStoreException {
+    public void clearUserPreferences(User currentUser) throws BackingStoreException
+    {
         Preferences preferences = Preferences.userNodeForPackage(this.getClass());
         preferences.clear();
     }

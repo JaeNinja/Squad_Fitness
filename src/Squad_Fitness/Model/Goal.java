@@ -23,43 +23,53 @@ public class Goal {
         accomplished = Accomplished;
     }
 
-    public int getGoalID() {
+    public int getGoalID()
+    {
         return goalID;
     }
 
-    public String getGoalType() {
+    public String getGoalType()
+    {
         return goalType;
     }
 
-    public int goalInt() {
+    public int goalInt()
+    {
         return goalInt;
     }
 
-    public int getExercise() {
+    public int getExercise()
+    {
         return exercise;
     }
 
-    public Boolean getAccomplished() {
+    public Boolean getAccomplished()
+    {
         return accomplished;
     }
 
-    public void setGoalID(int newGoalID) {
+    public void setGoalID(int newGoalID)
+    {
         goalID= newGoalID;
     }
 
-    public void setGoalType(String newGoalType) {
+    public void setGoalType(String newGoalType)
+    {
         goalType = newGoalType;
     }
 
-    public void setGoalInt(int newGoalInt) {
+    public void setGoalInt(int newGoalInt)
+    {
         goalInt = newGoalInt;
     }
 
-    public void setExercise(int exerciseName) {
+    public void setExercise(int exerciseName)
+    {
         exercise = exerciseName;
     }
 
-    public void getAccomplished(Boolean isAccomplished) {
+    public void getAccomplished(Boolean isAccomplished)
+    {
         accomplished = isAccomplished;
     }
 

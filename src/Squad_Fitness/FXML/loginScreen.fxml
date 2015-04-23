@@ -8,7 +8,7 @@
 
 <FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="1102.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Squad_Fitness.Java.LoginScreen">
    <children>
-      <Pane prefHeight="853.0" prefWidth="1102.0" styleClass="pane" stylesheets="@../CSS/GUI.css">
+      <Pane prefHeight="853.0" prefWidth="1102.0" styleClass="pane">
          <children>
             <Line endX="100.0" layoutX="147.0" layoutY="83.0" startX="-100.0" />
             <Text layoutX="47.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" wrappingWidth="201.0">

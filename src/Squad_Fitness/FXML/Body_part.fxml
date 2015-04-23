@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" fx:id="imgBody" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="450.0" styleClass="pane, text" stylesheets="@../CSS/GUI.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Squad_Fitness.Java.BodyMap">
+<AnchorPane id="AnchorPane" fx:id="imgBody" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="450.0" styleClass="pane, text" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Squad_Fitness.Java.BodyMap">
   <children>
     <Text layoutX="111.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Where's Your Focus?" textAlignment="CENTER" textOrigin="BASELINE" AnchorPane.topAnchor="23.0">
       <font>

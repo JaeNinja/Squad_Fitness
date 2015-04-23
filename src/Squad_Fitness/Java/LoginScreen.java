@@ -78,6 +78,11 @@ public class LoginScreen extends Application  implements Initializable
         loginScene = new Scene(root, 1000, 850);
         window.setScene(loginScene);
         window.setTitle("Enter Login Information");
+
+        CssChanger.setInitalStyleSheet(loginScene);
+        CssChanger.morningTrigger(loginScene);
+        CssChanger.afternoonTrigger(loginScene);
+
         window.show();
 
     }

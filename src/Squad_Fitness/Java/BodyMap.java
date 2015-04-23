@@ -101,6 +101,11 @@ public class BodyMap extends Application {
         bodyMapScene = new Scene(root, 1000, 850);
         window.setScene(bodyMapScene);
         window.setTitle("Interactive Body Map");
+
+        CssChanger.setInitalStyleSheet(bodyMapScene);
+        CssChanger.morningTrigger(bodyMapScene);
+        CssChanger.afternoonTrigger(bodyMapScene);
+
         window.show();
         currentUser = User.getUser();
     }

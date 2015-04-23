@@ -17,8 +17,8 @@ public class CssChanger {
         Date currentTime = new Date();
         Calendar cal = new GregorianCalendar();
         cal.setTime(currentTime);
-        cal.set(Calendar.HOUR_OF_DAY, 13);
-        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.HOUR_OF_DAY, 18);
+        cal.set(Calendar.MINUTE, 30);
 
         if(cal.getTime().after(currentTime)) {
             cal.set(Calendar.HOUR_OF_DAY, 7);

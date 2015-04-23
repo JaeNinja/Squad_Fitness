@@ -78,6 +78,10 @@ public class Register extends Application implements Initializable {
         registerScene = new Scene(root, 1000, 850);
         window.setScene(registerScene);
         window.setTitle("Enter Information");
+
+        CssChanger.setInitalStyleSheet(registerScene);
+        CssChanger.morningTrigger(registerScene);
+        CssChanger.afternoonTrigger(registerScene);
         window.show();
     }
 

@@ -225,7 +225,7 @@ public class BodyPart {
     public void setStretch(boolean Stretch)
     {
         stretch = Stretch;
-    }
+    } 
 
     public boolean getEquipment()
     {

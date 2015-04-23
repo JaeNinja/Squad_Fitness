@@ -36,7 +36,7 @@ import java.util.Calendar;
  */
     public class MyProfile extends Application implements Initializable {
 
-    Scene loginScene;
+    Scene myProfileScene;
     static Stage window;
     User currentUser = new User();
     Connection connection;
@@ -134,14 +134,19 @@ import java.util.Calendar;
     public void start(Stage primaryStage) throws Exception {
         window = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("/Squad_Fitness/FXML/My_Profile.fxml"));
-        loginScene = new Scene(root, 1000, 850);
-        window.setScene(loginScene);
+        myProfileScene = new Scene(root, 1000, 850);
+        window.setScene(myProfileScene);
         window.setTitle("Get swole!");
-        window.show();
+
+
+        CssChanger.setInitalStyleSheet(myProfileScene);
+        CssChanger.morningTrigger(myProfileScene);
+        CssChanger.afternoonTrigger(myProfileScene);
 
         User testUser = new User();
         testUser = testUser.getUserFromPreferences(testUser);
         System.out.print(testUser.getName());
+        window.show();
 
     }
 

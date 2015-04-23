@@ -14,7 +14,7 @@
   <children>
     <SplitPane blendMode="MULTIPLY" dividerPositions="0.8009090909090909, 0.9009090909090909" focusTraversable="true" orientation="VERTICAL" prefHeight="750.0" prefWidth="400.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.04" AnchorPane.rightAnchor="-0.04" AnchorPane.topAnchor="1.0">
       <items>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="461.0" prefWidth="398.0" styleClass="pane" stylesheets="@../CSS/GUI.css">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="461.0" prefWidth="398.0" styleClass="pane">
           <children>
                 <Text id="Register_Button" fill="BLACK" fontSmoothingType="LCD" layoutX="93.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My Profile">
                   <font>
@@ -69,7 +69,7 @@
             </Text>
             <Text font="$x1" layoutX="-344.0" layoutY="366.0" scaleX="0.22785273156417873" scaleY="0.6419088122145077" strokeType="OUTSIDE" strokeWidth="0.0" />
                   <TextField fx:id="tfBMI" editable="false" layoutX="106.0" layoutY="70.0" stylesheets="@../CSS/GUI.css" />
-                  <Button fx:id="btnCalculate" layoutX="308.0" layoutY="70.0" mnemonicParsing="false" onAction="#calculateBMI" text="Calculate" stylesheets="@../CSS/GUI.css" />
+                  <Button fx:id="btnCalculate" layoutX="308.0" layoutY="70.0" mnemonicParsing="false" onAction="#calculateBMI" stylesheets="@../CSS/GUI.css" text="Calculate" />
                   <ImageView fx:id="imgBMIChart" fitHeight="526.0" fitWidth="1010.0" layoutX="14.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Resources/Standard-BMI-chart.png" />

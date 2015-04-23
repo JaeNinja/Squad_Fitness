@@ -5,11 +5,10 @@ package Squad_Fitness.Model;
  */
 public class PersonalRecord {
 
-    //Idk what the purpose of this class is.
     int personalRecordID;
     String prType;
     int prInt;
-    int exercisE;
+    int Exercise;
     String userName;
 
     public PersonalRecord(int personalrecordid,
@@ -21,15 +20,57 @@ public class PersonalRecord {
         personalRecordID = personalrecordid;
         prType = prtype;
         prInt = print;
-        exercisE = exercise;
+        Exercise = exercise;
         userName = username;
     }
 
-    public int getPersonalRecordID() {
+    public int getPersonalRecordID()
+    {
         return personalRecordID;
     }
 
-    public void setPersonalRecordID(int newPersonalRecordID) {
+    public void setPersonalRecordID(int newPersonalRecordID)
+    {
         personalRecordID = newPersonalRecordID;
+    }
+
+    public String getPrType()
+    {
+        return prType;
+    }
+
+    public void setPrType(String PRType)
+    {
+        prType = PRType;
+    }
+
+    public int getExercise()
+    {
+        return Exercise;
+    }
+
+    public void setExercise(int exercise)
+    {
+        Exercise = exercise;
+    }
+
+    public String getUsername()
+    {
+        return userName;
+    }
+
+    public void setUsername(String username)
+    {
+        userName = username;
+    }
+
+    public int getPrInt()
+    {
+        return prInt;
+    }
+
+    public void setPrInt(int PRInt)
+    {
+        prInt = PRInt;
     }
 }

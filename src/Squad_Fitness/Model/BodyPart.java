@@ -77,4 +77,163 @@ public class BodyPart {
         return currentExercise;
     }
 
+    public boolean getNeck()
+    {
+        return neck;
+    }
+
+    public void setNeck(boolean Neck)
+    {
+        neck = Neck;
+    }
+
+    public boolean getShoulders()
+    {
+        return shoulders;
+    }
+
+    public void setShoulders(boolean Shoulders)
+    {
+        shoulders = Shoulders;
+    }
+
+    public boolean getBiceps()
+    {
+        return biceps;
+    }
+
+    public void setBiceps(boolean Biceps)
+    {
+        biceps = Biceps;
+    }
+
+    public boolean getTriceps()
+    {
+        return triceps;
+    }
+
+    public void setTriceps(boolean Triceps)
+    {
+        triceps = Triceps;
+    }
+
+    public boolean getForearms()
+    {
+        return forearms;
+    }
+
+    public void setForearms(boolean Forearms)
+    {
+        forearms = Forearms;
+    }
+
+    public boolean getAbs()
+    {
+        return abs;
+    }
+
+    public void setAbs(boolean Abs)
+    {
+        abs = Abs;
+    }
+
+    public boolean getObliques()
+    {
+        return obliques;
+    }
+
+    public void setObliques(boolean Obliques)
+    {
+        obliques = Obliques;
+    }
+
+    public boolean getBack()
+    {
+        return back;
+    }
+
+    public void setBack(boolean Back)
+    {
+        back = Back;
+    }
+
+    public boolean getGlutes()
+    {
+        return glutes;
+    }
+
+    public void setGlutes(boolean Glutes)
+    {
+        glutes = Glutes;
+    }
+
+    public boolean getQuads()
+    {
+        return quad;
+    }
+
+    public void setQuad(boolean Quad)
+    {
+        quad = Quad;
+    }
+
+    public boolean getCalves()
+    {
+        return calves;
+    }
+
+    public void setCalves(boolean Calves)
+    {
+        calves = Calves;
+    }
+
+    public boolean getHamstrings()
+    {
+        return hamstrings;
+    }
+
+    public void setHamstrings(boolean Hamstrings)
+    {
+        hamstrings = Hamstrings;
+    }
+
+    public boolean getBulk()
+    {
+        return bulk;
+    }
+
+    public void setBulk(boolean Bulk)
+    {
+        bulk = Bulk;
+    }
+
+    public boolean getCooldown()
+    {
+        return cooldown;
+    }
+
+    public void setCooldown(boolean Cooldown)
+    {
+        cooldown = Cooldown;
+    }
+
+    public boolean getStretch()
+    {
+        return stretch;
+    }
+
+    public void setStretch(boolean Stretch)
+    {
+        stretch = Stretch;
+    }
+
+    public boolean getEquipment()
+    {
+        return equipment;
+    }
+
+    public void setEquipment(boolean Equipment)
+    {
+        equipment = Equipment;
+    }
 }

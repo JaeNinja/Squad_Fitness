@@ -15,8 +15,13 @@ public class Exercise {
     //In seconds,
     int timeRequired;
 
-    public Exercise(int exerciseid, String exercisename, String exercisedescription, String type, String tips,
-                    int bodypart, Boolean equipmentneeded) {
+    public Exercise(int exerciseid,
+                    String exercisename,
+                    String exercisedescription,
+                    String type,
+                    String tips,
+                    int bodypart,
+                    Boolean equipmentneeded) {
         exerciseID = exerciseid;
         exerciseName = exercisename;
         exerciseDescription = exercisedescription;

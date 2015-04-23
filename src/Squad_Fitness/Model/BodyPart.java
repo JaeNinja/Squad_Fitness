@@ -5,14 +5,44 @@ package Squad_Fitness.Model;
  */
 public class BodyPart {
 
-    private boolean neck, shoulders, biceps, triceps, forearms, abs, obliques, back, glutes, quad, calves, hamstrings;
-    private boolean bulk, cooldown, stretch, equipment;
+    private boolean neck,
+            shoulders,
+            biceps,
+            triceps,
+            forearms,
+            abs,
+            obliques,
+            back,
+            glutes,
+            quad,
+            calves,
+            hamstrings;
+
+    private boolean bulk,
+            cooldown,
+            stretch,
+            equipment;
     public static BodyPart currentBodyParts = new BodyPart();
     public static int currentExercise;
 
     public BodyPart() {}
 
-    public BodyPart(boolean Neck, boolean Shoulders, boolean Biceps, boolean Triceps, boolean Forearms, boolean Abs, boolean Obliques, boolean Back, boolean Glutes, boolean Quad, boolean Calves, boolean Hamstrings, boolean Bulk, boolean Cooldown, boolean Stretch, boolean Equipment)
+    public BodyPart(boolean Neck,
+                    boolean Shoulders,
+                    boolean Biceps,
+                    boolean Triceps,
+                    boolean Forearms,
+                    boolean Abs,
+                    boolean Obliques,
+                    boolean Back,
+                    boolean Glutes,
+                    boolean Quad,
+                    boolean Calves,
+                    boolean Hamstrings,
+                    boolean Bulk,
+                    boolean Cooldown,
+                    boolean Stretch,
+                    boolean Equipment)
     {
         neck = Neck;
         shoulders = Shoulders;

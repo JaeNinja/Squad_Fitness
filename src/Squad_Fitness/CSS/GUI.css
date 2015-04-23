@@ -186,6 +186,12 @@
 	-fx-underline: true;
 }
 
+.password-field{
+	-fx-underline: true;
+	-fx-alignment: baseline-left;
+	-fx-font-size: inherit;
+
+}
 
 /* Larger than mobile */
 @media (min-width: 400px) {}
